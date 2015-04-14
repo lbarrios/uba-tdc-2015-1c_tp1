@@ -1,0 +1,2 @@
+S1 = campo destino (o emisor, decidir) del frame de arp
+El objetivo es estudiar que host recibe o emite mas paquetes
