@@ -14,18 +14,17 @@ check_sudo()
 from scapy.all import sniff
 pkts = sniff(offline='../output/'+args.input_testname)
 
-symbol_count = {}
+symbol_count = dict()
 pkts_count = 0
 
 for pkt in pkts:
   if args.verbose:
     pkt.show()
   # check if field is type or payload size
-  if type in pkt:
+  try:
     pkt_type = pkt.type
-  else:
+  except AttributeError:
     pkt_type = "802.3"
-    pass
   pkts_count += 1
   symbol_count[pkt_type] = symbol_count.get(pkt_type, 0) + 1
 
