@@ -1,37 +1,44 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from scapy.all import *
-import math
-import json
-import sys
+import argparse, json, math
+from funciones import *
 
-output_file = sys.argv[1]
+parser = argparse.ArgumentParser(description='Parsea un pcap y calcula la entropia')
+parser.add_argument('-i', '--input-testname', required=True, type=file_pcap,
+  help='nombre del testname (archivo pcap en la carpeta output)', metavar='FILE')
+parser.add_argument('-v','--verbose', action='store_true', default=False)
+args = parser.parse_args()
 
-pkts = sniff(offline='../output/out.pcap')
+# sniff
+check_sudo()
+from scapy.all import sniff
+pkts = sniff(offline='../output/'+args.input_testname)
 
 symbol_count = {}
 pkts_count = 0
 
 for pkt in pkts:
-    try:
-        pkt_type = pkt.type
-    except AttributeError:
-        pass
-    else:
-        pkts_count += 1
-        if pkt_type not in symbol_count:
-            symbol_count[pkt_type] = 0
-        symbol_count[pkt_type] += 1
+  if args.verbose:
+    pkt.show()
+  # check if field is type or payload size
+  if type in pkt:
+    pkt_type = pkt.type
+  else:
+    pkt_type = "802.3"
+    pass
+  pkts_count += 1
+  symbol_count[pkt_type] = symbol_count.get(pkt_type, 0) + 1
 
-symbol_freq = {k: v/float(pkts_count) for k,v in symbol_count.items()}
-symbol_information = {k: -(math.log(v, 2)) for k,v in symbol_freq.items()}
-source_entropy = sum({k: (v * symbol_information[k]) for k,v in symbol_freq.items()}.values())
+symbol_frequency = {k: v/float(pkts_count) for k,v in symbol_count.items()}
+symbol_information = {k: -(math.log(v, 2)) for k,v in symbol_frequency.items()}
+source_entropy = sum({k: (v * symbol_information[k]) 
+  for k,v in symbol_frequency.items()}.values())
 
 result = {
-    'symbol_freq': symbol_freq,
-    'symbol_information': symbol_information,
-    'source_entropy': source_entropy
+  'symbol_frequency': symbol_frequency,
+  'symbol_information': symbol_information,
+  'source_entropy': source_entropy
 }
 
-with open(output_file, 'w') as f:
-    f.write(json.dumps(result))
+with open(replace_ext(args.input_testname,'json'), 'w') as f:
+  f.write(json.dumps(result))

@@ -6,7 +6,7 @@ import argparse, sys, os
 def protocol_ok(x):
   protocols = ['tcp','icmp','arp','udp','']
   if not x in protocols:
-    parser.error('Invalid protocol. Valids protocols are: ',str(protocols))
+    parser.error('Invalid protocol. Valids protocols are: %s'%str(protocols))
   return x
 
 # verifies that testname parameter is valid
