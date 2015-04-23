@@ -1,0 +1,36 @@
+Introducción:
+En el presente Trabajo Práctico utilizaremos algunas de las técnicas
+provistas por la teoría de la información para estudiar y analizar algunas
+redes de información. El objetivo será distinguir diversos aspectos de la
+red de manera analítica. Para cumplir con nuestro objetivo, haremos uso de
+dos herramientas modernas de manipulación y análisis de paquetes: Wireshark
+y Scapy.
+
+Primera Consigna:
+1_ Implementar una herramienta para escuchar pasivamente en la red local
+Construimos un script en Construimos un script en python que hacía uso de la
+función "sniff", provista por Scapy. Este nos permitió escuchar durante
+cierto tiempo la red local y guardarnos todos los paquetes que llegaban a
+nuestra placa de red y eran levantados por la esta. A partir de estos datos
+que guardamos, seremos capaces de encontrar  nodos y protocolos
+distinguidos en la red a partir de gráficos de torta e histogramas.
+
+2_a_Proponga una nueva fuente con el objetivo de disinguir nodos de la red
+en base solamente al tráfico ARP. 
+ARP es un protocolo de la capa de enlace de datos, responsable de encontrar
+la dirección de capa 2 (Ethernet MAC) que corresponde a una determinada
+dirección IP (dirección de capa 3 de enlace). Es decir, cada vez que un host
+quiere comunicarse con otro y su dirección MAC no se encuentra dentro de su
+tabla ARP, debe enviar un paquete who-has broadcast para determinar la dirección MAC
+del host destino. De este modo, todos los hosts del dominio de colisión de
+esta máquina reciben dicho paquete, siendo respondido el mismo únicamente
+por el host requerido, mediante un paquete rep, mediante un paquete reply.
+Un nodo distinguido, en este contexto sería... 
+
+2_b_
+2_c_
+
+CASO POR ANÁLISIS POR PROTOCOLOS
+Nodos distinguidos en este contexto son aquellos símbolos cuya probabilidad
+de aparecer es alta, de forma tal que la información que proveen es menor a
+la entropía. 
