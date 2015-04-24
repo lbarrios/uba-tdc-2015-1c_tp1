@@ -4,7 +4,9 @@ protocol_title = {
     '2048': 'IPv4',
     '2054': 'ARP',
     '34525': 'IPv6',
-    '34983': 'Huawei_88A7'
+    '34983': 'Huawei_88A7',
+    '33079': 'IPX',
+    '35020': 'LLDP'
 }
 def get_protocol_title(s):
   if s in protocol_title:
