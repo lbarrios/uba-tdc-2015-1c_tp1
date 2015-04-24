@@ -6,7 +6,8 @@ protocol_title = {
     '34525': 'IPv6',
     '34983': 'Huawei_88A7',
     '33079': 'IPX',
-    '35020': 'LLDP'
+    '35020': 'LLDP',
+    '34958': 'IEEE 802.1X'
 }
 def get_protocol_title(s):
   if s in protocol_title:
