@@ -114,7 +114,7 @@
 % start the main text ...
 %----------------------------------------------------------------------
 % SECTION I: Introduction
-%----------------------------------------------------------------------
+  %----------------------------------------------------------------------
 \section{Introducción}
 
 \PARstart En el presente Trabajo Práctico utilizaremos algunas de las técnicas
@@ -124,20 +124,17 @@ red de manera analítica. Para cumplir con nuestro objetivo, haremos uso de
 dos herramientas modernas de manipulación y análisis de paquetes: Wireshark
 y Scapy.
 
-\medskip
-Primera Consigna:
-Implementar una herramienta para escuchar pasivamente en la red local
-Construimos un script en python que hace uso de la
+\section{Primera consigna}
+
+\subsection{}
+Para realizar esta consigna construimos un script en python que hace uso de la
 función "sniff", provista por Scapy. Este nos permitió escuchar durante
 cierto tiempo la red local y guardarnos todos los paquetes que llegaban a
 nuestra placa de red y eran levantados por esta. A partir de estos datos
 que guardamos, seremos capaces de encontrar  nodos y protocolos
 distinguidos en la red a partir de gráficos de torta e histogramas.
 
-\medskip
-Segunda consigna:
-Proponga una nueva fuente con el objetivo de disinguir nodos de la red
-en base solamente al tráfico ARP. 
+\subsection{}
 ARP es un protocolo de la capa de enlace de datos, responsable de encontrar
 la dirección de capa 2 (Ethernet MAC) que corresponde a una determinada
 dirección IP (dirección de capa 3 de enlace). Es decir, cada vez que un host
@@ -146,25 +143,20 @@ tabla ARP, debe enviar un paquete who-has broadcast para determinar la direcció
 del host destino. De este modo, todos los hosts del dominio de colisión de
 esta máquina reciben dicho paquete, siendo respondido el mismo únicamente
 por el host requerido, mediante un paquete rep, mediante un paquete reply.
-Un nodo distinguido, en este contexto sería... 
+Para distinguir nodos (símbolos) en este contexto, tomamos a aquellos cuya
+probabilidad de aparición era alta, de forma tal que la información provista
+por el mismo sea menor a la entropía de la fuente a la cuál el símbolo
+pertenece.
 
 \medskip
-CASO DE ANÁLISIS POR PROTOCOLOS
-Nodos distinguidos en este contexto son aquellos símbolos cuya probabilidad
-de aparecer es alta, de forma tal que la información que proveen es menor a
-la entropía. 
-
-
-%\PARstart Use the PARstart macro only for the first paragraph in 
-%the entire paper...
-
-\section{Ejercicio 2}
 Para este ejercicio se decidi\'o tomar la siguiente fuente: \\ 
-$S_{1}$ = \{s1 ... sn\} siendo $s_{i}$ la tupla (src, dst) con los respectivos campos del paquete ARP. \\
-Cabe aclarar que cada elemento de la tupla proveniente de los simbolos de la fuente son las direcciones \textit{ip}
-de fuente y de destino del paquete ARP. \\
-El objetivo de esta nueva fuente planteada, es el de analizar como se comunican los distintos nodos
-y cuales son los mas requeridos. 
+$S_{1}$ = \{$s_{1} \dots s_{n}$\} siendo el símbolo $s_{i}$ la tupla (src, dst), donde
+src y dst son respectivamente las direcciones ip del emisor y receptor del
+paquete ARP escuchado.  \\
+Al analizar esta fuente, se busca identificar los nodos distinguidos. Es
+decir, aquellos pares de ip que podemos concluir tienen mayor probabilidad de comunicarse
+entre sí en la red escuchada, a partir de los datos obtenidos. 
+
 
 \section{Experimentacion}
 
@@ -180,11 +172,19 @@ Los resultados obtenidos fueron los siguientes:
 
 \includegraphics[scale=0.5]{graficos/techint_pie.png} \\
 %{Grafico que muestra la proporción de cada protocolo dentro del total}
+En este gráfico de torta se observa la cantidad de paquetes escuchados de cada
+protocolo. Se pudieron escuchar protocolos de tipo IPv4, IPX, ARP, LLDP,
+802.3 e IPv6. El símbolo mayormente emitido (con mayor probabilidad de
+aparecer) por la fuente es IPv4.
 
 \includegraphics[scale=0.5]{graficos/techint_histogram.png} \\
 %{Grafico que muestra la información que aporta cada protocolo y el corte de
 %la entropía}
-
+Este histograma muestra la cantidad de información provista por cada símbolo
+de la fuente $S$ definida, calculada según la fórmula $ I(s_{i}) =
+-log(p(s_{i}))  $. También hay un corte en la entropía de la fuente
+(aproximadamente 1,9), que nos permite observar de manera sencilla cómo el símbolo (nodo)
+distinguido de la fuente es IPv4.
 
 \subsubsection{Fuente utilizada: $S_{1}$}
 
