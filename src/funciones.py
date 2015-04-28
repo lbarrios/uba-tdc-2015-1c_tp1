@@ -1,5 +1,6 @@
 import os.path
 import argparse
+import string
 
 # verifies that testname parameter is valid
 def check_testname_ok(f):
@@ -43,3 +44,13 @@ def output_testtype_ext(file,testtype,newext):
 def check_sudo():
   if os.getuid() != 0:
     raise RuntimeError("You need to run this script with sudo!")
+
+def make_unused_letter():
+    unused_letters = list(string.ascii_uppercase)
+    unused_letters.reverse()
+    def unused_letter():
+        return unused_letters.pop()
+    return unused_letter
+
+unused_letter = make_unused_letter()
+          
