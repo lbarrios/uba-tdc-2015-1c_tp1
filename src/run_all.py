@@ -27,10 +27,16 @@ args = parser.parse_args()
 from subprocess import Popen, PIPE
 
 if(args.full):
+  # Calculo la entropía de S
   process = Popen(["sudo", "./calcular_entropia_s.py", "-i", args.input_testname], stdout=PIPE)
   (output, err) = process.communicate()
   if process.wait() != 0:
     raise Exception("Error al ejecutar calcular_entropia_s.py")
+  # Calculo la entropía de S_1
+  process = Popen(["sudo", "./calcular_entropia_s1.py", "-i", args.input_testname], stdout=PIPE)
+  (output, err) = process.communicate()
+  if process.wait() != 0:
+    raise Exception("Error al ejecutar calcular_entropia_s1.py")
 
 process = Popen(["./plot-histogram-s.py", "-i", args.input_testname], stdout=PIPE)
 (output, err) = process.communicate()
