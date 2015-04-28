@@ -58,36 +58,29 @@ distinguidos en la red a partir de la realización de gráficos de torta e histo
 
 Para cada una de las mediciones consideramos las siguientes fuentes: 
 \begin{enumerate}
-  \item $S = {s_{1} \dots s_{n}}$, provista por la cátedra, donde $s_{i}$ es el valor del campo
+  \item $S = \{s_{1} \dots s_{n}\}$, provista por la cátedra, donde $s_{i}$ es el valor del campo
         \emph{type} del frame de capa 2. 
-  \item $S_{1}$, elegida por nosotros, con la restricción de que todos los paquetes considerados
-        debían ser de tipo ARP.
+  \item $S_{1} = \{s_{1} \dots s_{n}\} $, elegida por nosotros, con todos los paquetes escuchados 
+        siendo de tipo ARP.
 \end{enumerate}
 
+\medskip
+Para entender qué es lo que se obtendrá al efectuar estas mediciones, hay que aclarar que
 ARP es un protocolo de la capa de enlace de datos, responsable de encontrar
 la dirección de capa 2 (Ethernet MAC) que corresponde a una determinada
 dirección IP (dirección de capa 3 de enlace). Es decir, cada vez que un host
 quiere comunicarse con otro y su dirección MAC no se encuentra dentro de su
 tabla ARP, debe enviar un paquete who-has broadcast para determinar la dirección MAC
 del host destino. De este modo, todos los hosts del dominio de colisión de
-esta máquina reciben dicho paquete, siendo respondido el mismo únicamente
-por el host requerido, mediante un paquete rep, mediante un paquete reply.
+la máquina en la que se efectúa la medición reciben dicho paquete, siendo respondido el mismo únicamente
+por el host requerido, mediante un paquete \emph{rep}, mediante un paquete \emph{reply}.
 Para distinguir nodos (símbolos) en este contexto, tomamos a aquellos cuya
 probabilidad de aparición era alta, de forma tal que la información provista
-por el mismo sea menor a la entropía de la fuente a la cuál el símbolo
-pertenece.
-
-\medskip
-Para este ejercicio se decidi\'o tomar la siguiente fuente: \\ 
-$S_{1}$ = \{$s_{1} \dots s_{n}$\} siendo el símbolo $s_{i}$ la tupla (src, dst), donde
-src y dst son respectivamente las direcciones ip del emisor y receptor del
-paquete ARP escuchado.  \\
-Al analizar esta fuente, se busca identificar los nodos distinguidos. Es
-decir, aquellos pares de ip que podemos concluir tienen mayor probabilidad de comunicarse
-entre sí en la red escuchada, a partir de los datos obtenidos. 
+por el mismo fuera menor a la entropía de la fuente a la cuál el símbolo pertenecía.
 
 
-\section{Experimentacion}
+
+\section{Experimentación}
 
 
 \subsection{Experimento 1}
