@@ -8,9 +8,12 @@ all: $(BINDIR)/informe.pdf
 
 # El latex se compila dos veces seguidas, la primera es para que se arme bien el índice.
 TEX_PARAMS= -interaction=nonstopmode
-$(BINDIR)/informe.pdf: informe.tex
+
+informe.pdf: informe.tex
 		( pdflatex $(TEX_PARAMS) informe.tex && clear &&\
 		pdflatex $(TEX_PARAMS) informe.tex ) || (echo 'ERROR.'&&rm informe.pdf)
+
+$(BINDIR)/informe.pdf: informe.pdf
 		@mv informe.pdf $(BINDIR)
 		@(xdg-open $(BINDIR)/informe.pdf) || (echo "Abrir el pdf manualmente")
 
