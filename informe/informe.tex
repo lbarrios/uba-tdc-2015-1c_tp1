@@ -50,38 +50,48 @@ y Scapy.
 %----------------------------------------------------------------------
 \section{ Introducción }
 
-Construimos una herramienta que hace uso de la
-función ``sniff'', provista por la librería Scapy de Python. Esta nos permitió escuchar durante
-cierto tiempo la red local y guardarnos todos los paquetes que llegaban a
-nuestra placa de red y eran levantados por esta. A partir de estos datos
-que guardamos, fuimos capaces de encontrar  nodos y protocolos
-distinguidos en la red a partir de la realización de gráficos de torta e histogramas apropiados.
+Construimos una herramienta que hace uso de la función
+\texttt{``sniff''}, provista por la librería \textbf{Scapy} de
+Python. Esta nos permitió activar el \texttt{modo promiscuo}, o
+\texttt{monitor} en el caso de las placas wireless. Esto nos permitió
+escuchar la red durante cierto tiempo, obteniendo todos los paquetes
+que llegaban a nuestra placa de red. A partir de estos datos que
+guardamos en un archivo \texttt{pcap}, se definieron dos fuentes de
+información, con las cuales fuimos capaces de encontrar nodos y
+protocolos distinguidos en la red. Para su visualización, elegimos la
+realización de gráficos de torta e histogramas, ya que los
+consideramos los más apropiados.
 
 Para cada una de las mediciones consideramos las siguientes fuentes: 
 \begin{itemize}
 
-  \item $S = \{s_{1} \dots s_{n}\}$, provista por la cátedra, donde $s_{i}$ es
-  el valor del campo \emph{type} de cada paquete de capa 2.
+  \item $S = \{s_{1} \dots s_{n}\}$, provista por la cátedra, donde
+  $s_{i}$ es el valor del campo \emph{type} de cada paquete de capa
+  2.
 
-  \item $S_{1} = \{s_{1} \dots s_{n}\} $, determinada por nosotros, donde
-  $s_i$ es el valor del campo destino (MAC) cada paquete de capa 2 de tipo
-  ARP.
+  \item $S_{1} = \{s_{1} \dots s_{n}\} $, determinada por nosotros,
+  donde $s_i$ es el valor del campo destino (MAC) cada paquete de
+  capa 2 de tipo ARP.
 
 \end{itemize}
 
 \medskip
-Para entender qué es lo que se obtendrá al efectuar estas mediciones, hay que aclarar que
-ARP es un protocolo de la capa de enlace de datos, responsable de encontrar
-la dirección de capa 2 (Ethernet MAC) que corresponde a una determinada
-dirección IP (dirección de capa 3 de enlace). Es decir, cada vez que un host
-quiere comunicarse con otro y su dirección MAC no se encuentra dentro de su
-tabla ARP, debe enviar un paquete who-has broadcast para determinar la dirección MAC
-del host destino. De este modo, todos los hosts del dominio de colisión de
-la máquina en la que se efectúa la medición reciben dicho paquete, siendo respondido el mismo únicamente
-por el host requerido, mediante un paquete \emph{rep}, mediante un paquete \emph{reply}.
-Para distinguir nodos (símbolos) en este contexto, tomamos a aquellos cuya
-probabilidad de aparición era alta, de forma tal que la información provista
-por el mismo fuera menor a la entropía de la fuente a la cuál el símbolo pertenecía.
+
+Para entender qué es lo que se obtendrá al efectuar estas mediciones,
+hay que aclarar que ARP es un protocolo de la capa de enlace de
+datos, responsable de encontrar la dirección de capa 2 (Ethernet MAC)
+que corresponde a una determinada dirección IP (dirección de capa 3
+de enlace). Es decir, cada vez que un host quiere comunicarse con
+otro y su dirección MAC no se encuentra dentro de su tabla ARP, debe
+enviar un paquete who-has broadcast para determinar la dirección MAC
+del host destino. De este modo, todos los hosts del dominio de
+colisión de la máquina en la que se efectúa la medición reciben dicho
+paquete, siendo respondido el mismo únicamente por el host requerido,
+mediante un paquete \emph{rep}, mediante un paquete \emph{reply}.
+Para distinguir nodos (símbolos) en este contexto, tomamos a aquellos
+cuya probabilidad de aparición era alta, de forma tal que la
+información provista por el mismo fuera menor a la entropía de la
+fuente a la cuál el símbolo pertenecía.
 
 \newpage
 %----------------------------------------------------------------------
