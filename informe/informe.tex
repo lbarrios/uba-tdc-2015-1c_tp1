@@ -127,7 +127,7 @@ y Scapy.
 
 \subsection{}
 Para realizar esta consigna construimos un script en python que hace uso de la
-función "sniff", provista por Scapy. Este nos permitió escuchar durante
+función ``sniff'', provista por Scapy. Este nos permitió escuchar durante
 cierto tiempo la red local y guardarnos todos los paquetes que llegaban a
 nuestra placa de red y eran levantados por esta. A partir de estos datos
 que guardamos, seremos capaces de encontrar  nodos y protocolos
@@ -169,14 +169,36 @@ Los resultados obtenidos fueron los siguientes:
 
 \subsubsection{Fuente utilizada: S}
 
-\includegraphics[scale=0.5]{graficos/techint_pie.png} \\
+% \begin{figure}
+% \begin{center}
+%   \includegraphics[width=0.5\textwidth]{graficos/techint-pie.png}
+%   \caption{Techint - Gráfico torta}
+%   \label{techint-pie}
+% \end{center}
+% \end{figure}
+
+\begin{figure}
+\begin{center}
+  \includegraphics[width=0.5\textwidth]{../output/labosdc-20150428-pie.png}
+  \caption{Labosdc20150428 - pie}
+  \label{labosdc20150428-pie}
+\end{center}
+\end{figure}
+
 %{Grafico que muestra la proporción de cada protocolo dentro del total}
 En este gráfico de torta se observa la cantidad de paquetes escuchados de cada
 protocolo. Se pudieron escuchar protocolos de tipo IPv4, IPX, ARP, LLDP,
 802.3 e IPv6. El símbolo mayormente emitido (con mayor probabilidad de
 aparecer) por la fuente es IPv4.
 
-\includegraphics[scale=0.5]{graficos/techint_histogram.png} \\
+\begin{figure}
+\begin{center}
+  \includegraphics[width=0.5\textwidth]{graficos/techint_histogram.png}
+  \caption{Techint - Histograma}
+  \label{techint-pie}
+\end{center}
+\end{figure}
+
 %{Grafico que muestra la información que aporta cada protocolo y el corte de
 %la entropía}
 Este histograma muestra la cantidad de información provista por cada símbolo

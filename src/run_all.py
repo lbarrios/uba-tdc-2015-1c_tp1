@@ -40,5 +40,5 @@ process = Popen(["./plot-pie.py", "-i", args.input_testname], stdout=PIPE)
 if process.wait() != 0:
   raise Exception("Error al ejecutar plot-pie.py")
 
-os.system("xdg-open ../output/%s.histogram.png"%args.input_testname)
-os.system("xdg-open ../output/%s.pie.png"%args.input_testname)
+os.system("xdg-open ../output/%s-histogram.png"%args.input_testname)
+os.system("xdg-open ../output/%s-pie.png"%args.input_testname)

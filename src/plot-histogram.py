@@ -8,8 +8,7 @@ parser = argparse.ArgumentParser(description='Parsea un json e imprime un histog
 parser.add_argument('-i', '--input-testname', required=True, type=file_json,
   help='nombre del testname (archivo json en la carpeta output)', metavar='FILE')
 args = parser.parse_args()
-
-output_file = replace_ext(args.input_testname,'histogram.png')
+output_file = output_testtype_ext(args.input_testname, 'histogram', 'png')
 
 # parse the json input file
 with open(args.input_testname) as f:
