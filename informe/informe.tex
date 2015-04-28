@@ -53,6 +53,9 @@
 % In order to use the figure-defining commands in ieeefig.sty...
 \usepackage{ieeefig}
 
+% To use utf8 encoding
+\usepackage[utf8]{inputenc}
+
 \begin{document}
 
 %----------------------------------------------------------------------
@@ -63,14 +66,14 @@
 
 % format author this way for journal articles.
 \author[SHORT NAMES]{%
-      Leandro Ezequiel Barrios,
-    \and
-      Gonzalo Benegas,
-    \and
-     Martin Caravario, 
-    \and
-     Pedro Rodriguez 
-  }
+	Leandro Ezequiel Barrios,
+	\and
+	Gonzalo Benegas,
+	\and
+	Martin Caravario, 
+	\and
+	Pedro Rodriguez 
+}
 
 % format author this way for conference proceedings
 %\author[SHORT NAMES]{%
@@ -102,9 +105,14 @@
 
 % do the abstract
 
-%\begin{abstract}
-%Our premise is ...
-%\end{abstract}
+\begin{abstract}
+En el presente Trabajo Práctico utilizaremos algunas de las técnicas
+provistas por la teoría de la información para estudiar y analizar algunas
+redes de información. El objetivo será distinguir diversos aspectos de la
+red de manera analítica. Para cumplir con nuestro objetivo, haremos uso de
+dos herramientas modernas de manipulación y análisis de paquetes: Wireshark
+y Scapy.
+\end{abstract}
 
 % do the keywords
 %\begin{keywords}
@@ -114,16 +122,7 @@
 % start the main text ...
 %----------------------------------------------------------------------
 % SECTION I: Introduction
-  %----------------------------------------------------------------------
-\section{Introducción}
-
-\PARstart En el presente Trabajo Práctico utilizaremos algunas de las técnicas
-provistas por la teoría de la información para estudiar y analizar algunas
-redes de información. El objetivo será distinguir diversos aspectos de la
-red de manera analítica. Para cumplir con nuestro objetivo, haremos uso de
-dos herramientas modernas de manipulación y análisis de paquetes: Wireshark
-y Scapy.
-
+%----------------------------------------------------------------------
 \section{Primera consigna}
 
 \subsection{}
