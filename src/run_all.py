@@ -20,25 +20,27 @@ if len(sys.argv)<=1:
 parser = argparse.ArgumentParser(description='Corre los otros scripts')
 parser.add_argument('-i', '--input-testname', required=True,
   help='nombre del testname (archivo pcap en la carpeta output)')
+parser.add_argument('--full', action='store_true', default=False)
 args = parser.parse_args()
 
 # run the subprocess
 from subprocess import Popen, PIPE
 
-process = Popen(["sudo", "./calcular_entropia_s.py", "-i", args.input_testname], stdout=PIPE)
-(output, err) = process.communicate()
-if process.wait() != 0:
-  raise Exception("Error al ejecutar calcular_entropia_s.py")
+if(args.full):
+  process = Popen(["sudo", "./calcular_entropia_s.py", "-i", args.input_testname], stdout=PIPE)
+  (output, err) = process.communicate()
+  if process.wait() != 0:
+    raise Exception("Error al ejecutar calcular_entropia_s.py")
 
-process = Popen(["./plot-histogram.py", "-i", args.input_testname], stdout=PIPE)
+process = Popen(["./plot-histogram-s.py", "-i", args.input_testname], stdout=PIPE)
 (output, err) = process.communicate()
 if process.wait() != 0:
   raise Exception("Error al ejecutar plot-histogram.py")
 
-process = Popen(["./plot-pie.py", "-i", args.input_testname], stdout=PIPE)
+process = Popen(["./plot-pie-s.py", "-i", args.input_testname], stdout=PIPE)
 (output, err) = process.communicate()
 if process.wait() != 0:
   raise Exception("Error al ejecutar plot-pie.py")
 
-os.system("xdg-open ../output/%s.histogram.png"%args.input_testname)
-os.system("xdg-open ../output/%s.pie.png"%args.input_testname)
+os.system("xdg-open ../output/%s-histogram-s.png"%args.input_testname)
+os.system("xdg-open ../output/%s-pie-s.png"%args.input_testname)

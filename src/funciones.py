@@ -33,6 +33,11 @@ def replace_ext(file,newext):
   root,ext = os.path.splitext(file)
   return root+"."+newext
 
+# given a file path, returns a png filepath
+def output_testtype_ext(file,testtype,newext):
+  root,ext = os.path.splitext(file)
+  return root+"-"+testtype+"."+newext
+
 
 # check sudo
 def check_sudo():

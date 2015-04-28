@@ -1,0 +1,38 @@
+% \subsection{Experimento 1}
+% Para este experimento se analiz\'o el trafico dentro de la red LAN de la empresa Techint, escuchando pasivamente
+% en la red durante media hora, con la herramienta desarrollada en el ejercicio 1. \\
+% Los resultados del experimento seran divididos segun la fuente utilizada (S o $S_{1}$), para poder analizar
+% entropias e informacion de sus respectivos simbolos de forma adecuada. \\
+% Los resultados obtenidos fueron los siguientes: 
+
+% \subsubsection{Fuente utilizada: S}
+
+% \begin{figure}
+% \begin{center}
+%   \includegraphics[width=0.5\textwidth]{graficos/techint-pie.png}
+%   \caption{Techint - Gráfico torta}
+%   \label{techint-pie}
+% \end{center}
+% \end{figure}
+
+%\begin{figure}
+%\begin{center}
+%  \includegraphics[width=0.5\textwidth]{../output/labosdc-20150428-pie.png}
+%  \caption{Labosdc20150428 - pie}
+%  \label{labosdc20150428-pie}
+%\end{center}
+%\end{figure}
+
+%{Grafico que muestra la proporción de cada protocolo dentro del total}
+% En este gráfico de torta se observa la cantidad de paquetes escuchados de cada
+% protocolo. Se pudieron escuchar protocolos de tipo IPv4, IPX, ARP, LLDP,
+% 802.3 e IPv6. El símbolo mayormente emitido (con mayor probabilidad de
+% aparecer) por la fuente es IPv4.
+
+%{Grafico que muestra la información que aporta cada protocolo y el corte de
+%la entropía}
+% Este histograma muestra la cantidad de información provista por cada símbolo
+% de la fuente $S$ definida, calculada según la fórmula $ I(s_{i}) =
+% -log(p(s_{i}))  $. También hay un corte en la entropía de la fuente
+% (aproximadamente 1,9), que nos permite observar de manera sencilla cómo el símbolo (nodo)
+% distinguido de la fuente es IPv4.
