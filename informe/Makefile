@@ -1,5 +1,5 @@
 BINDIR=bin
-TRASH=informe.aux informe.log informe.out informe.toc informe.idx
+TRASH=informe.aux informe.log informe.out informe.toc informe.idx informe.fdb_latexmk
 
 
 .PHONY: all clean
