@@ -58,12 +58,16 @@ que guardamos, fuimos capaces de encontrar  nodos y protocolos
 distinguidos en la red a partir de la realización de gráficos de torta e histogramas apropiados.
 
 Para cada una de las mediciones consideramos las siguientes fuentes: 
-\begin{enumerate}
-  \item $S = \{s_{1} \dots s_{n}\}$, provista por la cátedra, donde $s_{i}$ es el valor del campo
-        \emph{type} del frame de capa 2. 
-  \item $S_{1} = \{s_{1} \dots s_{n}\} $, elegida por nosotros, con todos los paquetes escuchados 
-        siendo de tipo ARP.
-\end{enumerate}
+\begin{itemize}
+
+  \item $S = \{s_{1} \dots s_{n}\}$, provista por la cátedra, donde $s_{i}$ es
+  el valor del campo \emph{type} de cada paquete de capa 2.
+
+  \item $S_{1} = \{s_{1} \dots s_{n}\} $, determinada por nosotros, donde
+  $s_i$ es el valor del campo destino (MAC) cada paquete de capa 2 de tipo
+  ARP.
+
+\end{itemize}
 
 \medskip
 Para entender qué es lo que se obtendrá al efectuar estas mediciones, hay que aclarar que
