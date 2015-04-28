@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-import argparse, json, string, sys
+import argparse, json, sys
 from funciones import *
 
 # parse the arguments
@@ -8,8 +8,7 @@ parser = argparse.ArgumentParser(description='Parsea un json e imprime un histog
 parser.add_argument('-i', '--input-testname', required=True, type=file_json,
   help='nombre del testname (archivo json en la carpeta output)', metavar='FILE')
 args = parser.parse_args()
-
-output_file = replace_ext(args.input_testname,'histogram.png')
+output_file = output_testtype_ext(args.input_testname, 'histogram-s1', 'png')
 
 # parse the json input file
 with open(args.input_testname) as f:
@@ -27,15 +26,6 @@ posicion_x = np.arange(len(symbols))
             # for sym, info in symbol_information.items()]
 
 
-def make_unused_letter():
-    unused_letters = list(string.ascii_uppercase)
-    unused_letters.reverse()
-    def unused_letter():
-        return unused_letters.pop()
-    return unused_letter
-
-unused_letter = make_unused_letter()
-        
 x_labels = [unused_letter() if info < source_entropy else ''
             for sym, info in symbol_information.items()]
             
