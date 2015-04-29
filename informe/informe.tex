@@ -2,9 +2,11 @@
 % In order to use the figure-defining commands in ieeefig.sty...
 \usepackage{ieeefig}
 % To use utf8 encoding
-%\usepackage[T1]{fontenc}
+\usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-%\usepackage[spanish]{babel}
+\usepackage[spanish]{babel}
+% to place figures
+\usepackage{float}
 \begin{document}
 
 %----------------------------------------------------------------------
@@ -103,6 +105,14 @@ fuente a la cuál el símbolo pertenecía.
 
 Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.
 
+  \begin{figure}[h]\begin{center}
+    \includegraphics[width=0.5\textwidth]{%
+    ../output/marto-casa-3hs-s-pie.png}
+    \vspace{-3em}
+    \caption{S: Casa - Torta}
+    \label{marto-casa-3hs-s-pie}
+  \end{center}\end{figure}
+
   %--------------------------------------------------------------------
   % SUBSECTION II-B: TECHINT
   %--------------------------------------------------------------------
@@ -127,6 +137,57 @@ Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de te
 
 Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.
 
+  %
+  \begin{figure}[H]\begin{center}
+    \includegraphics[width=0.4\textwidth]{%
+    ../output/hyundai-1-s-pie.png}
+    \vspace{-3em}
+    \caption{S: Hyundai - Torta (1 minuto)}
+    \label{hyundai-1-s-pie}
+  \end{center}\end{figure}
+  %
+  \begin{figure}[H]\begin{center}
+    \includegraphics[width=0.4\textwidth]{%
+    ../output/hyundai-5-s-pie.png}
+    \vspace{-3em}
+    \caption{S: Hyundai - Torta (5 minutos)}
+    \label{hyundai-5-s-pie}
+  \end{center}\end{figure}
+  %
+  \begin{figure}[H]\begin{center}
+    \includegraphics[width=0.4\textwidth]{%
+    ../output/hyundai-10-s-pie.png}
+    \vspace{-3em}
+    \caption{S: Hyundai - Torta (10 minutos)}
+    \label{hyundai-10-s-pie}
+  \end{center}\end{figure}
+  %
+  \begin{figure}[H]\begin{center}
+    \includegraphics[width=0.4\textwidth]{%
+    ../output/hyundai-20-s-pie.png}
+    \vspace{-3em}
+    \caption{S: Hyundai - Torta (20 minutos)}
+    \label{hyundai-20-s-pie}
+  \end{center}\end{figure}
+  
+  \begin{figure}[H]\begin{center}
+    \includegraphics[width=0.4\textwidth]{%
+    ../output/hyundai-30-s-pie.png}
+    \vspace{-3em}
+    \caption{S: Hyundai - Torta (30 minutos)}
+    \label{hyundai-30-s-pie}
+  \end{center}\end{figure}
+  %
+  \begin{figure}[H]\begin{center}
+    \includegraphics[width=0.4\textwidth]{%
+    ../output/hyundai-s-pie.png}
+    \vspace{-3em}
+    \caption{S: Hyundai - Torta (Total)}
+    \label{hyundai-s-pie}
+  \end{center}\end{figure}
+
+
+
   %--------------------------------------------------------------------
   % SUBSECTION II-D: LABORATORIOS DC
   %--------------------------------------------------------------------
@@ -140,13 +201,6 @@ Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de te
   %\subsection{Gráficos}
   %\subsubsection*{Gráficos Torta}
   %casa
-    \begin{figure}[h]\begin{center}
-      \includegraphics[width=0.5\textwidth]{%
-      ../output/marto-casa-3hs-s-pie.png}
-      \vspace{-3em}
-      \caption{S: Casa - Torta}
-      \label{marto-casa-3hs-s-pie}
-    \end{center}\end{figure}
   % techint
     \begin{figure}[h]\begin{center}
       \includegraphics[width=0.5\textwidth]{%
@@ -156,13 +210,7 @@ Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de te
       \label{techint-s-pie}
     \end{center}\end{figure}
   % hyundai
-    \begin{figure}[h]\begin{center}
-      \includegraphics[width=0.5\textwidth]{%
-      ../output/hyundai-s-pie.png}
-      \vspace{-3em}
-      \caption{S: Hyundai - Torta}
-      \label{hyundai-s-pie}
-    \end{center}\end{figure}
+
   % laboratorios dc
     \begin{figure}[h]\begin{center}
       \includegraphics[width=0.5\textwidth]{%

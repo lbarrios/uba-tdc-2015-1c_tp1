@@ -21,6 +21,7 @@ parser = argparse.ArgumentParser(description='Corre los otros scripts')
 parser.add_argument('-i', '--input-testname', required=True,
   help='nombre del testname (archivo pcap en la carpeta output)')
 parser.add_argument('--full', action='store_true', default=False)
+parser.add_argument('--dont-open', action='store_true', default=False)
 args = parser.parse_args()
 
 # run the subprocess
@@ -58,7 +59,8 @@ process = Popen(["./plot-pie-s1.py", "-i", args.input_testname], stdout=PIPE)
 if process.wait() != 0:
   raise Exception("Error al ejecutar plot-pie-s1.py")
 
-os.system("xdg-open ../output/%s-s-histogram.png"%args.input_testname)
-os.system("xdg-open ../output/%s-s-pie.png"%args.input_testname)
-os.system("xdg-open ../output/%s-s1-histogram.png"%args.input_testname)
-os.system("xdg-open ../output/%s-s1-pie.png"%args.input_testname)
+if not args.dont_open:
+  os.system("xdg-open ../output/%s-s-histogram.png"%args.input_testname)
+  os.system("xdg-open ../output/%s-s-pie.png"%args.input_testname)
+  os.system("xdg-open ../output/%s-s1-histogram.png"%args.input_testname)
+  os.system("xdg-open ../output/%s-s1-pie.png"%args.input_testname)
