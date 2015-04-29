@@ -81,7 +81,7 @@ Para entender qué es lo que se obtendrá al efectuar estas mediciones,
 hay que aclarar que \texttt{ARP} es un protocolo de la capa de enlace
 de datos, responsable de encontrar la dirección de capa 2
 (\texttt{Ethernet MAC}) que corresponde a una determinada dirección IP
-(dirección de capa 3 de enlace).
+(dirección de capa 3 de red).
 
 Es decir, cada vez que un host quiere comunicarse con otro y su
 dirección \texttt{MAC} no se encuentra dentro de su tabla
@@ -94,7 +94,27 @@ por el host requerido, mediante un paquete \emph{reply}.
 Para distinguir \emph{nodos} (símbolos) en este contexto, tomamos a
 aquellos cuya probabilidad de aparición era alta, de forma tal que la
 información provista por el mismo fuera menor a la entropía de la
-fuente a la cuál el símbolo pertenecía.
+fuente a la cuál el símbolo pertenecía. 
+
+Tomamos esta decisión porque, según Shannon, el nivel de entropía de una
+fuente habla de la máxima compresibilidad de cada bit en un mensaje enviado 
+con una codificación óptima ($H(F) \leq L(C)$). Luego, si la 
+fuente presenta símbolos cuya cantidad de información está
+por debajo de la entropía, son símbolos que tienen mucha probabilidad de
+aparecer en un mensaje en comparación con los otros, y podría ser 
+conveniente representar a estos símbolos con menos bits que al resto, para
+así disminuir la longitud media del código. Por ejemplo, supongamos que 
+enviamos números binarios, y sabemos que el símbolo $X = "00000000"$ aparece en 
+los mensajes la mitad del tiempo y que el resto de las tiras pueden aparecer 
+todas con la misma
+probabilidad. Entonces, $X$ brindaría una cantidad de información por debajo
+de la entropía, y convendría representar a esa tira simplemente con un $0$,
+y al resto de las tiras prefijarlas con el $1$. De esta manera, se ahorraría
+en promedio $7$.$1/2+(-1)$.$1/2 = 3$ bits en cada mensaje.
+
+Entonces, también analizaremos las entropías de las fuentes en cada una
+de las escuchas de red realizadas, y trataremos
+de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
 
 %----------------------------------------------------------------------
 % SECTION II: Desarrollo - Fuente S
