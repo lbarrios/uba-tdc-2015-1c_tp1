@@ -23,4 +23,5 @@ protocols = [get_protocol_title(s) for s in symbols]
 # plot
 import matplotlib.pyplot as plt
 plt.pie(freqs, labels=protocols)
+plt.legend()
 plt.savefig(output_file)
