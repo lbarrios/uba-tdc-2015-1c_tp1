@@ -9,28 +9,22 @@ parser.add_argument('-i', '--input-testname', required=True, type=file_pcap,
 parser.add_argument('-v','--verbose', action='store_true', default=False)
 args = parser.parse_args()
 
-# sniff
-check_sudo()
-from scapy.all import sniff
-pkts = sniff(offline='../output/'+args.input_testname)
-
 symbol_count = dict()
 pkts_count = 0
 
-for pkt in pkts:
-    # try-check if field is type or payload size
-    try:
-        pkt_type = pkt.type
-    except AttributeError:
-        pkt_type = 0
-    # check if packet ethertype is ARP
-    if not pkt_type == 0x806: 
-        continue
-    if args.verbose:
-        pkt.show()
-    ip_dst = pkt.pdst
-    pkts_count += 1
-    symbol_count[ip_dst] = symbol_count.get(ip_dst, 0) + 1
+def parse_art(pkt):
+    global pkts_count,symbol_count
+    if ARP in pkt: #and pkt[ARP].op in (1,2): #who-has or is-at
+        ip_dst = pkt.pdst
+        pkts_count += 1
+        symbol_count[ip_dst] = symbol_count.get(ip_dst, 0) + 1
+        if args.verbose:
+            pkt.show()
+
+# sniff
+check_sudo()
+from scapy.all import sniff,ARP
+pkts = sniff(offline='../output/'+args.input_testname, filter="arp", store=0, prn=parse_art)
 
 symbol_frequency = {k: v/float(pkts_count) for k,v in symbol_count.items()}
 symbol_information = {k: -(math.log(v, 2)) for k,v in symbol_frequency.items()}
