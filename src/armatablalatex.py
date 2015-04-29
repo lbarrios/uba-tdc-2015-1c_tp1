@@ -14,8 +14,7 @@ symbols = [k for k, v in symbol_information.items()]
 
 def percent(f):
     f = f * 100
-    f = int(f)
-    f = str(f) + '\\%'
+    f = '%.2f'%f+'%'
     return f
 
 res = []
