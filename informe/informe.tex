@@ -2,9 +2,11 @@
 % In order to use the figure-defining commands in ieeefig.sty...
 \usepackage{ieeefig}
 % To use utf8 encoding
-%\usepackage[T1]{fontenc}
+\usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-%\usepackage[spanish]{babel}
+\usepackage[spanish]{babel}
+% to place figures
+\usepackage{float}
 \begin{document}
 
 %----------------------------------------------------------------------
@@ -92,7 +94,6 @@ aquellos cuya probabilidad de aparición era alta, de forma tal que la
 información provista por el mismo fuera menor a la entropía de la
 fuente a la cuál el símbolo pertenecía.
 
-\newpage
 %----------------------------------------------------------------------
 % SECTION II: Desarrollo - Fuente S
 %----------------------------------------------------------------------
@@ -102,75 +103,152 @@ fuente a la cuál el símbolo pertenecía.
   %--------------------------------------------------------------------
   \subsection{Casa}
 
+Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.
+
+  \begin{figure}[h]\begin{center}
+    \includegraphics[width=0.5\textwidth]{%
+    ../output/marto-casa-3hs-s-pie.png}
+    \vspace{-3em}
+    \caption{S: Casa - Torta}
+    \label{marto-casa-3hs-s-pie}
+  \end{center}\end{figure}
+
   %--------------------------------------------------------------------
   % SUBSECTION II-B: TECHINT
   %--------------------------------------------------------------------
   \subsection{Techint}
-  Esta medición fue realizada en la empresa Techint, en el horario de las
-  11:00 am, por un lapso de 30 minutos. Se utilizó la herramienta
-  desarrollada en el ejercicio anterior. 
 
+  Esta medición fue realizada en la empresa Techint, en el horario de
+  las 11:00 am, por un lapso de 30 minutos. Se utilizó la herramienta
+  desarrollada en el ejercicio anterior. Se desconoce la cantidad de
+  computadoras o la topología de la red medida.
   
   Como se observa en la figura TORTA, el protocolo que mas aparece en
   este escenario es \texttt{IPv4}, haciendo que su probabilidad sea la
-  mayor. Esto se ve reflejado en la figura HISTOGRAMA, en la cual se puede
-  ver como afecta la frecuencia de aparición del protocolo a la información
-  que este provee.
+  mayor. Esto se ve reflejado en la figura HISTOGRAMA, en la cual se
+  puede ver como afecta la frecuencia de aparición del protocolo a la
+  información que este provee.
 
-  En este caso el nodo distinguido es el protocolo \texttt{IPv4}, pues la
-  información que provee es menor a la entropía de la fuente. 
+  En este caso el nodo distinguido es el protocolo \texttt{IPv4}, pues
+  la información que provee es menor a la entropía de la fuente.
+
+  \begin{figure}[ht]\begin{center}
+    \includegraphics[width=0.5\textwidth]{%
+    ../output/techint-s-pie.png}
+    \vspace{-3em}
+    \caption{S: Techint - Torta}
+    \label{techint-s-pie}
+  \end{center}\end{figure}
+
   %--------------------------------------------------------------------
   % SUBSECTION II-C: HYUNDAI
   %--------------------------------------------------------------------
   \subsection{Hyundai}
+
+Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.
+
+  %
+  \begin{figure}[H]\begin{center}
+    \includegraphics[width=0.4\textwidth]{%
+    ../output/hyundai-1-s-pie.png}
+    \vspace{-3em}
+    \caption{S: Hyundai - Torta (1 minuto)}
+    \label{hyundai-1-s-pie}
+  \end{center}\end{figure}
+  %
+  \begin{figure}[H]\begin{center}
+    \includegraphics[width=0.4\textwidth]{%
+    ../output/hyundai-5-s-pie.png}
+    \vspace{-3em}
+    \caption{S: Hyundai - Torta (5 minutos)}
+    \label{hyundai-5-s-pie}
+  \end{center}\end{figure}
+  %
+  \begin{figure}[H]\begin{center}
+    \includegraphics[width=0.4\textwidth]{%
+    ../output/hyundai-10-s-pie.png}
+    \vspace{-3em}
+    \caption{S: Hyundai - Torta (10 minutos)}
+    \label{hyundai-10-s-pie}
+  \end{center}\end{figure}
+  %
+  \begin{figure}[H]\begin{center}
+    \includegraphics[width=0.4\textwidth]{%
+    ../output/hyundai-20-s-pie.png}
+    \vspace{-3em}
+    \caption{S: Hyundai - Torta (20 minutos)}
+    \label{hyundai-20-s-pie}
+  \end{center}\end{figure}
+  
+  \begin{figure}[H]\begin{center}
+    \includegraphics[width=0.4\textwidth]{%
+    ../output/hyundai-30-s-pie.png}
+    \vspace{-3em}
+    \caption{S: Hyundai - Torta (30 minutos)}
+    \label{hyundai-30-s-pie}
+  \end{center}\end{figure}
+  %
+  \begin{figure}[H]\begin{center}
+    \includegraphics[width=0.4\textwidth]{%
+    ../output/hyundai-s-pie.png}
+    \vspace{-3em}
+    \caption{S: Hyundai - Torta (Total)}
+    \label{hyundai-s-pie}
+  \end{center}\end{figure}
+
+
 
   %--------------------------------------------------------------------
   % SUBSECTION II-D: LABORATORIOS DC
   %--------------------------------------------------------------------
   \subsection{Laboratorios DC}
 
+Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.
+
   %--------------------------------------------------------------------
   % SUBSECTION II-E: Gráficos
   %--------------------------------------------------------------------
-  \subsection{Gráficos}
-  \subsubsection*{Gráficos Torta}
+  %\subsection{Gráficos}
+  %\subsubsection*{Gráficos Torta}
   %casa
-    \begin{figure}[ht]\begin{center}
-      %\includegraphics[width=0.5\textwidth]{../output/marto-casa-3hs-s-pie.png}
-      \caption{S: Casa - Torta}
-      \label{marto-casa-3hs-s-pie}
-    \end{center}\end{figure}
   % techint
-  \includegraphics[width=0.5\textwidth]{../output/dummy-s-pie.png}
-  \includegraphics[width=0.5\textwidth]{../output/dummy-s-pie.png}
-    \begin{figure}[ht]\begin{center}
-
-    \end{center}\end{figure}
   % hyundai
-  % laboratorios dc
 
-  \subsubsection*{Gráficos Histograma}
+  % laboratorios dc
+    \begin{figure}[h]\begin{center}
+      \includegraphics[width=0.5\textwidth]{%
+      ../output/labos-dc-30m-s-pie.png}
+      \vspace{-3em}
+      \caption{S: Laboratorios DC - Torta}
+      \label{labos-dc-30m-s-pie}
+    \end{center}\end{figure}
+
+  %\subsubsection*{Gráficos Histograma}
   % casa
-    \begin{figure}[ht]\begin{center}
-      \includegraphics[width=0.5\textwidth]{../output/marto-casa-3hs-s-histogram.png}
+    \begin{figure}[h]\begin{center}
+      \includegraphics[width=0.5\textwidth]{%
+      ../output/marto-casa-3hs-s-histogram.png}
       \caption{S: Casa - Histograma}
       \label{marto-casa-3hs-s-histogram}
     \end{center}\end{figure}
   % techint
-    \begin{figure}[ht]\begin{center}
-      \includegraphics[width=0.5\textwidth]{../output/techint-s-histogram.png}
+    \begin{figure}[h]\begin{center}
+      \includegraphics[width=0.5\textwidth]{%
+      ../output/techint-s-histogram.png}
       \caption{S: Techint - Histograma}
       \label{techint-s-histogram}
     \end{center}\end{figure}
   % hyundai
-    \begin{figure}[ht]\begin{center}
-      \includegraphics[width=0.5\textwidth]{../output/hyundai-s-histogram.png}
+    \begin{figure}[h]\begin{center}
+      \includegraphics[width=0.5\textwidth]{%
+      ../output/hyundai-s-histogram.png}
       \caption{S: Hyundai - Histograma}
       \label{hyundai-s-histogram}
     \end{center}\end{figure}
   % laboratorios dc
-    \begin{figure}[ht]\begin{center}
-      \includegraphics[width=0.5\textwidth]{../output/labos-dc-30m-s-histogram.png}
+    \begin{figure}[h]\begin{center}
+      \includegraphics[width=0.5\textwidth]{%
+      ../output/labos-dc-30m-s-histogram.png}
       \caption{S: Laboratorios DC - Histograma}
       \label{labos-dc-30m-s-histogram}
     \end{center}\end{figure}
@@ -181,48 +259,133 @@ fuente a la cuál el símbolo pertenecía.
   %--------------------------------------------------------------------
   \subsection{Conclusión}
 
-\newpage
+Al contrario del pensamiento popular, el texto de Lorem Ipsum no es simplemente texto aleatorio. Tiene sus raices en una pieza clásica de la literatura del Latin, que data del año 45 antes de Cristo, haciendo que este adquiera mas de 2000 años de antiguedad. Richard McClintock, un profesor de Latin de la Universidad de Hampden-Sydney en Virginia, encontró una de las palabras más oscuras de la lengua del latín, ``consecteur'', en un pasaje de Lorem Ipsum, y al seguir leyendo distintos textos del latín, descubrió la fuente indudable. Lorem Ipsum viene de las secciones 1.10.32 y 1.10.33 de ``de Finnibus Bonorum et Malorum'' (Los Extremos del Bien y El Mal) por Cicero, escrito en el año 45 antes de Cristo. Este libro es un tratado de teoría de éticas, muy popular durante el Renacimiento. La primera linea del Lorem Ipsum, ``Lorem ipsum dolor sit amet..'', viene de una linea en la sección 1.10.32
+
+El trozo de texto estándar de Lorem Ipsum usado desde el año 1500 es reproducido debajo para aquellos interesados. Las secciones 1.10.32 y 1.10.33 de ``de Finibus Bonorum et Malorum'' por Cicero son también reproducidas en su forma original exacta, acompañadas por versiones en Inglés de la traducción realizada en 1914 por H. Rackham.
+
+\clearpage
 %----------------------------------------------------------------------
 % SECTION III: Desarrollo - Fuente S
-%----------------------------------------------------------------------
+%----------+------------------------------------------------------------
 \section{Desarrollo - Fuente $S_1$}
   %--------------------------------------------------------------------
   % SUBSECTION II-A: CASA
   %--------------------------------------------------------------------
   \subsection{Casa}
 
+Hay muchas variaciones de los pasajes de Lorem Ipsum disponibles, pero la mayoría sufrió alteraciones en alguna manera, ya sea porque se le agregó humor, o palabras aleatorias que no parecen ni un poco creíbles. Si vas a utilizar un pasaje de Lorem Ipsum, necesitás estar seguro de que no hay nada avergonzante escondido en el medio del texto. Todos los generadores de Lorem Ipsum que se encuentran en Internet tienden a repetir trozos predefinidos cuando sea necesario, haciendo a este el único generador verdadero (válido) en la Internet. Usa un diccionario de mas de 200 palabras provenientes del latín, combinadas con estructuras muy útiles de sentencias, para generar texto de Lorem Ipsum que parezca razonable. Este Lorem Ipsum generado siempre estará libre de repeticiones, humor agregado o palabras no características del lenguaje, etc.
+
   %--------------------------------------------------------------------
   % SUBSECTION II-B: TECHINT
   %--------------------------------------------------------------------
   \subsection{Techint}
+
+Hay muchas variaciones de los pasajes de Lorem Ipsum disponibles, pero la mayoría sufrió alteraciones en alguna manera, ya sea porque se le agregó humor, o palabras aleatorias que no parecen ni un poco creíbles. Si vas a utilizar un pasaje de Lorem Ipsum, necesitás estar seguro de que no hay nada avergonzante escondido en el medio del texto. Todos los generadores de Lorem Ipsum que se encuentran en Internet tienden a repetir trozos predefinidos cuando sea necesario, haciendo a este el único generador verdadero (válido) en la Internet. Usa un diccionario de mas de 200 palabras provenientes del latín, combinadas con estructuras muy útiles de sentencias, para generar texto de Lorem Ipsum que parezca razonable. Este Lorem Ipsum generado siempre estará libre de repeticiones, humor agregado o palabras no características del lenguaje, etc.
 
   %--------------------------------------------------------------------
   % SUBSECTION II-C: HYUNDAI
   %--------------------------------------------------------------------
   \subsection{Hyundai}
 
+Hay muchas variaciones de los pasajes de Lorem Ipsum disponibles, pero la mayoría sufrió alteraciones en alguna manera, ya sea porque se le agregó humor, o palabras aleatorias que no parecen ni un poco creíbles. Si vas a utilizar un pasaje de Lorem Ipsum, necesitás estar seguro de que no hay nada avergonzante escondido en el medio del texto. Todos los generadores de Lorem Ipsum que se encuentran en Internet tienden a repetir trozos predefinidos cuando sea necesario, haciendo a este el único generador verdadero (válido) en la Internet. Usa un diccionario de mas de 200 palabras provenientes del latín, combinadas con estructuras muy útiles de sentencias, para generar texto de Lorem Ipsum que parezca razonable. Este Lorem Ipsum generado siempre estará libre de repeticiones, humor agregado o palabras no características del lenguaje, etc.
+
   %--------------------------------------------------------------------
   % SUBSECTION II-D: LABORATORIOS DC
   %--------------------------------------------------------------------
   \subsection{Laboratorios DC}
 
+Hay muchas variaciones de los pasajes de Lorem Ipsum disponibles, pero la mayoría sufrió alteraciones en alguna manera, ya sea porque se le agregó humor, o palabras aleatorias que no parecen ni un poco creíbles. Si vas a utilizar un pasaje de Lorem Ipsum, necesitás estar seguro de que no hay nada avergonzante escondido en el medio del texto. Todos los generadores de Lorem Ipsum que se encuentran en Internet tienden a repetir trozos predefinidos cuando sea necesario, haciendo a este el único generador verdadero (válido) en la Internet. Usa un diccionario de mas de 200 palabras provenientes del latín, combinadas con estructuras muy útiles de sentencias, para generar texto de Lorem Ipsum que parezca razonable. Este Lorem Ipsum generado siempre estará libre de repeticiones, humor agregado o palabras no características del lenguaje, etc.
+
   %--------------------------------------------------------------------
   % SUBSECTION II-E: Gráficos
   %--------------------------------------------------------------------
   \subsection{Gráficos}
-  \subsubsection*{Gráficos Torta}
-  \subsubsection*{Gráficos Histograma}
+  %\subsubsection*{Gráficos Torta}
+  %casa
+    \begin{figure}[h]\begin{center}
+      \includegraphics[width=0.5\textwidth]{%
+      ../output/marto-casa-3hs-s-pie.png}
+      \vspace{-2em}
+      \caption{S: Casa - Torta}
+      \label{marto-casa-3hs-s-pie}
+    \end{center}\end{figure}
+  % techint
+    \begin{figure}[h]\begin{center}
+      \includegraphics[width=0.5\textwidth]{%
+      ../output/techint-s-pie.png}
+      \vspace{-2em}
+      \caption{S: Techint - Torta}
+      \label{techint-s-pie}
+    \end{center}\end{figure}
+  % hyundai
+    \begin{figure}[h]\begin{center}
+      \includegraphics[width=0.5\textwidth]{%
+      ../output/hyundai-s-pie.png}
+      \vspace{-2em}
+      \caption{S: Hyundai - Torta}
+      \label{hyundai-s-pie}
+    \end{center}\end{figure}
+  % laboratorios dc
+    \begin{figure}[h]\begin{center}
+      \includegraphics[width=0.5\textwidth]{%
+      ../output/labos-dc-30m-s-pie.png}
+      \vspace{-2em}
+      \caption{S: Laboratorios DC - Torta}
+      \label{labos-dc-30m-s-pie}
+    \end{center}\end{figure}
+
+  %\subsubsection*{Gráficos Histograma}
+  % casa
+    \begin{figure}[h]\begin{center}
+      \includegraphics[width=0.5\textwidth]{%
+      ../output/marto-casa-3hs-s-histogram.png}
+      \vspace{-2em}
+      \caption{S: Casa - Histograma}
+      \label{marto-casa-3hs-s-histogram}
+    \end{center}\end{figure}
+  % techint
+    \begin{figure}[h]\begin{center}
+      \includegraphics[width=0.5\textwidth]{%
+      ../output/techint-s-histogram.png}
+      \vspace{-2em}
+      \caption{S: Techint - Histograma}
+      \label{techint-s-histogram}
+    \end{center}\end{figure}
+  % hyundai
+    \begin{figure}[h]\begin{center}
+      \includegraphics[width=0.5\textwidth]{%
+      ../output/hyundai-s-histogram.png}
+      \vspace{-2em}
+      \caption{S: Hyundai - Histograma}
+      \label{hyundai-s-histogram}
+    \end{center}\end{figure}
+  % laboratorios dc
+    \begin{figure}[h]\begin{center}
+      \includegraphics[width=0.5\textwidth]{%
+      ../output/labos-dc-30m-s-histogram.png}
+      \vspace{-2em}
+      \caption{S: Laboratorios DC - Histograma}
+      \label{labos-dc-30m-s-histogram}
+    \end{center}\end{figure}
 
   %--------------------------------------------------------------------
   % SUBSECTION II-F: Conclusión
   %--------------------------------------------------------------------
   \subsection{Conclusión}
 
-\newpage
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum cursus ipsum sapien, a laoreet orci viverra a. Etiam tempus tempor risus non egestas. Maecenas viverra turpis at velit commodo varius. Quisque lobortis elit vitae nibh condimentum, et tincidunt velit pretium. Fusce vitae lacus mi. Suspendisse at bibendum tellus. Fusce maximus nulla libero, sed ornare ex convallis eu. In hac habitasse platea dictumst. Pellentesque commodo rhoncus turpis, sit amet laoreet ex dignissim sit amet. Maecenas in nibh ut purus consequat varius sed at nulla. Duis in magna ut augue aliquam vestibulum. Quisque rhoncus vehicula elementum. Duis tristique imperdiet molestie. Nam placerat tellus finibus laoreet ultrices. Proin feugiat aliquet convallis. Nulla tempus aliquam sem.
+
 %----------------------------------------------------------------------
 % SECTION IV: Conclusión
 %----------------------------------------------------------------------
+\clearpage
 \section{Conclusión}
+
+Fusce pellentesque egestas euismod. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eu imperdiet risus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam porttitor, sapien vel vestibulum tincidunt, elit orci bibendum enim, ut dignissim massa metus in elit. Proin id imperdiet justo. Maecenas egestas, tortor quis blandit sagittis, diam ante eleifend elit, et volutpat tortor velit eget ligula. Nulla sit amet libero tellus.
+
+Aliquam rhoncus euismod hendrerit. Integer quis nunc non enim tincidunt aliquam nec id dolor. Pellentesque et eleifend urna. Sed dictum in est eu ullamcorper. Cras suscipit scelerisque dignissim. Vestibulum at ligula orci. Phasellus sit amet mauris bibendum dolor ullamcorper fermentum id id elit. In pharetra malesuada gravida. Proin vitae ultrices tellus, at iaculis tellus. Proin suscipit quis velit sit amet finibus.
+
+Curabitur vitae nulla libero. Suspendisse in velit id mi scelerisque iaculis ullamcorper lacinia magna. Curabitur at nulla imperdiet, vehicula dolor in, sodales erat. Pellentesque vel erat ligula. Vestibulum eu lectus ornare, gravida ex a, aliquet diam. Aliquam ut nisl sit amet dui tempus ornare. Curabitur ullamcorper, enim et laoreet finibus, enim magna molestie magna, sed semper augue odio eget neque. Sed non est posuere, malesuada magna in, luctus diam. Aliquam posuere placerat libero at sollicitudin. Sed lacus enim, maximus sit amet placerat consectetur, tincidunt eget diam.
 
 % do the biliography:
 %\bibliographystyle{IEEEbib}
