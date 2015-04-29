@@ -28,9 +28,9 @@ for pkt in pkts:
         continue
     if args.verbose:
         pkt.show()
-    mac_src = pkt.src
+    ip_dst = pkt.pdst
     pkts_count += 1
-    symbol_count[mac_src] = symbol_count.get(mac_src, 0) + 1
+    symbol_count[ip_dst] = symbol_count.get(ip_dst, 0) + 1
 
 symbol_frequency = {k: v/float(pkts_count) for k,v in symbol_count.items()}
 symbol_information = {k: -(math.log(v, 2)) for k,v in symbol_frequency.items()}
