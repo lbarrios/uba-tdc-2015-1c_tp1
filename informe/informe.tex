@@ -128,7 +128,7 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
 
   La siguiente medición fue realizada en una red LAN hogareña, en el horario
   de las 15:00 hs, por un lapso de 3 hs. La herramienta utilizada fue la
-  diseñada en el ejercicio anterior. A esta LAN hubo conectadas 5 computadoras,
+  indicada en el enunciado del trabajo. A esta LAN hubo conectadas 5 computadoras,
   una impresora y 3 celulares al momento de la medición. Los resultados obtenidos
   fueron los siguientes
 
@@ -159,18 +159,19 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
     observa en la figura \ref{marto-casa-3hs-s-pie}, la cantidad de
     paquetes  de este tipo fue del 98\% mientras que la de paquetes
     \texttt{ARP} fue del 1\%. Esto permite concluir que en el caso de
-    la red hogareña, el overhead del tipo\texttt{ARP} en un tiempo
+    la red hogareña, el overhead del tipo \texttt{ARP} en un tiempo
     de 3 horas es practicamente nulo, con respecto al total de
     paquetes de la red.
 
-    La entropía de la fuente propuesta es de 0.095, como se observa en la
-    figura \ref{marto-casa-3hs-s-histogram}, dejando por debajo de ella al
-    protocolo \texttt{IPv4} que, al presentar una mayor probabilidad de
-    aparición en la fuente, provoca que la información que aporte sea
+    La entropía de la fuente propuesta es de 0.095, lo que indica que los
+    símbolos emitidos por la fuente son muy previsibles. Esto se puede
+    observar en la figura \ref{marto-casa-3hs-s-histogram}, donde deja
+    por debajo de ella al protocolo \texttt{IPv4} que, al presentar una
+    mayor probabilidad de aparición en la fuente, provoca que la información que aporte sea
     poca y lo destaque como nodo distinguido. A diferencia de
     \texttt{IPv4}, podemos encontrar al protocolo \texttt{802.1X} que al
     tener poca probabilidad de aparición $(2.35 * 10^-5)$, aporta mucha
-    información, siendo el protocolo que mas aporta.
+    información, siendo el protocolo que más aporta.
       
     
     %------------------------------------------------------------------
@@ -181,7 +182,8 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
     Esta medición fue realizada en la empresa Techint, en el horario de
     las 11:00 am, por un lapso de 30 minutos. Se utilizó la herramienta
     desarrollada en el ejercicio anterior. Se desconoce la cantidad de
-    computadoras o la topología de la red medida. Los resultados fueron
+    computadoras o la topología de la red medida. La conexión a la red fue
+    efectuada mediante un cable de ethernet. Los resultados fueron
     los siguientes.
     
     %------------------------------------------------------------------
@@ -216,10 +218,6 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
     afecta la frecuencia de aparición del protocolo a la información
     que este provee.
 
-    % CHEQUEAR ESTE PARRAFO, QUIZAS ES HUMO
-    También se observa el gran predominio de \texttt{IPv4} sobre \texttt{IPv6},
-    el cual actualmente no esta implementado ni funcionando en todos
-    los sistemas.
 
     En este caso el nodo distinguido es el protocolo \texttt{IPv4}, 
     pues la información que provee es menor a la entropía de la fuente 
@@ -352,17 +350,10 @@ Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de te
   figura \ref{labos-dc-30m-s-histogram}, dejando por debajo de ella al
   protocolo \texttt{IPv4} que, al presentar una mayor probabilidad de
   aparición en la fuente, provoca que la información que aporta sea
-  poca y se destaque como nodo distinguido. Podemos enconrar al protocolo 
+  poca y se destaque como nodo distinguido. Podemos encontrar al protocolo 
   \texttt{802.3} que al tener poca probabilidad de aparición
   (1\%), aporta mucha información, siendo el protocolo que más información
   aporta.
- 
-    %------------------------------------------------------------------
-    % SUBSECTION II-E: Gráficos
-    %------------------------------------------------------------------
-    %\subsection{Gráficos}
-    %\subsubsection*{Gráficos Torta}
-    %\subsubsection*{Gráficos Histograma}
 
     %------------------------------------------------------------------
     % SUBSECTION II-F: Conclusión
@@ -375,11 +366,11 @@ Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de te
     % INFORMACION
 
     % GRAN IMPACTO DE ARP EN LAPSOS CORTOS DE ESCUCHA, EN TIEMPOS LARGOS EL OVERHEAD BAJA
-Al contrario del pensamiento popular, el texto de Lorem Ipsum no es simplemente texto aleatorio. Tiene sus raices en una pieza clásica de la literatura del Latin, que data del año 45 antes de Cristo, haciendo que este adquiera mas de 2000 años de antiguedad. Richard McClintock, un profesor de Latin de la Universidad de Hampden-Sydney en Virginia, encontró una de las palabras más oscuras de la lengua del latín, ``consecteur'', en un pasaje de Lorem Ipsum, y al seguir leyendo distintos textos del latín, descubrió la fuente indudable. Lorem Ipsum viene de las secciones 1.10.32 y 1.10.33 de ``de Finnibus Bonorum et Malorum'' (Los Extremos del Bien y El Mal) por Cicero, escrito en el año 45 antes de Cristo. Este libro es un tratado de teoría de éticas, muy popular durante el Renacimiento. La primera linea del Lorem Ipsum, ``Lorem ipsum dolor sit amet..'', viene de una linea en la sección 1.10.32
-
-El trozo de texto estándar de Lorem Ipsum usado desde el año 1500 es reproducido debajo para aquellos interesados. Las secciones 1.10.32 y 1.10.33 de ``de Finibus Bonorum et Malorum'' por Cicero son también reproducidas en su forma original exacta, acompañadas por versiones en Inglés de la traducción realizada en 1914 por H. Rackham.
-
-
+    %
+    %
+    % También se observa el gran predominio de \texttt{IPv4} sobre \texttt{IPv6},
+    % el cual actualmente no esta implementado ni funcionando en todos
+    % los sistemas.
 
 
 %----------------------------------------------------------------------
@@ -427,7 +418,7 @@ El trozo de texto estándar de Lorem Ipsum usado desde el año 1500 es reproduci
   la fuente, la cual es 1.24.  
 
   Las direcciones ip que no son distinguidas tienen frecuencias y
-  probabilidades de aparición muy similares, teniendo así
+  probabilidades de aparición muy similares, aportando así
   cantidades similares de información. Esto se puede observar en la figura
   \ref{marto-casa-3hs-s1-histogram}.
 
@@ -437,12 +428,14 @@ El trozo de texto estándar de Lorem Ipsum usado desde el año 1500 es reproduci
   %--------------------------------------------------------------------
   \subsection{Techint}
 
-Hay muchas variaciones de los pasajes de Lorem Ipsum disponibles, pero la mayoría sufrió alteraciones en alguna manera, ya sea porque se le agregó humor, o palabras aleatorias que no parecen ni un poco creíbles. Si vas a utilizar un pasaje de Lorem Ipsum, necesitás estar seguro de que no hay nada avergonzante escondido en el medio del texto. Todos los generadores de Lorem Ipsum que se encuentran en Internet tienden a repetir trozos predefinidos cuando sea necesario, haciendo a este el único generador verdadero (válido) en la Internet. Usa un diccionario de mas de 200 palabras provenientes del latín, combinadas con estructuras muy útiles de sentencias, para generar texto de Lorem Ipsum que parezca razonable. Este Lorem Ipsum generado siempre estará libre de repeticiones, humor agregado o palabras no características del lenguaje, etc.
+  Las condiciones en las que se midió fueron las mismas a la detallada en la
+  sección III-A, solamente se cambió la fuente utilizada y se filtraron los
+  paquetes segun el tipo \texttt{ARP}.  
 
     %------------------------------------------------------------------
     % TORTA TECHINT
     %------------------------------------------------------------------
-    \begin{figure}[ht]\begin{center}
+    \begin{figure}[H]\begin{center}
       \includegraphics[width=0.5\textwidth]{%
       ../output/techint-s1-pie.png}
       \vspace{-2em}
@@ -453,14 +446,26 @@ Hay muchas variaciones de los pasajes de Lorem Ipsum disponibles, pero la mayor�
     %------------------------------------------------------------------
     % HISTOGRAMA TECHINT
     %------------------------------------------------------------------
-    \begin{figure}[ht]\begin{center}
+    \begin{figure}[H]\begin{center}
       \includegraphics[width=0.5\textwidth]{%
       ../output/techint-s1-histogram.png}
       \vspace{-2em}
       \caption{S$_1$: Techint - Histograma}
       \label{techint-s1-histogram}
     \end{center}\end{figure}
+  
+  En este caso se encontró un subconjunto de nodos distinguidos, los cuales
+  presentan una frecuencia significativamente mayor en comparación con el
+  resto de los nodos. Esto se puede observar en la figura
+  \ref{techint-s1-pie}. 
 
+  Todos estos nodos aportaron un información menor a la entropía de la
+  fuente, la cual fue de 4.73. Estos estan enumerados con letras de la A a
+  la J, formando así un subconjunto con 10 nodos distinguidos, tal como se
+  ve en la figura \ref{techint-s1-histogram}. Dentro de estos nodos, se
+  observa uno en particular nombrado como A (cuya ip es 172.23.135.254), que
+  aparece con una frecuencia mayor al resto (18\%), lo que como consecuencia
+  aportará menor cantidad de información.
 
   %--------------------------------------------------------------------
   % SUBSECTION III-C: HYUNDAI
