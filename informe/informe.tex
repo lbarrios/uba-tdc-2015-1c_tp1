@@ -14,11 +14,11 @@
 %----------------------------------------------------------------------
 % Title Information, Abstract and Keywords
 %----------------------------------------------------------------------
-\title[Trabajo Práctico N$^o$ 1: Wiretapping]{%
+\title[TP N$^o$ 1: Wiretapping]{%
 Trabajo Práctico N$^o$ 1: Wiretapping}
 
 % format author this way for journal articles.
-\author[SHORT NAMES]{%
+\author[Barrios, Benegas, Caravario, Rodriguez]{%
 	Leandro Ezequiel Barrios,
 	\and
 	Gonzalo Benegas,
@@ -125,30 +125,51 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
   %--------------------------------------------------------------------
   \subsection{Casa}
 
-Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.
+  La siguiente medición fue realizada en una red LAN hogareña, en el horario
+  de las 15:00 hs, por un lapso de 3 hs. La herramienta utilizada fue la
+  diseñada en el ejercicio anterior. A esta LAN hubo conectadas 5 computadoras,
+  una impresora y 3 celulares al momento de la medición. Los resultados obtenidos
+  fueron los siguientes
 
     %------------------------------------------------------------------
     % TORTA CASA
     %------------------------------------------------------------------
 
-   % \begin{figure}[ht]\begin{center}
-   %   \includegraphics[width=0.5\textwidth]{%
-   %   ../output/marto-casa-3hs-s-pie.png}
-   %   \vspace{-3em}
-   %   \caption{S: Casa - Torta}
-   %   \label{marto-casa-3hs-s-pie}
-   % \end{center}\end{figure}
+    \begin{figure}[H]\begin{center}
+      \includegraphics[width=0.5\textwidth]{%
+      ../output/marto-casa-3hs-s-pie.png}
+      \vspace{-3em}
+      \caption{S: Casa - Torta}
+      \label{marto-casa-3hs-s-pie}
+    \end{center}\end{figure}
 
     %------------------------------------------------------------------
     % HISTOGRAMA CASA
     %------------------------------------------------------------------
-    %\begin{figure}[ht]\begin{center}
-    %  \includegraphics[width=0.5\textwidth]{%
-    %  ../output/marto-casa-3hs-s-histogram.png}
-    %  \caption{S: Casa - Histograma}
-    %  \label{marto-casa-3hs-s-histogram}
-    %\end{center}\end{figure}
+    
+    \begin{figure}[H]\begin{center}
+     \includegraphics[width=0.5\textwidth]{%
+      ../output/marto-casa-3hs-s-histogram.png}
+      \caption{S: Casa - Histograma}
+      \label{marto-casa-3hs-s-histogram}
+    \end{center}\end{figure}
 
+    Como se observa en la figura 1, el protocolo que mas fue escuchado
+    fue \texttt{IPv4}, la cantidad de paquetes de este tipo fue del 98\%
+    mientras que la de paquetes \texttt{ARP} fue del 1\%. Esto permite
+    concluir que en el caso de la red hogareña, el overhead del tipo
+    \texttt{ARP} en un tiempo de 3 horas es practicamente nulo, con respecto
+    al total de paquetes de la red.
+
+    La entropía de la fuente propuesta es de 0.095, como se observa en la
+    figura 2, dejando por debajo de ella al protocolo \texttt{IPv4} que, 
+    al presentar una mayor probabilidad de aparición en la fuente, provoca
+    que la información que aporte sea poca y lo destaque como nodo distinguido.
+    A diferencia de \texttt{IPv4}, podemos encontrar al protocolo \texttt{802.1X}
+    que al tener poca probabilidad de aparición $(2.35 * 10^-5)$, aporta mucha
+    información, siendo el protocolo que mas aporta.
+      
+    
     %------------------------------------------------------------------
     % SUBSECTION II-B: TECHINT
     %------------------------------------------------------------------
@@ -184,9 +205,9 @@ Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de te
     \end{center}\end{figure}
 
 
-    Como se observa en la figura 1, el protocolo que mas aparece en
+    Como se observa en la figura 3, el protocolo que mas aparece en
     este escenario es \texttt{IPv4}, haciendo que su probabilidad sea 
-    la mayor. Esto se ve reflejado en la figura 2, en la cual 
+    la mayor. Esto se ve reflejado en la figura 4, en la cual 
     se puede ver como afecta la frecuencia de aparición del protocolo a 
     la información que este provee.
 
@@ -197,15 +218,16 @@ Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de te
 
     En este caso el nodo distinguido es el protocolo \texttt{IPv4}, 
     pues la información que provee es menor a la entropía de la fuente 
-    utilizada, y además es el único que está por debajo de ella. El
+    utilizada(1.74) , y además es el único que está por debajo de ella. El
     protocolo que mas información aporta es \texttt{LLDP}, ya que
-    su frecuencia de aparición es la menor en la medición tomada. Esto
+    su frecuencia de aparición(0.15\%) es la menor en la medición tomada. Esto
     genera que las pocas veces que aparece aporte mas información en 
-    comparación con los protocolos que mas aparecen (\texttt{IPv4}),
-    tal como se observa en la figura 2.
+    comparación con los protocolos que mas aparecen, como por ejemplo 
+    \texttt{IPv4} cuyo porcentaje de aparición sobre el total es del 56\%
+    tal como se observa en la figura 3.
 
     % ALGO MAS ACA?
-    También se puede observar en la figura 1, la gran cantidad de paquetes 
+    También se puede observar en la figura 3, la gran cantidad de paquetes 
     de tipo \texttt{ARP} (12\%) que aparecen, en comparación con los
     de tipo \texttt{IPv6} (15\%) y \texttt{802.3} (14\%), que se encuentran
     en segundo lugar y tercer lugar respectivamente. Esto demuestra el overhead
@@ -286,12 +308,16 @@ Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de te
   %
   \subsection{Laboratorios DC}
 
-Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.
-
+    Esta medición fue realizada en los laboratorios del departamento de
+    computación, en el horario de las 17 hs, por un lapso de 30 minutos.
+    Se utilizó la herramienta explicada previamente. La red cuenta con 175
+    computadoras, y se desconoce la cantidad de celulares conectados a ella.
+    Los resultados fueron los siguientes.
+   
     %------------------------------------------------------------------
     % TORTA LABOS-DC
     %------------------------------------------------------------------	
-    \begin{figure}[ht]\begin{center}
+    \begin{figure}[H]\begin{center}
       \includegraphics[width=0.5\textwidth]{%
       ../output/labos-dc-30m-s-pie.png}
       \vspace{-3em}
@@ -302,12 +328,14 @@ Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de te
     %------------------------------------------------------------------
     % HISTOGRAMA LABOS-DC
     %------------------------------------------------------------------	
-    \begin{figure}[ht]\begin{center}
+    \begin{figure}[H]\begin{center}
       \includegraphics[width=0.5\textwidth]{%
       ../output/labos-dc-30m-s-histogram.png}
       \caption{S: Laboratorios DC - Histograma}
       \label{labos-dc-30m-s-histogram}
     \end{center}\end{figure}
+
+
 
     %------------------------------------------------------------------
     % SUBSECTION II-E: Gráficos
@@ -337,7 +365,7 @@ El trozo de texto estándar de Lorem Ipsum usado desde el año 1500 es reproduci
 \clearpage
 \section{Desarrollo - Fuente $S_1$}
   %--------------------------------------------------------------------
-  % SUBSECTION II-A: CASA
+  % SUBSECTION III-A: CASA
   %--------------------------------------------------------------------
   \subsection{Casa}
 
@@ -366,7 +394,7 @@ Hay muchas variaciones de los pasajes de Lorem Ipsum disponibles, pero la mayor�
     \end{center}\end{figure}	
 
   %--------------------------------------------------------------------
-  % SUBSECTION II-B: TECHINT
+  % SUBSECTION III-B: TECHINT
   %--------------------------------------------------------------------
   \subsection{Techint}
 
@@ -396,7 +424,7 @@ Hay muchas variaciones de los pasajes de Lorem Ipsum disponibles, pero la mayor�
 
 
   %--------------------------------------------------------------------
-  % SUBSECTION II-C: HYUNDAI
+  % SUBSECTION III-C: HYUNDAI
   %--------------------------------------------------------------------
   \subsection{Hyundai}
 
@@ -425,7 +453,7 @@ Hay muchas variaciones de los pasajes de Lorem Ipsum disponibles, pero la mayor�
     \end{center}\end{figure}
 
   %--------------------------------------------------------------------
-  % SUBSECTION II-D: LABORATORIOS DC
+  % SUBSECTION III-D: LABORATORIOS DC
   %--------------------------------------------------------------------
   \subsection{Laboratorios DC}
 
@@ -454,14 +482,14 @@ Hay muchas variaciones de los pasajes de Lorem Ipsum disponibles, pero la mayor�
     \end{center}\end{figure}
 
   %--------------------------------------------------------------------
-  % SUBSECTION II-E: Gráficos
+  % SUBSECTION III-E: Gráficos
   %--------------------------------------------------------------------
   %\subsection{Gráficos}
   %\subsubsection*{Gráficos Torta}
   %\subsubsection*{Gráficos Histograma}
 
   %--------------------------------------------------------------------
-  % SUBSECTION II-F: Conclusión
+  % SUBSECTION III-F: Conclusión
   %--------------------------------------------------------------------
   \subsection{Conclusión de las mediciones}
 
