@@ -19,12 +19,15 @@ execfile('plot-functions.py')
 symbol_frequency = data['symbol_frequency']
 symbol_information = data['symbol_information']
 source_entropy = data['source_entropy']
-symbols, freqs = zip(*(symbol_frequency.items()))
+
+symbols = [k for k,v in symbol_information.items()]
+freqs = [symbol_frequency[k] for k,v in symbol_information.items()]
 
 labels = [unused_letter() if info < source_entropy else ''
-            for sym, info in symbol_information.items()]
+          for sym, info in symbol_information.items()]
 
 # plot
 import matplotlib.pyplot as plt
 plt.pie(freqs, labels=labels)
 plt.savefig(output_file)
+
