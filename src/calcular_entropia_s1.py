@@ -18,16 +18,19 @@ symbol_count = dict()
 pkts_count = 0
 
 for pkt in pkts:
-    if not "ARP" in pkt: pass
+    # try-check if field is type or payload size
+    try:
+        pkt_type = pkt.type
+    except AttributeError:
+        pkt_type = 0
+    # check if packet ethertype is ARP
+    if not pkt_type == 0x806: 
+        continue
     if args.verbose:
         pkt.show()
-    # check if field is type or payload size
-    try:
-        pkt_type = pkt.src
-    except AttributeError:
-        pkt_type = None
+    mac_src = pkt.src
     pkts_count += 1
-    symbol_count[pkt_type] = symbol_count.get(pkt_type, 0) + 1
+    symbol_count[mac_src] = symbol_count.get(mac_src, 0) + 1
 
 symbol_frequency = {k: v/float(pkts_count) for k,v in symbol_count.items()}
 symbol_information = {k: -(math.log(v, 2)) for k,v in symbol_frequency.items()}
