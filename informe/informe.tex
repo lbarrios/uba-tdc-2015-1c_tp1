@@ -130,23 +130,24 @@ Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de te
     %------------------------------------------------------------------
     % TORTA CASA
     %------------------------------------------------------------------
-    \begin{figure}[ht]\begin{center}
-      \includegraphics[width=0.5\textwidth]{%
-      ../output/marto-casa-3hs-s-pie.png}
-      \vspace{-3em}
-      \caption{S: Casa - Torta}
-      \label{marto-casa-3hs-s-pie}
-    \end{center}\end{figure}
+
+   % \begin{figure}[ht]\begin{center}
+   %   \includegraphics[width=0.5\textwidth]{%
+   %   ../output/marto-casa-3hs-s-pie.png}
+   %   \vspace{-3em}
+   %   \caption{S: Casa - Torta}
+   %   \label{marto-casa-3hs-s-pie}
+   % \end{center}\end{figure}
 
     %------------------------------------------------------------------
     % HISTOGRAMA CASA
     %------------------------------------------------------------------
-    \begin{figure}[ht]\begin{center}
-      \includegraphics[width=0.5\textwidth]{%
-      ../output/marto-casa-3hs-s-histogram.png}
-      \caption{S: Casa - Histograma}
-      \label{marto-casa-3hs-s-histogram}
-    \end{center}\end{figure}
+    %\begin{figure}[ht]\begin{center}
+    %  \includegraphics[width=0.5\textwidth]{%
+    %  ../output/marto-casa-3hs-s-histogram.png}
+    %  \caption{S: Casa - Histograma}
+    %  \label{marto-casa-3hs-s-histogram}
+    %\end{center}\end{figure}
 
     %------------------------------------------------------------------
     % SUBSECTION II-B: TECHINT
@@ -156,38 +157,59 @@ Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de te
     Esta medición fue realizada en la empresa Techint, en el horario de
     las 11:00 am, por un lapso de 30 minutos. Se utilizó la herramienta
     desarrollada en el ejercicio anterior. Se desconoce la cantidad de
-    computadoras o la topología de la red medida.
-  
-    Como se observa en la figura TORTA, el protocolo que mas aparece en
-    este escenario es \texttt{IPv4}, haciendo que su probabilidad sea 
-    la mayor. Esto se ve reflejado en la figura HISTOGRAMA, en la cual 
-    se puede ver como afecta la frecuencia de aparición del protocolo a 
-    la información que este provee.
-
-    En este caso el nodo distinguido es el protocolo \texttt{IPv4}, 
-    pues la información que provee es menor a la entropía de la fuente.
-
+    computadoras o la topología de la red medida. Los resultados fueron
+    los siguientes.
+    
     %------------------------------------------------------------------
     % TORTA TECHINT
     %------------------------------------------------------------------
-    \begin{figure}[ht]\begin{center}
+    
+    \begin{figure}[H]\begin{center}
       \includegraphics[width=0.5\textwidth]{%
       ../output/techint-s-pie.png}
       \vspace{-3em}
       \caption{S: Techint - Torta}
       \label{techint-s-pie}
     \end{center}\end{figure}
-
+ 
     %------------------------------------------------------------------
     % HISTOGRAMA TECHINT
     %------------------------------------------------------------------
-    \begin{figure}[ht]\begin{center}
+     
+    \begin{figure}[H]\begin{center}
       \includegraphics[width=0.5\textwidth]{%
       ../output/techint-s-histogram.png}
       \caption{S: Techint - Histograma}
       \label{techint-s-histogram}
     \end{center}\end{figure}
 
+
+    Como se observa en la figura 1, el protocolo que mas aparece en
+    este escenario es \texttt{IPv4}, haciendo que su probabilidad sea 
+    la mayor. Esto se ve reflejado en la figura 2, en la cual 
+    se puede ver como afecta la frecuencia de aparición del protocolo a 
+    la información que este provee.
+
+    % CHEQUEAR ESTE PARRAFO, QUIZAS ES HUMO
+    También se observa el gran predominio de \texttt{IPv4} sobre \texttt{IPv6},
+    el cual actualmente no esta implementado ni funcionando unicamente en todos
+    los sistemas.
+
+    En este caso el nodo distinguido es el protocolo \texttt{IPv4}, 
+    pues la información que provee es menor a la entropía de la fuente 
+    utilizada, y además es el único que está por debajo de ella. El
+    protocolo que mas información aporta es \texttt{LLDP}, ya que
+    su frecuencia de aparición es la menor en la medición tomada. Esto
+    genera que las pocas veces que aparece aporte mas información en 
+    comparación con los protocolos que mas aparecen (\texttt{IPv4}),
+    tal como se observa en la figura 2.
+
+    % ALGO MAS ACA?
+    También se puede observar en la figura 1, la gran cantidad de paquetes 
+    de tipo \texttt{ARP} (12\%) que aparecen, en comparación con los
+    de tipo \texttt{IPv6} (15\%) y \texttt{802.3} (14\%), que se encuentran
+    en segundo lugar y tercer lugar respectivamente. Esto demuestra el overhead
+    del protocolo \texttt{ARP} sobre el total de paquetes escuchados.
 
   %--------------------------------------------------------------------
   % SUBSECTION II-C: HYUNDAI
@@ -298,7 +320,13 @@ Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de te
     % SUBSECTION II-F: Conclusión
     %------------------------------------------------------------------
     \subsection{Conclusión}
+    % HABLAR SOBRE EL PREDOMINIO DE IPV4 SOBRE IPV6 QUE TODAVIA NO ESTA BIEN IMPLEMENTADO EN 
+    % TODOS LADOS
 
+    % IMPACTO DE ARP: SE PIERDE MUCHO TIEMPO EN PROTOCOLOS DE "MANTENIMIENTO" QUE NO APORTAN
+    % INFORMACION
+
+    % GRAN IMPACTO DE ARP EN LAPSOS CORTOS DE ESCUCHA, EN TIEMPOS LARGOS EL OVERHEAD BAJA
 Al contrario del pensamiento popular, el texto de Lorem Ipsum no es simplemente texto aleatorio. Tiene sus raices en una pieza clásica de la literatura del Latin, que data del año 45 antes de Cristo, haciendo que este adquiera mas de 2000 años de antiguedad. Richard McClintock, un profesor de Latin de la Universidad de Hampden-Sydney en Virginia, encontró una de las palabras más oscuras de la lengua del latín, ``consecteur'', en un pasaje de Lorem Ipsum, y al seguir leyendo distintos textos del latín, descubrió la fuente indudable. Lorem Ipsum viene de las secciones 1.10.32 y 1.10.33 de ``de Finnibus Bonorum et Malorum'' (Los Extremos del Bien y El Mal) por Cicero, escrito en el año 45 antes de Cristo. Este libro es un tratado de teoría de éticas, muy popular durante el Renacimiento. La primera linea del Lorem Ipsum, ``Lorem ipsum dolor sit amet..'', viene de una linea en la sección 1.10.32
 
 El trozo de texto estándar de Lorem Ipsum usado desde el año 1500 es reproducido debajo para aquellos interesados. Las secciones 1.10.32 y 1.10.33 de ``de Finibus Bonorum et Malorum'' por Cicero son también reproducidas en su forma original exacta, acompañadas por versiones en Inglés de la traducción realizada en 1914 por H. Rackham.
