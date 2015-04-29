@@ -39,5 +39,5 @@ result = {
   'source_entropy': source_entropy
 }
 
-with open(replace_ext(args.input_testname,'json'), 'w') as f:
+with open(output_testtype_ext(args.input_testname,'s','json'), 'w') as f:
   f.write(json.dumps(result))

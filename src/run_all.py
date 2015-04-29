@@ -27,20 +27,38 @@ args = parser.parse_args()
 from subprocess import Popen, PIPE
 
 if(args.full):
+  # Calculo la entropía de S
   process = Popen(["sudo", "./calcular_entropia_s.py", "-i", args.input_testname], stdout=PIPE)
   (output, err) = process.communicate()
   if process.wait() != 0:
     raise Exception("Error al ejecutar calcular_entropia_s.py")
+  # Calculo la entropía de S_1
+  process = Popen(["sudo", "./calcular_entropia_s1.py", "-i", args.input_testname], stdout=PIPE)
+  (output, err) = process.communicate()
+  if process.wait() != 0:
+    raise Exception("Error al ejecutar calcular_entropia_s1.py")
 
+# Plot histogram
 process = Popen(["./plot-histogram-s.py", "-i", args.input_testname], stdout=PIPE)
 (output, err) = process.communicate()
 if process.wait() != 0:
-  raise Exception("Error al ejecutar plot-histogram.py")
+  raise Exception("Error al ejecutar plot-histogram-s.py")
+process = Popen(["./plot-histogram-s1.py", "-i", args.input_testname], stdout=PIPE)
+(output, err) = process.communicate()
+if process.wait() != 0:
+  raise Exception("Error al ejecutar plot-histogram-s1.py")
 
+# Plot pie
 process = Popen(["./plot-pie-s.py", "-i", args.input_testname], stdout=PIPE)
 (output, err) = process.communicate()
 if process.wait() != 0:
-  raise Exception("Error al ejecutar plot-pie.py")
+  raise Exception("Error al ejecutar plot-pie-s.py")
+process = Popen(["./plot-pie-s1.py", "-i", args.input_testname], stdout=PIPE)
+(output, err) = process.communicate()
+if process.wait() != 0:
+  raise Exception("Error al ejecutar plot-pie-s1.py")
 
-os.system("xdg-open ../output/%s-histogram-s.png"%args.input_testname)
-os.system("xdg-open ../output/%s-pie-s.png"%args.input_testname)
+os.system("xdg-open ../output/%s-s-histogram.png"%args.input_testname)
+os.system("xdg-open ../output/%s-s-pie.png"%args.input_testname)
+os.system("xdg-open ../output/%s-s1-histogram.png"%args.input_testname)
+os.system("xdg-open ../output/%s-s1-pie.png"%args.input_testname)

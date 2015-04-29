@@ -23,9 +23,14 @@ def file_pcap(f):
   return y
 
 # to check json input
-def file_json(f):
+def file_json_s(f):
   check_testname_ok(f)
-  y = '../output/'+f+'.json'
+  y = '../output/'+f+'-s.json'
+  check_filepath_isfile(y)
+  return y
+def file_json_s1(f):
+  check_testname_ok(f)
+  y = '../output/'+f+'-s1.json'
   check_filepath_isfile(y)
   return y
 

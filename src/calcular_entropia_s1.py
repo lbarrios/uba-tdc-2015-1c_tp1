@@ -10,7 +10,7 @@ parser.add_argument('-v','--verbose', action='store_true', default=False)
 args = parser.parse_args()
 
 # sniff
-# check_sudo()
+check_sudo()
 from scapy.all import sniff
 pkts = sniff(offline='../output/'+args.input_testname)
 
@@ -40,5 +40,5 @@ result = {
     'source_entropy': source_entropy
 }
 
-with open(replace_ext(args.input_testname,'json'), 'w') as f:
+with open(output_testtype_ext(args.input_testname,'s1','json'), 'w') as f:
     f.write(json.dumps(result, indent=4))
