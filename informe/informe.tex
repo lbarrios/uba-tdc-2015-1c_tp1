@@ -154,7 +154,7 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
       \label{marto-casa-3hs-s-histogram}
     \end{center}\end{figure}
 
-    El protocolo que masa fue escuchado fue \texttt{IPv4}, tal como se
+    El protocolo que más fue escuchado fue \texttt{IPv4}, tal como se
     observa en la figura \ref{marto-casa-3hs-s-pie}, la cantidad de
     paquetes  de este tipo fue del 98\% mientras que la de paquetes
     \texttt{ARP} fue del 1\%. Esto permite concluir que en el caso de
@@ -208,14 +208,16 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
 
 
     El protocolo que mas aparece en este escenario es \texttt{IPv4}, tal
-    como se observa en la figura \ref{techint-s-pie}, haciendo que su probabilidad sea la
-    mayor. Esto se ve reflejado en la figura \ref{techint-s-histogram},, en la cual se puede ver como
+    como se observa en la figura \ref{techint-s-pie}, haciendo que 
+    su probabilidad sea la
+    mayor. Esto se ve reflejado en la figura \ref{techint-s-histogram},
+    en la cual se puede ver como
     afecta la frecuencia de aparición del protocolo a la información
     que este provee.
 
     % CHEQUEAR ESTE PARRAFO, QUIZAS ES HUMO
     También se observa el gran predominio de \texttt{IPv4} sobre \texttt{IPv6},
-    el cual actualmente no esta implementado ni funcionando unicamente en todos
+    el cual actualmente no esta implementado ni funcionando en todos
     los sistemas.
 
     En este caso el nodo distinguido es el protocolo \texttt{IPv4}, 
@@ -224,7 +226,7 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
     protocolo que mas información aporta es \texttt{LLDP}, ya que
     su frecuencia de aparición(0.15\%) es la menor en la medición tomada. Esto
     genera que las pocas veces que aparece aporte mas información en 
-    comparación con los protocolos que mas aparecen, como por ejemplo 
+    comparación con los protocolos que más aparecen, como por ejemplo 
     \texttt{IPv4} cuyo porcentaje de aparición sobre el total es del 56\%
     tal como se observa en la figura \ref{techint-s-pie}.
 
@@ -296,7 +298,7 @@ Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de te
     %------------------------------------------------------------------
     % HISTOGRAMA HYUNDAI
     %------------------------------------------------------------------	
-    \begin{figure}[ht]\begin{center}
+    \begin{figure}[h]\begin{center}
       \includegraphics[width=0.5\textwidth]{%
       ../output/hyundai-s-histogram.png}
       \caption{S: Hyundai - Histograma}
@@ -338,7 +340,22 @@ Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de te
     \end{center}\end{figure}
 
 
+  El protocolo que más se escuchó fue \texttt{IPv4}, tal como se
+  observa en la figura \ref{labos-dc-30m-s-pie}, la cantidad de
+  paquetes  de este tipo fue del 82\% mientras que la de paquetes
+  \texttt{ARP} fue del 11\%. Se observa que el overhead del tipo \texttt{ARP} 
+  en un tiempo de 30 minutos es bajo pero no despreciable con respecto al 
+  total de paquetes de la red.
 
+  La entropía de la fuente propuesta es de 0.882, como se observa en la
+  figura \ref{labos-dc-30m-s-histogram}, dejando por debajo de ella al
+  protocolo \texttt{IPv4} que, al presentar una mayor probabilidad de
+  aparición en la fuente, provoca que la información que aporta sea
+  poca y se destaque como nodo distinguido. Podemos enconrar al protocolo 
+  \texttt{802.3} que al tener poca probabilidad de aparición
+  (1\%), aporta mucha información, siendo el protocolo que más información
+  aporta.
+ 
     %------------------------------------------------------------------
     % SUBSECTION II-E: Gráficos
     %------------------------------------------------------------------
@@ -361,6 +378,9 @@ Al contrario del pensamiento popular, el texto de Lorem Ipsum no es simplemente 
 
 El trozo de texto estándar de Lorem Ipsum usado desde el año 1500 es reproducido debajo para aquellos interesados. Las secciones 1.10.32 y 1.10.33 de ``de Finibus Bonorum et Malorum'' por Cicero son también reproducidas en su forma original exacta, acompañadas por versiones en Inglés de la traducción realizada en 1914 por H. Rackham.
 
+
+
+
 %----------------------------------------------------------------------
 % SECTION III: Desarrollo - Fuente S_1
 %----------+------------------------------------------------------------
@@ -373,7 +393,7 @@ El trozo de texto estándar de Lorem Ipsum usado desde el año 1500 es reproduci
 
   Las condiciones de esta medición son las mismas que las mencionadas en la
   sección II-A, solamente se cambió la fuente utilizada y se filtraron los
-  paquetes segun el tipo \texttt{ARP}
+  paquetes segun el tipo \texttt{ARP}.
 
     %------------------------------------------------------------------
     % TORTA CASA
@@ -397,9 +417,22 @@ El trozo de texto estándar de Lorem Ipsum usado desde el año 1500 es reproduci
       \label{marto-casa-3hs-s1-histogram}
     \end{center}\end{figure}	
 
+  La ip que más aparece en los paquetes de tipo \texttt{ARP}, dentro del
+  campo \textit{destino}, es la 190.168.1.100, tal como se observa en la
+  figura \ref{marto-casa-3hs-s1-pie}. Esta ip al ser la que más aparece
+  dentro de las comunicaciones, será un nodo distinguido, por lo que será la
+  que menos información aporte. Esto se ve reflejado en la figura
+  \ref{marto-casa-3hs-s1-histogram}, en donde la información que brinda la
+  ip 190.168.1.100 (representada como A) queda por debajo de la entropía de
+  la fuente, la cual es 1.24.  
 
-  
-  %--------------------------------------------------------------------
+  Las direcciones ip que no son distinguidas tienen frecuencias y
+  probabilidades de aparición muy similares, teniendo así
+  cantidades similares de información. Esto se puede observar en la figura
+  \ref{marto-casa-3hs-s1-histogram}.
+
+
+  %------------------------------------------------------------ --------
   % SUBSECTION III-B: TECHINT
   %--------------------------------------------------------------------
   \subsection{Techint}
