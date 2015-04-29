@@ -1,4 +1,4 @@
-\documentclass[final,narroweqnarray,inline]{ieee}
+\documentclass[final,inline,a4paper,narroweqnarray]{ieee}
 % In order to use the figure-defining commands in ieeefig.sty...
 \usepackage{ieeefig}
 % To use utf8 encoding
@@ -8,7 +8,8 @@
 % to place figures
 \usepackage{float}
 \usepackage{graphicx}
-\usepackage{geometry}
+% dont use geometry package
+%\usepackage{geometry}
 \begin{document}
 
 %----------------------------------------------------------------------
@@ -135,7 +136,7 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
     % TORTA CASA
     %------------------------------------------------------------------
 
-    \begin{figure}[H]\begin{center}
+    \begin{figure}[ht]\begin{center}
       \includegraphics[width=0.5\textwidth]{%
       ../output/marto-casa-3hs-s-pie.png}
       \vspace{-3em}
@@ -147,7 +148,7 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
     % HISTOGRAMA CASA
     %------------------------------------------------------------------
     
-    \begin{figure}[H]\begin{center}
+    \begin{figure}[ht]\begin{center}
      \includegraphics[width=0.5\textwidth]{%
       ../output/marto-casa-3hs-s-histogram.png}
       \caption{S: Casa - Histograma}
@@ -187,7 +188,7 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
     % TORTA TECHINT
     %------------------------------------------------------------------
     
-    \begin{figure}[H]\begin{center}
+    \begin{figure}[ht]\begin{center}
       \includegraphics[width=0.5\textwidth]{%
       ../output/techint-s-pie.png}
       \vspace{-3em}
@@ -199,7 +200,7 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
     % HISTOGRAMA TECHINT
     %------------------------------------------------------------------
      
-    \begin{figure}[H]\begin{center}
+    \begin{figure}[ht]\begin{center}
       \includegraphics[width=0.5\textwidth]{%
       ../output/techint-s-histogram.png}
       \caption{S: Techint - Histograma}
@@ -321,7 +322,7 @@ Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de te
     %------------------------------------------------------------------
     % TORTA LABOS-DC
     %------------------------------------------------------------------	
-    \begin{figure}[H]\begin{center}
+    \begin{figure}[ht]\begin{center}
       \includegraphics[width=0.5\textwidth]{%
       ../output/labos-dc-30m-s-pie.png}
       \vspace{-3em}
@@ -332,7 +333,7 @@ Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de te
     %------------------------------------------------------------------
     % HISTOGRAMA LABOS-DC
     %------------------------------------------------------------------	
-    \begin{figure}[H]\begin{center}
+    \begin{figure}[ht]\begin{center}
       \includegraphics[width=0.5\textwidth]{%
       ../output/labos-dc-30m-s-histogram.png}
       \caption{S: Laboratorios DC - Histograma}
@@ -384,7 +385,6 @@ El trozo de texto estándar de Lorem Ipsum usado desde el año 1500 es reproduci
 %----------------------------------------------------------------------
 % SECTION III: Desarrollo - Fuente S_1
 %----------+------------------------------------------------------------
-\clearpage
 \section{Desarrollo - Fuente $S_1$}
   %--------------------------------------------------------------------
   % SUBSECTION III-A: CASA
@@ -398,7 +398,7 @@ El trozo de texto estándar de Lorem Ipsum usado desde el año 1500 es reproduci
     %------------------------------------------------------------------
     % TORTA CASA
     %------------------------------------------------------------------
-    \begin{figure}[H]\begin{center}
+    \begin{figure}[ht]\begin{center}
       \includegraphics[width=0.5\textwidth]{%
       ../output/marto-casa-3hs-s1-pie.png}
       \vspace{-2em}
@@ -409,7 +409,7 @@ El trozo de texto estándar de Lorem Ipsum usado desde el año 1500 es reproduci
     %------------------------------------------------------------------
     % HISTOGRAMA CASA
     %------------------------------------------------------------------
-    \begin{figure}[H]\begin{center}
+    \begin{figure}[ht]\begin{center}
       \includegraphics[width=0.5\textwidth]{%
       ../output/marto-casa-3hs-s1-histogram.png}
       \vspace{-2em}
