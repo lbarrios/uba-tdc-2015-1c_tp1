@@ -9,6 +9,9 @@
 *.ind
 *.idx
 *.toc
+*.bbl
+*.blg
+*.dvi
 
 # Build temporary folder #
 ##########################
