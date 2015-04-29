@@ -243,56 +243,49 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
   %--------------------------------------------------------------------
   \subsection{Hyundai}
 
-Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.
+    Esta medición fue realizada en la empresa Hyundai Motor Argentina, en
+    horario laboral, durante 2 horas. El edificio en donde se realizó la
+    medición, cuenta con unos 30 estaciones de trabajo fijas (PC Desktop), y
+    10 Notebooks, distribuídas a través de los pisos del edificio. La red
+    tiene, además, un \textbf{switch de nivel 2} por sector, al que se
+    encuentran conectados los dispositivos que pertenecen al departamento. A
+    su vez, cada uno de estos está conectado a un \textbf{switch de nivel 3} a
+    través de un \textbf{enlace Gigabit punto a punto}. A su vez, hay al menos
+    un \textbf{access point} en cada uno de los sectores de la empresa, al
+    cual se conectan la mayoría de los dispositivos móviles de los empleados.
+    También hay diversos dispositivos, impresoras de red, lectores de códigos
+    de barras inalámbricos, cámaras IPs, teléfonos IPS, entre otros,
+    conectados a los \textbf{switches} o \textbf{access point} de cada sector.
+
+    A su vez, existen varios servidores conectados mediante un enlace
+    \textbf{PPP} al switch principal, que proveen de diversos servicios a las
+    estaciones de trabajo, por ejemplo: active directory, samba, correo
+    electrónico, backup, acceso a bases de datos, acceso a sistemas, telefonía
+    IP, acceso a internet, etc.
+
+    La conexión fue realizada mediante una conexión cableada \textbf{PPP}
+    entre el switch principal, y la computadora corriendo el sniffer, lo que
+    nos permite suponer que pese a activar el modo promiscuo, sólo llegarán
+    hasta la placa de red aquellos paquetes que se encuentren dentro de su
+    dominio de broadcast.
+
+    \begin{tabular}{| c c c |}
+    \hline
+    1 & 2 & 3 \\
+    \hline
+    1 & 2 & 3 \\
+    1 & 2 & 3 \\
+    \end{tabular}
+
 
     %------------------------------------------------------------------
   	% GRAFICOS HYUNDAI - TIEMPO
     %------------------------------------------------------------------
-    \begin{figure}[H]\begin{center}
-      \includegraphics[width=0.5\textwidth]{%
-      ../output/hyundai-1-s-pie.png}
-      \vspace{-3em}
-      \caption{S: Hyundai - Torta (1 minuto)}
-      \label{hyundai-1-s-pie}
-    \end{center}\end{figure}
-    %
-    \begin{figure}[H]\begin{center}
-      \includegraphics[width=0.5\textwidth]{%
-      ../output/hyundai-5-s-pie.png}
-      \vspace{-3em}
-      \caption{S: Hyundai - Torta (5 minutos)}
-      \label{hyundai-5-s-pie}
-    \end{center}\end{figure}
-    %
-    \begin{figure}[H]\begin{center}
-      \includegraphics[width=0.5\textwidth]{%
-      ../output/hyundai-10-s-pie.png}
-      \vspace{-3em}
-      \caption{S: Hyundai - Torta (10 minutos)}
-      \label{hyundai-10-s-pie}
-    \end{center}\end{figure}
-    %
-    \begin{figure}[H]\begin{center}
-      \includegraphics[width=0.5\textwidth]{%
-      ../output/hyundai-20-s-pie.png}
-      \vspace{-3em}
-      \caption{S: Hyundai - Torta (20 minutos)}
-      \label{hyundai-20-s-pie}
-    \end{center}\end{figure}
-    %  
-    \begin{figure}[H]\begin{center}
-      \includegraphics[width=0.5\textwidth]{%
-      ../output/hyundai-30-s-pie.png}
-      \vspace{-3em}
-      \caption{S: Hyundai - Torta (30 minutos)}
-      \label{hyundai-30-s-pie}
-    \end{center}\end{figure}
-    %
-    \begin{figure}[H]\begin{center}
+    \begin{figure}[h]\begin{center}
       \includegraphics[width=0.5\textwidth]{%
       ../output/hyundai-s-pie.png}
       \vspace{-3em}
-      \caption{S: Hyundai - Torta (Total)}
+      \caption{S: Hyundai - Torta}
       \label{hyundai-s-pie}
     \end{center}\end{figure}
 
@@ -305,6 +298,47 @@ Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de te
       \caption{S: Hyundai - Histograma}
       \label{hyundai-s-histogram}
     \end{center}\end{figure}
+
+    \begin{figure}[H]\begin{center}
+      \includegraphics[width=0.5\textwidth]{%
+      ../output/hyundai-1-s-pie.png}
+      \vspace{-3em}
+      \caption{S: Hyundai - Torta (primer minuto)}
+      \label{hyundai-1-s-pie}
+    \end{center}\end{figure}
+    %
+    \begin{figure}[H]\begin{center}
+      \includegraphics[width=0.5\textwidth]{%
+      ../output/hyundai-5-s-pie.png}
+      \vspace{-3em}
+      \caption{S: Hyundai - Torta (primeros 5 minutos)}
+      \label{hyundai-5-s-pie}
+    \end{center}\end{figure}
+    %
+    \begin{figure}[H]\begin{center}
+      \includegraphics[width=0.5\textwidth]{%
+      ../output/hyundai-10-s-pie.png}
+      \vspace{-3em}
+      \caption{S: Hyundai - Torta (primeros 10 minutos)}
+      \label{hyundai-10-s-pie}
+    \end{center}\end{figure}
+    %
+    \begin{figure}[H]\begin{center}
+      \includegraphics[width=0.5\textwidth]{%
+      ../output/hyundai-20-s-pie.png}
+      \vspace{-3em}
+      \caption{S: Hyundai - Torta (primeros 20 minutos)}
+      \label{hyundai-20-s-pie}
+    \end{center}\end{figure}
+    %  
+    \begin{figure}[H]\begin{center}
+      \includegraphics[width=0.5\textwidth]{%
+      ../output/hyundai-30-s-pie.png}
+      \vspace{-3em}
+      \caption{S: Hyundai - Torta (primeros 30 minutos)}
+      \label{hyundai-30-s-pie}
+    \end{center}\end{figure}
+    %
 
   %
   %--------------------------------------------------------------------
