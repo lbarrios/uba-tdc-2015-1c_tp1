@@ -154,19 +154,21 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
       \label{marto-casa-3hs-s-histogram}
     \end{center}\end{figure}
 
-    Como se observa en la figura 1, el protocolo que mas fue escuchado
-    fue \texttt{IPv4}, la cantidad de paquetes de este tipo fue del 98\%
-    mientras que la de paquetes \texttt{ARP} fue del 1\%. Esto permite
-    concluir que en el caso de la red hogareña, el overhead del tipo
-    \texttt{ARP} en un tiempo de 3 horas es practicamente nulo, con respecto
-    al total de paquetes de la red.
+    El protocolo que masa fue escuchado fue \texttt{IPv4}, tal como se
+    observa en la figura \ref{marto-casa-3hs-s-pie}, la cantidad de
+    paquetes  de este tipo fue del 98\% mientras que la de paquetes
+    \texttt{ARP} fue del 1\%. Esto permite concluir que en el caso de
+    la red hogareña, el overhead del tipo\texttt{ARP} en un tiempo
+    de 3 horas es practicamente nulo, con respecto al total de
+    paquetes de la red.
 
     La entropía de la fuente propuesta es de 0.095, como se observa en la
-    figura 2, dejando por debajo de ella al protocolo \texttt{IPv4} que, 
-    al presentar una mayor probabilidad de aparición en la fuente, provoca
-    que la información que aporte sea poca y lo destaque como nodo distinguido.
-    A diferencia de \texttt{IPv4}, podemos encontrar al protocolo \texttt{802.1X}
-    que al tener poca probabilidad de aparición $(2.35 * 10^-5)$, aporta mucha
+    figura \ref{marto-casa-3hs-s-histogram}, dejando por debajo de ella al
+    protocolo \texttt{IPv4} que, al presentar una mayor probabilidad de
+    aparición en la fuente, provoca que la información que aporte sea
+    poca y lo destaque como nodo distinguido. A diferencia de
+    \texttt{IPv4}, podemos encontrar al protocolo \texttt{802.1X} que al
+    tener poca probabilidad de aparición $(2.35 * 10^-5)$, aporta mucha
     información, siendo el protocolo que mas aporta.
       
     
@@ -205,11 +207,11 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
     \end{center}\end{figure}
 
 
-    Como se observa en la figura 3, el protocolo que mas aparece en
-    este escenario es \texttt{IPv4}, haciendo que su probabilidad sea 
-    la mayor. Esto se ve reflejado en la figura 4, en la cual 
-    se puede ver como afecta la frecuencia de aparición del protocolo a 
-    la información que este provee.
+    El protocolo que mas aparece en este escenario es \texttt{IPv4}, tal
+    como se observa en la figura \ref{techint-s-pie}, haciendo que su probabilidad sea la
+    mayor. Esto se ve reflejado en la figura \ref{techint-s-histogram},, en la cual se puede ver como
+    afecta la frecuencia de aparición del protocolo a la información
+    que este provee.
 
     % CHEQUEAR ESTE PARRAFO, QUIZAS ES HUMO
     También se observa el gran predominio de \texttt{IPv4} sobre \texttt{IPv6},
@@ -224,10 +226,10 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
     genera que las pocas veces que aparece aporte mas información en 
     comparación con los protocolos que mas aparecen, como por ejemplo 
     \texttt{IPv4} cuyo porcentaje de aparición sobre el total es del 56\%
-    tal como se observa en la figura 3.
+    tal como se observa en la figura \ref{techint-s-pie}.
 
     % ALGO MAS ACA?
-    También se puede observar en la figura 3, la gran cantidad de paquetes 
+    También se puede observar en la figura \ref{techint-s-pie}, la gran cantidad de paquetes 
     de tipo \texttt{ARP} (12\%) que aparecen, en comparación con los
     de tipo \texttt{IPv6} (15\%) y \texttt{802.3} (14\%), que se encuentran
     en segundo lugar y tercer lugar respectivamente. Esto demuestra el overhead
@@ -369,12 +371,14 @@ El trozo de texto estándar de Lorem Ipsum usado desde el año 1500 es reproduci
   %--------------------------------------------------------------------
   \subsection{Casa}
 
-Hay muchas variaciones de los pasajes de Lorem Ipsum disponibles, pero la mayoría sufrió alteraciones en alguna manera, ya sea porque se le agregó humor, o palabras aleatorias que no parecen ni un poco creíbles. Si vas a utilizar un pasaje de Lorem Ipsum, necesitás estar seguro de que no hay nada avergonzante escondido en el medio del texto. Todos los generadores de Lorem Ipsum que se encuentran en Internet tienden a repetir trozos predefinidos cuando sea necesario, haciendo a este el único generador verdadero (válido) en la Internet. Usa un diccionario de mas de 200 palabras provenientes del latín, combinadas con estructuras muy útiles de sentencias, para generar texto de Lorem Ipsum que parezca razonable. Este Lorem Ipsum generado siempre estará libre de repeticiones, humor agregado o palabras no características del lenguaje, etc.
+  Las condiciones de esta medición son las mismas que las mencionadas en la
+  sección II-A, solamente se cambió la fuente utilizada y se filtraron los
+  paquetes segun el tipo \texttt{ARP}
 
     %------------------------------------------------------------------
     % TORTA CASA
     %------------------------------------------------------------------
-    \begin{figure}[ht]\begin{center}
+    \begin{figure}[H]\begin{center}
       \includegraphics[width=0.5\textwidth]{%
       ../output/marto-casa-3hs-s1-pie.png}
       \vspace{-2em}
@@ -385,7 +389,7 @@ Hay muchas variaciones de los pasajes de Lorem Ipsum disponibles, pero la mayor�
     %------------------------------------------------------------------
     % HISTOGRAMA CASA
     %------------------------------------------------------------------
-    \begin{figure}[ht]\begin{center}
+    \begin{figure}[H]\begin{center}
       \includegraphics[width=0.5\textwidth]{%
       ../output/marto-casa-3hs-s1-histogram.png}
       \vspace{-2em}
@@ -393,6 +397,8 @@ Hay muchas variaciones de los pasajes de Lorem Ipsum disponibles, pero la mayor�
       \label{marto-casa-3hs-s1-histogram}
     \end{center}\end{figure}	
 
+
+  
   %--------------------------------------------------------------------
   % SUBSECTION III-B: TECHINT
   %--------------------------------------------------------------------
