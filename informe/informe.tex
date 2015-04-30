@@ -71,8 +71,8 @@ Para cada una de las mediciones consideramos las siguientes fuentes:
   2.
 
   \item $S_{1} = \{s_{1} \dots s_{n}\} $, determinada por nosotros,
-  donde $s_i$ es el valor del campo destino (MAC) cada paquete de
-  capa 2 de tipo ARP.
+  donde $s_i$ es el valor del campo destino (\texttt{IP}) cada paquete
+  de capa 2 de tipo \texttt{ARP}.
 
 \end{itemize}
 
@@ -117,6 +117,57 @@ Entonces, también analizaremos las entropías de las fuentes en cada
 una de las escuchas de red realizadas, y trataremos de concluir cuál
 de las dos fuentes elegidas es \emph{más compresible}.
 
+\subsection{Casa}
+
+  Esta siguiente medición fue realizada en una red LAN hogareña, en el
+  horario de las 15:00 hs, por un lapso de 3 hs. La herramienta
+  utilizada fue la indicada en el enunciado del trabajo. A esta LAN
+  hubo conectadas 5 computadoras, una impresora y 3 celulares al
+  momento de la medición.
+
+\subsection{Techint}
+
+  Esta medición fue realizada en la empresa Techint, en el horario de
+  las 11:00 am, por un lapso de 30 minutos. Se utilizó la herramienta
+  desarrollada en el ejercicio anterior. Se desconoce la cantidad de
+  computadoras o la topología de la red medida. La conexión a la red
+  fue efectuada mediante un cable de ethernet.
+
+
+\subsection{Hyundai}
+
+  Esta medición fue realizada en la empresa Hyundai Motor Argentina,
+  en horario laboral, durante 5 horas. El edificio en donde se realizó
+  la medición, cuenta con unos 30 estaciones de trabajo fijas (PC
+  Desktop), y 10 Notebooks, distribuídas a través de los pisos del
+  edificio. La red tiene, además, un \textbf{switch de nivel 2} por
+  sector, al que se encuentran conectados los dispositivos que
+  pertenecen al departamento. A su vez, cada uno de estos está
+  conectado a un \textbf{switch de nivel 3} a través de un
+  \textbf{enlace Gigabit punto a punto}. A su vez, hay al menos un
+  \textbf{access point} en cada uno de los sectores de la empresa, al
+  cual se conectan la mayoría de los dispositivos móviles de los
+  empleados. También hay diversos dispositivos, impresoras de red,
+  lectores de códigos de barras inalámbricos, cámaras IPs, teléfonos
+  IPS, entre otros, conectados a los
+  \textbf{switches} o \textbf{access point} de cada sector.
+
+  A su vez, existen varios servidores conectados mediante un enlace
+  \textbf{PPP} al switch principal, que proveen de diversos servicios a las
+  estaciones de trabajo, por ejemplo: active directory, samba, correo
+  electrónico, backup, acceso a bases de datos, acceso a sistemas,
+  telefonía IP, acceso a internet, etc.
+
+  La conexión fue realizada mediante una conexión cableada
+  \textbf{PPP} entre el switch principal, y la computadora corriendo
+  el sniffer, lo que nos permite suponer que pese a activar el modo
+  promiscuo, sólo llegarán hasta la placa de red aquellos paquetes que
+  se encuentren dentro de su dominio de broadcast.
+
+\subsection{Laboratorios DC}
+
+
+
 %----------------------------------------------------------------------
 % SECTION II: Desarrollo - Fuente S
 %----------------------------------------------------------------------
@@ -126,12 +177,7 @@ de las dos fuentes elegidas es \emph{más compresible}.
   %--------------------------------------------------------------------
   \subsection{Casa}
 
-  La siguiente medición fue realizada en una red LAN hogareña, en el
-  horario de las 15:00 hs, por un lapso de 3 hs. La herramienta
-  utilizada fue la indicada en el enunciado del trabajo. A esta LAN
-  hubo conectadas 5 computadoras, una impresora y 3 celulares al
-  momento de la medición. Los resultados obtenidos fueron los
-  siguientes
+   Los resultados obtenidos fueron los siguientes
 
 \begin{table}[h]\begin{center}
     \begin{tabular}{|c|c|c|}
@@ -146,6 +192,13 @@ de las dos fuentes elegidas es \emph{más compresible}.
     \label{casa-s-table}
 \end{center}\end{table}
 
+    El protocolo que más fue escuchado fue \texttt{IPv4}, tal como se
+    observa en la figura \ref{marto-casa-3hs-s-pie}, la cantidad de
+    paquetes  de este tipo fue del 98\% mientras que la de paquetes
+    \texttt{ARP} fue del 1\%. Esto permite concluir que en el caso de
+    la red hogareña, el overhead del tipo \texttt{ARP} en un tiempo de
+    3 horas es practicamente nulo, con respecto al total de paquetes
+    de la red.
 
     %------------------------------------------------------------------
     % TORTA CASA
@@ -159,6 +212,17 @@ de las dos fuentes elegidas es \emph{más compresible}.
       \label{marto-casa-3hs-s-pie}
     \end{center}\end{figure}
 
+    La entropía de la fuente propuesta es de 0.095, lo que indica que
+    los símbolos emitidos por la fuente son muy previsibles. Esto se
+    puede observar en la figura \ref{marto-casa-3hs-s-histogram},
+    donde deja por debajo de ella al protocolo \texttt{IPv4} que, al
+    presentar una mayor probabilidad de aparición en la fuente,
+    provoca que la información que aporte sea poca y lo destaque como
+    nodo distinguido. A diferencia de \texttt{IPv4}, podemos encontrar
+    al protocolo \texttt{802.1X} que al tener poca probabilidad de
+    aparición $(2.35 * 10^-5)$, aporta mucha información, siendo el
+    protocolo que más aporta.
+
     %------------------------------------------------------------------
     % HISTOGRAMA CASA
     %------------------------------------------------------------------
@@ -169,25 +233,6 @@ de las dos fuentes elegidas es \emph{más compresible}.
       \caption{S: Casa - Histograma}
       \label{marto-casa-3hs-s-histogram}
     \end{center}\end{figure}
-
-    El protocolo que más fue escuchado fue \texttt{IPv4}, tal como se
-    observa en la figura \ref{marto-casa-3hs-s-pie}, la cantidad de
-    paquetes  de este tipo fue del 98\% mientras que la de paquetes
-    \texttt{ARP} fue del 1\%. Esto permite concluir que en el caso de
-    la red hogareña, el overhead del tipo \texttt{ARP} en un tiempo de
-    3 horas es practicamente nulo, con respecto al total de paquetes
-    de la red.
-
-    La entropía de la fuente propuesta es de 0.095, lo que indica que
-    los símbolos emitidos por la fuente son muy previsibles. Esto se
-    puede observar en la figura \ref{marto-casa-3hs-s-histogram},
-    donde deja por debajo de ella al protocolo \texttt{IPv4} que, al
-    presentar una mayor probabilidad de aparición en la fuente,
-    provoca que la información que aporte sea poca y lo destaque como
-    nodo distinguido. A diferencia de
-    \texttt{IPv4}, podemos encontrar al protocolo \texttt{802.1X} que al
-    tener poca probabilidad de aparición $(2.35 * 10^-5)$, aporta mucha
-    información, siendo el protocolo que más aporta.
       
     
     %------------------------------------------------------------------
@@ -195,12 +240,7 @@ de las dos fuentes elegidas es \emph{más compresible}.
     %------------------------------------------------------------------
     \subsection{Techint}
 
-    Esta medición fue realizada en la empresa Techint, en el horario
-    de las 11:00 am, por un lapso de 30 minutos. Se utilizó la
-    herramienta desarrollada en el ejercicio anterior. Se desconoce la
-    cantidad de computadoras o la topología de la red medida. La
-    conexión a la red fue efectuada mediante un cable de ethernet. Los
-    resultados se pueden ver en la
+    Los resultados se pueden ver en la
     \textbf{tabla\ref{techint-s-table}}.
 
     \begin{table}\begin{center}
@@ -218,6 +258,13 @@ de las dos fuentes elegidas es \emph{más compresible}.
       \label{techint-s-table}
     \end{center}\end{table}
     
+    El protocolo que más aparece en este escenario es \texttt{IPv4},
+    tal como se observa en la figura \ref{techint-s-pie}, haciendo que
+    su probabilidad sea la mayor. Esto se ve reflejado en la figura
+    \ref{techint-s-histogram}, en la cual se puede ver como afecta la
+    frecuencia de aparición del protocolo a la información que este
+    provee.
+
     %------------------------------------------------------------------
     % TORTA TECHINT
     %------------------------------------------------------------------
@@ -230,6 +277,17 @@ de las dos fuentes elegidas es \emph{más compresible}.
       \label{techint-s-pie}
     \end{center}\end{figure}
  
+    En este caso el nodo distinguido es el protocolo \texttt{IPv4},
+    pues la información que provee es menor a la entropía de la fuente
+    utilizada(1.74) , y además es el único que está por debajo de
+    ella. El protocolo que más información aporta es \texttt{LLDP}, ya
+    que su frecuencia de aparición(0.15\%) es la menor en la medición
+    tomada. Esto genera que las pocas veces que aparece aporte más
+    información en comparación con los protocolos que más aparecen,
+    como por ejemplo \texttt{IPv4} cuyo porcentaje de aparición sobre
+    el total es del 56\% tal como se observa en la figura
+    \ref{techint-s-pie}.
+
     %------------------------------------------------------------------
     % HISTOGRAMA TECHINT
     %------------------------------------------------------------------
@@ -241,27 +299,6 @@ de las dos fuentes elegidas es \emph{más compresible}.
       \label{techint-s-histogram}
     \end{center}\end{figure}
 
-
-    El protocolo que mas aparece en este escenario es \texttt{IPv4},
-    tal como se observa en la figura \ref{techint-s-pie}, haciendo que
-    su probabilidad sea la mayor. Esto se ve reflejado en la figura
-    \ref{techint-s-histogram}, en la cual se puede ver como afecta la
-    frecuencia de aparición del protocolo a la información que este
-    provee.
-
-
-    En este caso el nodo distinguido es el protocolo \texttt{IPv4},
-    pues la información que provee es menor a la entropía de la fuente
-    utilizada(1.74) , y además es el único que está por debajo de
-    ella. El protocolo que mas información aporta es \texttt{LLDP}, ya
-    que su frecuencia de aparición(0.15\%) es la menor en la medición
-    tomada. Esto genera que las pocas veces que aparece aporte mas
-    información en comparación con los protocolos que más aparecen,
-    como por ejemplo
-    \texttt{IPv4} cuyo porcentaje de aparición sobre el total es del 56\%
-    tal como se observa en la figura \ref{techint-s-pie}.
-
-    % ALGO MAS ACA?
     También se puede observar en la figura \ref{techint-s-pie}, la
     gran cantidad de paquetes de tipo \texttt{ARP} (12\%) que
     aparecen, en comparación con los de tipo \texttt{IPv6} (15\%) y
@@ -273,34 +310,6 @@ de las dos fuentes elegidas es \emph{más compresible}.
   % SUBSECTION II-C: HYUNDAI
   %--------------------------------------------------------------------
   \subsection{Hyundai}
-
-    Esta medición fue realizada en la empresa Hyundai Motor Argentina,
-    en horario laboral, durante 5 horas. El edificio en donde se
-    realizó la medición, cuenta con unos 30 estaciones de trabajo
-    fijas (PC Desktop), y 10 Notebooks, distribuídas a través de los
-    pisos del edificio. La red tiene, además, un \textbf{switch de
-    nivel 2} por sector, al que se encuentran conectados los
-    dispositivos que pertenecen al departamento. A su vez, cada uno de
-    estos está conectado a un \textbf{switch de nivel 3} a través de
-    un \textbf{enlace Gigabit punto a punto}. A su vez, hay al menos
-    un \textbf{access point} en cada uno de los sectores de la
-    empresa, al cual se conectan la mayoría de los dispositivos
-    móviles de los empleados. También hay diversos dispositivos,
-    impresoras de red, lectores de códigos de barras inalámbricos,
-    cámaras IPs, teléfonos IPS, entre otros, conectados a los
-    \textbf{switches} o \textbf{access point} de cada sector.
-
-    A su vez, existen varios servidores conectados mediante un enlace
-    \textbf{PPP} al switch principal, que proveen de diversos servicios a las
-    estaciones de trabajo, por ejemplo: active directory, samba,
-    correo electrónico, backup, acceso a bases de datos, acceso a
-    sistemas, telefonía IP, acceso a internet, etc.
-
-    La conexión fue realizada mediante una conexión cableada
-    \textbf{PPP} entre el switch principal, y la computadora corriendo
-    el sniffer, lo que nos permite suponer que pese a activar el modo
-    promiscuo, sólo llegarán hasta la placa de red aquellos paquetes
-    que se encuentren dentro de su dominio de broadcast.
 
     \begin{table}\begin{center}
       \begin{tabular}{|c|c|c|}
@@ -353,7 +362,9 @@ de las dos fuentes elegidas es \emph{más compresible}.
     comprobar si efectivamente al aumentar el tiempo de medición, se
     produce el efecto esperado. 
 
-    En las figuras \ref{hyundai-1-s-pie}, \ref{hyundai-5-s-pie},
+    Tomando la medición original, se la cortó en intervalos de 1
+    minuto, 5 minutos, 10 minutos, 20 minutos y 30 minutos. En las
+    figuras \ref{hyundai-1-s-pie}, \ref{hyundai-5-s-pie},
     \ref{hyundai-10-s-pie}, \ref{hyundai-20-s-pie} y
     \ref{hyundai-30-s-pie} se puede ver claramente una progresión, en
     la que a medida que el tiempo de medición aumenta, el overhead de
@@ -373,13 +384,21 @@ de las dos fuentes elegidas es \emph{más compresible}.
     %------------------------------------------------------------------
     % HISTOGRAMA HYUNDAI
     %------------------------------------------------------------------	
-    \begin{figure}[h]\begin{center}
+    \begin{figure}[H]\begin{center}
       \includegraphics[width=0.5\textwidth]{%
       ../output/hyundai-s-histogram.png}
       \caption{S: Hyundai - Histograma}
       \label{hyundai-s-histogram}
     \end{center}\end{figure}
 
+    Se realizó además un gráfico de histograma (\emph{fig.
+    \ref{hyundai-s-histogram}}) y un gráfico de torta (\emph{fig.
+    \ref{hyundai-s-pie}}), que permiten apreciar la relación entre los
+    distintos protocolos de una forma visual e inmediata.
+
+    %------------------------------------------------------------------
+    % HYUNDAI TIEMPO - PROGRESION
+    %------------------------------------------------------------------ 
     \begin{figure}[H]\begin{center}
       \includegraphics[width=0.5\textwidth]{%
       ../output/hyundai-1-s-pie.png}
@@ -434,20 +453,18 @@ de las dos fuentes elegidas es \emph{más compresible}.
     computadoras, y se desconoce la cantidad de celulares conectados a ella.
     Los resultados fueron los siguientes.
   
-\begin{table}\begin{center}
-    \begin{tabular}{|c|c|c|}
-    \hline
-    \textbf{Protocolo} & \textbf{Informacion} & \textbf{Frecuencia} \\ \hline
-    \texttt{IPv6      }& 4.25        & 5.26\%     \\ \hline
-    \texttt{802.3     }& 6.41        & 1.17\%     \\ \hline
-    \texttt{IPv4      }& 0.28        & 82.40\%    \\ \hline
-    \texttt{ARP       }& 3.16        & 11.17\%    \\ \hline
-    \end{tabular}
-    \label{labos-dc-s-table}
-\end{center}\end{table}
+    \begin{table}\begin{center}
+      \begin{tabular}{|c|c|c|}
+      \hline
+      \textbf{Protocolo} & \textbf{Informacion} & \textbf{Frecuencia} \\ \hline
+      \texttt{IPv6      }& 4.25        & 5.26\%     \\ \hline
+      \texttt{802.3     }& 6.41        & 1.17\%     \\ \hline
+      \texttt{IPv4      }& 0.28        & 82.40\%    \\ \hline
+      \texttt{ARP       }& 3.16        & 11.17\%    \\ \hline
+      \end{tabular}
+      \label{labos-dc-s-table}
+    \end{center}\end{table}
 
-	
- 
     %------------------------------------------------------------------
     % TORTA LABOS-DC
     %------------------------------------------------------------------	
@@ -470,21 +487,22 @@ de las dos fuentes elegidas es \emph{más compresible}.
     \end{center}\end{figure}
 
 
-  El protocolo que más se escuchó fue \texttt{IPv4}, tal como se
-  observa en la figura \ref{labos-dc-30m-s-pie}, la cantidad de
-  paquetes  de este tipo fue del 82\% mientras que la de paquetes
-  \texttt{ARP} fue del 11\%. Se observa que el overhead del tipo \texttt{ARP} 
-  en un tiempo de 30 minutos es bajo pero no despreciable con respecto al 
-  total de paquetes de la red.
+    El protocolo que más se escuchó fue \texttt{IPv4}, tal como se
+    observa en la figura \ref{labos-dc-30m-s-pie}, la cantidad de
+    paquetes  de este tipo fue del 82\% mientras que la de paquetes
+    \texttt{ARP} fue del 11\%. Se observa que el overhead del tipo
+    \texttt{ARP} en un tiempo de 30 minutos es bajo pero no
+    despreciable con respecto al total de paquetes de la red.
 
-  La entropía de la fuente propuesta es de 0.882, como se observa en la
-  figura \ref{labos-dc-30m-s-histogram}, dejando por debajo de ella al
-  protocolo \texttt{IPv4} que, al presentar una mayor probabilidad de
-  aparición en la fuente, provoca que la información que aporta sea
-  poca y se destaque como nodo distinguido. Podemos encontrar al protocolo 
-  \texttt{802.3} que al tener poca probabilidad de aparición
-  (1\%), aporta mucha información, siendo el protocolo que más información
-  aporta.
+    La entropía de la fuente propuesta es de 0.882, como se observa en
+    la figura \ref{labos-dc-30m-s-histogram}, dejando por debajo de
+    ella al protocolo \texttt{IPv4} que, al presentar una mayor
+    probabilidad de aparición en la fuente, provoca que la información
+    que aporta sea poca y se destaque como nodo distinguido. Podemos
+    encontrar al protocolo
+    \texttt{802.3} que al tener poca probabilidad de aparición
+    (1\%), aporta mucha información, siendo el protocolo que más
+    información aporta.
 
     %------------------------------------------------------------------
     % SUBSECTION II-F: Conclusión
@@ -506,7 +524,7 @@ de las dos fuentes elegidas es \emph{más compresible}.
 
 %----------------------------------------------------------------------
 % SECTION III: Desarrollo - Fuente S_1
-%----------+------------------------------------------------------------
+%----------------------------------------------------------------------
 \section{Desarrollo - Fuente $S_1$}
   %--------------------------------------------------------------------
   % SUBSECTION III-A: CASA
