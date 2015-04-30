@@ -245,7 +245,7 @@ de las dos fuentes elegidas es \emph{más compresible}.
   \subsection{Hyundai}
 
     Esta medición fue realizada en la empresa Hyundai Motor Argentina,
-    en horario laboral, durante 2 horas. El edificio en donde se
+    en horario laboral, durante 5 horas. El edificio en donde se
     realizó la medición, cuenta con unos 30 estaciones de trabajo
     fijas (PC Desktop), y 10 Notebooks, distribuídas a través de los
     pisos del edificio. La red tiene, además, un \textbf{switch de
@@ -293,10 +293,41 @@ de las dos fuentes elegidas es \emph{más compresible}.
     predominancia de paquetes de protocolo IPv4.
 
     A priori, según los resultados de esta medición, parecería que
-    \texttt{ARP} no impone un overhead considerable. Sobre esto,
-    decidimos comparar esta medición con el resto, y buscar en qué
-    cosas se diferencian, con el fin de encontrar a qué se debe esta
-    situación de alta eficiencia.
+    \texttt{ARP} no impone un overhead considerable. Tomando este
+    hecho, decidimos comparar esta medición con el resto, y buscar en
+    qué cosas se diferencian, con el fin de encontrar a qué se debe
+    esta situación de alta eficiencia. Encontramos dos grandes
+    diferencias con el resto de las mediciones:
+
+    \begin{itemize}
+
+    \item El largo tiempo de medición / la alta cantidad de paquetes
+    capturados.
+
+    \item La medición, realizada mediante placa ethernet en modo
+    promiscuo, no tiene el alcance de una medición wireless en modo
+    monitor.
+
+    \item La red switcheada, que encapsula los dominios de broadcast y
+    colisión, reduciendo sensiblemente el tráfico de la red.
+
+    \end{itemize}
+
+    De estos tres puntos, el tiempo de medición como amortiguador del
+    overhead de ARP resulta sumamente interesante, en parte debido a
+    que las limitaciones de la medición en modo promiscuo eran sabidas
+    de antemano, y son inevitables, y el beneficio de una red de
+    switches en cascada fue explicado en clase. Además, es una
+    conjetura fácil de poner a prueba. Basta particionar los datos de
+    una misma captura, en intervalos de tiempo cada vez mayores, para
+    comprobar si efectivamente al aumentar el tiempo de medición, se
+    produce el efecto esperado. 
+
+    En las figuras \ref{hyundai-1-s-pie}, \ref{hyundai-5-s-pie},
+    \ref{hyundai-10-s-pie}, \ref{hyundai-20-s-pie} y
+    \ref{hyundai-30-s-pie} se puede ver claramente una progresión, en
+    la que a medida que el tiempo de medición aumenta, el overhead de
+    ARP disminuye.
 
     %------------------------------------------------------------------
   	% GRAFICOS HYUNDAI - TIEMPO
@@ -547,6 +578,14 @@ Hay muchas variaciones de los pasajes de Lorem Ipsum disponibles, pero la mayor�
     \begin{figure}[ht]\begin{center}
       \includegraphics[width=0.5\textwidth]{%
       ../output/hyundai-s1-histogram.png}
+      \vspace{-2em}
+      \caption{S$_1$: Hyundai - Histograma}
+      \label{hyundai-s1-histogram}
+    \end{center}\end{figure}
+
+    \begin{figure}[ht]\begin{center}
+      \includegraphics[width=0.5\textwidth]{%
+      ../output/hyundai-s1-graph.png}
       \vspace{-2em}
       \caption{S$_1$: Hyundai - Histograma}
       \label{hyundai-s1-histogram}
