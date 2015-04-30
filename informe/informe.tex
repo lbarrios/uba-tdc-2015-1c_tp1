@@ -126,11 +126,25 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
   %--------------------------------------------------------------------
   \subsection{Casa}
 
-  La siguiente medición fue realizada en una red LAN hogareña, en el horario
-  de las 15:00 hs, por un lapso de 3 hs. La herramienta utilizada fue la
-  indicada en el enunciado del trabajo. A esta LAN hubo conectadas 5 computadoras,
-  una impresora y 3 celulares al momento de la medición. Los resultados obtenidos
-  fueron los siguientes
+  La siguiente medición fue realizada en una red LAN hogareña, en el
+  horario de las 15:00 hs, por un lapso de 3 hs. La herramienta
+  utilizada fue la indicada en el enunciado del trabajo. A esta LAN
+  hubo conectadas 5 computadoras, una impresora y 3 celulares al
+  momento de la medición. Los resultados obtenidos fueron los
+  siguientes
+
+\begin{table}[h]\begin{center}
+    \begin{tabular}{|c|c|c|}
+    \hline
+    \textbf{Protocolo} & \textbf{Informacion} & \textbf{Frecuencia} \\ \hline
+    \texttt{802.1X    }& 15.38       & 0.00\%     \\ \hline
+    \texttt{IPv6      }& 9.59        & 0.13\%     \\ \hline
+    \texttt{ARP       }& 6.65        & 0.99\%     \\ \hline
+    \texttt{IPv4      }& 0.02        & 98.87\%    \\ \hline
+    \end{tabular} 
+    \caption{S: Casa - Mediciones}
+    \label{casa-s-table}
+\end{center}\end{table}
 
     %------------------------------------------------------------------
     % TORTA CASA
@@ -179,12 +193,28 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
     %------------------------------------------------------------------
     \subsection{Techint}
 
-    Esta medición fue realizada en la empresa Techint, en el horario de
-    las 11:00 am, por un lapso de 30 minutos. Se utilizó la herramienta
-    desarrollada en el ejercicio anterior. Se desconoce la cantidad de
-    computadoras o la topología de la red medida. La conexión a la red fue
-    efectuada mediante un cable de ethernet. Los resultados fueron
-    los siguientes.
+    Esta medición fue realizada en la empresa Techint, en el horario
+    de las 11:00 am, por un lapso de 30 minutos. Se utilizó la
+    herramienta desarrollada en el ejercicio anterior. Se desconoce la
+    cantidad de computadoras o la topología de la red medida. La
+    conexión a la red fue efectuada mediante un cable de ethernet. Los
+    resultados se pueden ver en la
+    \textbf{tabla\ref{techint-s-table}}.
+
+    \begin{table}\begin{center}
+      \begin{tabular}{|c|c|c|}
+      \hline
+      \textbf{Protocolo} & \textbf{Informacion} & \textbf{Frecuencia} \\ \hline
+      \texttt{ARP       }& 3.03        & 12.26\%    \\ \hline
+      \texttt{IPX       }& 6.40        & 1.19\%     \\ \hline
+      \texttt{IPv4      }& 0.82        & 56.55\%    \\ \hline
+      \texttt{802.3     }& 2.74        & 14.92\%    \\ \hline
+      \texttt{IPv6      }& 2.74        & 14.93\%    \\ \hline
+      \texttt{LLDP      }& 9.30        & 0.16\%     \\ \hline
+      \end{tabular}
+      \caption{S: Techint - Mediciones}
+      \label{techint-s-table}
+    \end{center}\end{table}
     
     %------------------------------------------------------------------
     % TORTA TECHINT
@@ -241,7 +271,90 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
   %--------------------------------------------------------------------
   \subsection{Hyundai}
 
-Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.
+    Esta medición fue realizada en la empresa Hyundai Motor Argentina,
+    en horario laboral, durante 5 horas. El edificio en donde se
+    realizó la medición, cuenta con unos 30 estaciones de trabajo
+    fijas (PC Desktop), y 10 Notebooks, distribuídas a través de los
+    pisos del edificio. La red tiene, además, un \textbf{switch de
+    nivel 2} por sector, al que se encuentran conectados los
+    dispositivos que pertenecen al departamento. A su vez, cada uno de
+    estos está conectado a un \textbf{switch de nivel 3} a través de
+    un \textbf{enlace Gigabit punto a punto}. A su vez, hay al menos
+    un \textbf{access point} en cada uno de los sectores de la
+    empresa, al cual se conectan la mayoría de los dispositivos
+    móviles de los empleados. También hay diversos dispositivos,
+    impresoras de red, lectores de códigos de barras inalámbricos,
+    cámaras IPs, teléfonos IPS, entre otros, conectados a los
+    \textbf{switches} o \textbf{access point} de cada sector.
+
+    A su vez, existen varios servidores conectados mediante un enlace
+    \textbf{PPP} al switch principal, que proveen de diversos servicios a las
+    estaciones de trabajo, por ejemplo: active directory, samba,
+    correo electrónico, backup, acceso a bases de datos, acceso a
+    sistemas, telefonía IP, acceso a internet, etc.
+
+    La conexión fue realizada mediante una conexión cableada
+    \textbf{PPP} entre el switch principal, y la computadora corriendo
+    el sniffer, lo que nos permite suponer que pese a activar el modo
+    promiscuo, sólo llegarán hasta la placa de red aquellos paquetes
+    que se encuentren dentro de su dominio de broadcast.
+
+    \begin{table}\begin{center}
+      \begin{tabular}{|c|c|c|}
+      \hline
+      \textbf{Protocolo}   & \textbf{Frecuencia} & \textbf{Informacion}\\ \hline
+      \texttt{ARP         }& 0.75\%     & 7.06       \\ \hline
+      \texttt{IPX         }& 0.01\%     & 13.41      \\ \hline
+      \texttt{IPv4        }& 98.82\%    & 0.02       \\ \hline
+      \texttt{IEEE\_26734 }& 0.00\%     & 16.21      \\ \hline
+      \texttt{802.3       }& 0.15\%     & 9.38       \\ \hline
+      \texttt{IPv6        }& 0.27\%     & 8.55       \\ \hline
+      \texttt{LLDP        }& 0.01\%     & 13.71      \\ \hline
+      \end{tabular}
+      \caption{S: Hyundai - Mediciones}
+      \label{hyundai-s-table}
+    \end{center}\end{table}
+
+    Se pueden apreciar los resultados de las mediciones en la tabla
+    \ref{hyundai-s-table}. Lo primero que se observa es una muy fuerte
+    predominancia de paquetes de protocolo IPv4.
+
+    A priori, según los resultados de esta medición, parecería que
+    \texttt{ARP} no impone un overhead considerable. Tomando este
+    hecho, decidimos comparar esta medición con el resto, y buscar en
+    qué cosas se diferencian, con el fin de encontrar a qué se debe
+    esta situación de alta eficiencia. Encontramos dos grandes
+    diferencias con el resto de las mediciones:
+
+    \begin{itemize}
+
+    \item El largo tiempo de medición / la alta cantidad de paquetes
+    capturados.
+
+    \item La medición, realizada mediante placa ethernet en modo
+    promiscuo, no tiene el alcance de una medición wireless en modo
+    monitor.
+
+    \item La red switcheada, que encapsula los dominios de broadcast y
+    colisión, reduciendo sensiblemente el tráfico de la red.
+
+    \end{itemize}
+
+    De estos tres puntos, el tiempo de medición como amortiguador del
+    overhead de ARP resulta sumamente interesante, en parte debido a
+    que las limitaciones de la medición en modo promiscuo eran sabidas
+    de antemano, y son inevitables, y el beneficio de una red de
+    switches en cascada fue explicado en clase. Además, es una
+    conjetura fácil de poner a prueba. Basta particionar los datos de
+    una misma captura, en intervalos de tiempo cada vez mayores, para
+    comprobar si efectivamente al aumentar el tiempo de medición, se
+    produce el efecto esperado. 
+
+    En las figuras \ref{hyundai-1-s-pie}, \ref{hyundai-5-s-pie},
+    \ref{hyundai-10-s-pie}, \ref{hyundai-20-s-pie} y
+    \ref{hyundai-30-s-pie} se puede ver claramente una progresión, en
+    la que a medida que el tiempo de medición aumenta, el overhead de
+    ARP disminuye.
 
     %------------------------------------------------------------------
   	% GRAFICOS HYUNDAI - TIEMPO
@@ -316,7 +429,20 @@ Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de te
     Se utilizó la herramienta explicada previamente. La red cuenta con 175
     computadoras, y se desconoce la cantidad de celulares conectados a ella.
     Los resultados fueron los siguientes.
-   
+  
+\begin{table}\begin{center}
+    \begin{tabular}{|c|c|c|}
+    \hline
+    \textbf{Protocolo} & \textbf{Informacion} & \textbf{Frecuencia} \\ \hline
+    \texttt{IPv6      }& 4.25        & 5.26\%     \\ \hline
+    \texttt{802.3     }& 6.41        & 1.17\%     \\ \hline
+    \texttt{IPv4      }& 0.28        & 82.40\%    \\ \hline
+    \texttt{ARP       }& 3.16        & 11.17\%    \\ \hline
+    \end{tabular}
+    \label{labos-dc-s-table}
+\end{center}\end{table}
+
+ 
     %------------------------------------------------------------------
     % TORTA LABOS-DC
     %------------------------------------------------------------------	
@@ -527,7 +653,7 @@ Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de te
 Hay muchas variaciones de los pasajes de Lorem Ipsum disponibles, pero la mayoría sufrió alteraciones en alguna manera, ya sea porque se le agregó humor, o palabras aleatorias que no parecen ni un poco creíbles. Si vas a utilizar un pasaje de Lorem Ipsum, necesitás estar seguro de que no hay nada avergonzante escondido en el medio del texto. Todos los generadores de Lorem Ipsum que se encuentran en Internet tienden a repetir trozos predefinidos cuando sea necesario, haciendo a este el único generador verdadero (válido) en la Internet. Usa un diccionario de mas de 200 palabras provenientes del latín, combinadas con estructuras muy útiles de sentencias, para generar texto de Lorem Ipsum que parezca razonable. Este Lorem Ipsum generado siempre estará libre de repeticiones, humor agregado o palabras no características del lenguaje, etc.
 
     %------------------------------------------------------------------
-    % TORTA TECHINT
+    % TORTA HYUNDAI
     %------------------------------------------------------------------
     \begin{figure}[ht]\begin{center}
       \includegraphics[width=0.5\textwidth]{%
@@ -538,7 +664,7 @@ Hay muchas variaciones de los pasajes de Lorem Ipsum disponibles, pero la mayor�
     \end{center}\end{figure}
 
     %------------------------------------------------------------------
-    % HISTOGRAMA TECHINT
+    % HISTOGRAMA HYUNDAI
     %------------------------------------------------------------------
     \begin{figure}[H]\begin{center}
       \includegraphics[width=0.5\textwidth]{%
@@ -546,6 +672,17 @@ Hay muchas variaciones de los pasajes de Lorem Ipsum disponibles, pero la mayor�
       \vspace{-2em}
       \caption{S$_1$: Hyundai - Histograma}
       \label{hyundai-s1-histogram}
+    \end{center}\end{figure}
+
+    %------------------------------------------------------------------
+    % TOPOLOGÍA DE RED HYUNDAI
+    %------------------------------------------------------------------
+    \begin{figure}[ht]\begin{center}
+      \includegraphics[width=0.5\textwidth]{%
+      ../output/hyundai-graph.png}
+      \vspace{-2em}
+      \caption{S$_1$: Hyundai - Topología de la Red}
+      \label{hyundai-graph}
     \end{center}\end{figure}
 
   %--------------------------------------------------------------------
