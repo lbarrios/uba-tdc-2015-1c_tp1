@@ -1,0 +1,26 @@
+se observan dos nodos distinguidos, nombrados como A y B, cuyas 
+775   frecuencias de aparición son las mayores. A su vez se puede distinguir
+una 
+776   jerarquía en la que además de estos nodos primarios existe una serie
+de 
+777   nodos de segundo nivel en cuanto a su frecuencia, tal como se observa
+en 
+778   la figura \ref{hyundai-s1-histogram}. 
+779  
+780   Esta jerarquía también es observable en la figura \ref{hyundai-graph},
+en 
+781   donde hay un nodo central bien marcado, y otros nodos importantes  en
+su periferia más 
+782   cercana. 
+783  
+784   Segun sabemos del entorno en donde fue realizada la medición, esto es 
+785   posiblemente una consecuencia de la topología de la red en donde se 
+786   realizó la medición, en particular pudimos corroborar que muchas de
+las 
+787   ips correspondientes a los nodos pertenecen a servidores, que brindan 
+788   servicios activos a todo el resto de las máquinas de la empresa. De
+esta 
+789   forma es comprensible que los mismos tengan una gran cantidad de 
+790   solicitudes \texttt{ARP}. 
+791  
+
