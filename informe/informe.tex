@@ -97,25 +97,25 @@ aquellos cuya probabilidad de aparición era alta, de forma tal que la
 información provista por el mismo fuera menor a la entropía de la
 fuente a la cuál el símbolo pertenecía. 
 
-Tomamos esta decisión porque, según Shannon, el nivel de entropía de una
-fuente habla de la máxima compresibilidad de cada bit en un mensaje enviado 
-con una codificación óptima ($H(F) \leq L(C)$). Luego, si la 
-fuente presenta símbolos cuya cantidad de información está
-por debajo de la entropía, son símbolos que tienen mucha probabilidad de
-aparecer en un mensaje en comparación con los otros, y podría ser 
-conveniente representar a estos símbolos con menos bits que al resto, para
-así disminuir la longitud media del código. Por ejemplo, supongamos que 
-enviamos números binarios, y sabemos que el símbolo $X = "00000000"$ aparece en 
-los mensajes la mitad del tiempo y que el resto de las tiras pueden aparecer 
-todas con la misma
-probabilidad. Entonces, $X$ brindaría una cantidad de información por debajo
-de la entropía, y convendría representar a esa tira simplemente con un $0$,
-y al resto de las tiras prefijarlas con el $1$. De esta manera, se ahorraría
-en promedio $7$.$1/2+(-1)$.$1/2 = 3$ bits en cada mensaje.
+Tomamos esta decisión porque, según Shannon, el nivel de entropía de
+una fuente habla de la máxima compresibilidad de cada bit en un
+mensaje enviado con una codificación óptima ($H(F) \leq L(C)$). Luego,
+si la fuente presenta símbolos cuya cantidad de información está por
+debajo de la entropía, son símbolos que tienen mucha probabilidad de
+aparecer en un mensaje en comparación con los otros, y podría ser
+conveniente representar a estos símbolos con menos bits que al resto,
+para así disminuir la longitud media del código. Por ejemplo,
+supongamos que enviamos números binarios, y sabemos que el símbolo $X
+= "00000000"$ aparece en los mensajes la mitad del tiempo y que el
+resto de las tiras pueden aparecer todas con la misma probabilidad.
+Entonces, $X$ brindaría una cantidad de información por debajo de la
+entropía, y convendría representar a esa tira simplemente con un $0$,
+y al resto de las tiras prefijarlas con el $1$. De esta manera, se
+ahorraría en promedio $7$.$1/2+(-1)$.$1/2 = 3$ bits en cada mensaje.
 
-Entonces, también analizaremos las entropías de las fuentes en cada una
-de las escuchas de red realizadas, y trataremos
-de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
+Entonces, también analizaremos las entropías de las fuentes en cada
+una de las escuchas de red realizadas, y trataremos de concluir cuál
+de las dos fuentes elegidas es \emph{más compresible}.
 
 %----------------------------------------------------------------------
 % SECTION II: Desarrollo - Fuente S
@@ -126,11 +126,25 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
   %--------------------------------------------------------------------
   \subsection{Casa}
 
-  La siguiente medición fue realizada en una red LAN hogareña, en el horario
-  de las 15:00 hs, por un lapso de 3 hs. La herramienta utilizada fue la
-  indicada en el enunciado del trabajo. A esta LAN hubo conectadas 5 computadoras,
-  una impresora y 3 celulares al momento de la medición. Los resultados obtenidos
-  fueron los siguientes
+  La siguiente medición fue realizada en una red LAN hogareña, en el
+  horario de las 15:00 hs, por un lapso de 3 hs. La herramienta
+  utilizada fue la indicada en el enunciado del trabajo. A esta LAN
+  hubo conectadas 5 computadoras, una impresora y 3 celulares al
+  momento de la medición. Los resultados obtenidos fueron los
+  siguientes
+
+\begin{table}\begin{center}
+    \begin{tabular}{|c|c|c|}
+    \hline
+    Protocolo & Informacion & Frecuencia \\ \hline
+    802.1X    & 15.38       & 0.00\%     \\ \hline
+    IPv6      & 9.59        & 0.13\%     \\ \hline
+    ARP       & 6.65        & 0.99\%     \\ \hline
+    IPv4      & 0.02        & 98.87\%    \\ \hline
+    \end{tabular} 
+    \caption{S: Casa - Mediciones}
+\end{center}\end{table}
+
 
     %------------------------------------------------------------------
     % TORTA CASA
@@ -159,16 +173,17 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
     observa en la figura \ref{marto-casa-3hs-s-pie}, la cantidad de
     paquetes  de este tipo fue del 98\% mientras que la de paquetes
     \texttt{ARP} fue del 1\%. Esto permite concluir que en el caso de
-    la red hogareña, el overhead del tipo \texttt{ARP} en un tiempo
-    de 3 horas es practicamente nulo, con respecto al total de
-    paquetes de la red.
+    la red hogareña, el overhead del tipo \texttt{ARP} en un tiempo de
+    3 horas es practicamente nulo, con respecto al total de paquetes
+    de la red.
 
-    La entropía de la fuente propuesta es de 0.095, lo que indica que los
-    símbolos emitidos por la fuente son muy previsibles. Esto se puede
-    observar en la figura \ref{marto-casa-3hs-s-histogram}, donde deja
-    por debajo de ella al protocolo \texttt{IPv4} que, al presentar una
-    mayor probabilidad de aparición en la fuente, provoca que la información que aporte sea
-    poca y lo destaque como nodo distinguido. A diferencia de
+    La entropía de la fuente propuesta es de 0.095, lo que indica que
+    los símbolos emitidos por la fuente son muy previsibles. Esto se
+    puede observar en la figura \ref{marto-casa-3hs-s-histogram},
+    donde deja por debajo de ella al protocolo \texttt{IPv4} que, al
+    presentar una mayor probabilidad de aparición en la fuente,
+    provoca que la información que aporte sea poca y lo destaque como
+    nodo distinguido. A diferencia de
     \texttt{IPv4}, podemos encontrar al protocolo \texttt{802.1X} que al
     tener poca probabilidad de aparición $(2.35 * 10^-5)$, aporta mucha
     información, siendo el protocolo que más aporta.
@@ -179,12 +194,26 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
     %------------------------------------------------------------------
     \subsection{Techint}
 
-    Esta medición fue realizada en la empresa Techint, en el horario de
-    las 11:00 am, por un lapso de 30 minutos. Se utilizó la herramienta
-    desarrollada en el ejercicio anterior. Se desconoce la cantidad de
-    computadoras o la topología de la red medida. La conexión a la red fue
-    efectuada mediante un cable de ethernet. Los resultados fueron
-    los siguientes.
+    Esta medición fue realizada en la empresa Techint, en el horario
+    de las 11:00 am, por un lapso de 30 minutos. Se utilizó la
+    herramienta desarrollada en el ejercicio anterior. Se desconoce la
+    cantidad de computadoras o la topología de la red medida. La
+    conexión a la red fue efectuada mediante un cable de ethernet. Los
+    resultados fueron los siguientes.
+
+\begin{table}\begin{center}
+    \begin{tabular}{|c|c|c|}
+    \hline
+    Protocolo & Informacion & Frecuencia \\ \hline
+    ARP       & 3.03        & 12.26\%    \\ \hline
+    IPX       & 6.40        & 1.19\%     \\ \hline
+    IPv4      & 0.82        & 56.55\%    \\ \hline
+    802.3     & 2.74        & 14.92\%    \\ \hline
+    IPv6      & 2.74        & 14.93\%    \\ \hline
+    LLDP      & 9.30        & 0.16\%     \\ \hline
+   \end{tabular}
+    \caption{S: Techint - Mediciones}
+\end{center}\end{table}
     
     %------------------------------------------------------------------
     % TORTA TECHINT
@@ -210,87 +239,100 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
     \end{center}\end{figure}
 
 
-    El protocolo que mas aparece en este escenario es \texttt{IPv4}, tal
-    como se observa en la figura \ref{techint-s-pie}, haciendo que 
-    su probabilidad sea la
-    mayor. Esto se ve reflejado en la figura \ref{techint-s-histogram},
-    en la cual se puede ver como
-    afecta la frecuencia de aparición del protocolo a la información
-    que este provee.
+    El protocolo que mas aparece en este escenario es \texttt{IPv4},
+    tal como se observa en la figura \ref{techint-s-pie}, haciendo que
+    su probabilidad sea la mayor. Esto se ve reflejado en la figura
+    \ref{techint-s-histogram}, en la cual se puede ver como afecta la
+    frecuencia de aparición del protocolo a la información que este
+    provee.
 
 
-    En este caso el nodo distinguido es el protocolo \texttt{IPv4}, 
-    pues la información que provee es menor a la entropía de la fuente 
-    utilizada(1.74) , y además es el único que está por debajo de ella. El
-    protocolo que mas información aporta es \texttt{LLDP}, ya que
-    su frecuencia de aparición(0.15\%) es la menor en la medición tomada. Esto
-    genera que las pocas veces que aparece aporte mas información en 
-    comparación con los protocolos que más aparecen, como por ejemplo 
+    En este caso el nodo distinguido es el protocolo \texttt{IPv4},
+    pues la información que provee es menor a la entropía de la fuente
+    utilizada(1.74) , y además es el único que está por debajo de
+    ella. El protocolo que mas información aporta es \texttt{LLDP}, ya
+    que su frecuencia de aparición(0.15\%) es la menor en la medición
+    tomada. Esto genera que las pocas veces que aparece aporte mas
+    información en comparación con los protocolos que más aparecen,
+    como por ejemplo
     \texttt{IPv4} cuyo porcentaje de aparición sobre el total es del 56\%
     tal como se observa en la figura \ref{techint-s-pie}.
 
     % ALGO MAS ACA?
-    También se puede observar en la figura \ref{techint-s-pie}, la gran cantidad de paquetes 
-    de tipo \texttt{ARP} (12\%) que aparecen, en comparación con los
-    de tipo \texttt{IPv6} (15\%) y \texttt{802.3} (14\%), que se encuentran
-    en segundo lugar y tercer lugar respectivamente. Esto demuestra el overhead
-    del protocolo \texttt{ARP} sobre el total de paquetes escuchados.
+    También se puede observar en la figura \ref{techint-s-pie}, la
+    gran cantidad de paquetes de tipo \texttt{ARP} (12\%) que
+    aparecen, en comparación con los de tipo \texttt{IPv6} (15\%) y
+    \texttt{802.3} (14\%), que se encuentran en segundo lugar y tercer
+    lugar respectivamente. Esto demuestra el overhead del protocolo
+    \texttt{ARP} sobre el total de paquetes escuchados.
 
   %--------------------------------------------------------------------
   % SUBSECTION II-C: HYUNDAI
   %--------------------------------------------------------------------
   \subsection{Hyundai}
 
-Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.
+    Esta medición fue realizada en la empresa Hyundai Motor Argentina,
+    en horario laboral, durante 2 horas. El edificio en donde se
+    realizó la medición, cuenta con unos 30 estaciones de trabajo
+    fijas (PC Desktop), y 10 Notebooks, distribuídas a través de los
+    pisos del edificio. La red tiene, además, un \textbf{switch de
+    nivel 2} por sector, al que se encuentran conectados los
+    dispositivos que pertenecen al departamento. A su vez, cada uno de
+    estos está conectado a un \textbf{switch de nivel 3} a través de
+    un \textbf{enlace Gigabit punto a punto}. A su vez, hay al menos
+    un \textbf{access point} en cada uno de los sectores de la
+    empresa, al cual se conectan la mayoría de los dispositivos
+    móviles de los empleados. También hay diversos dispositivos,
+    impresoras de red, lectores de códigos de barras inalámbricos,
+    cámaras IPs, teléfonos IPS, entre otros, conectados a los
+    \textbf{switches} o \textbf{access point} de cada sector.
+
+    A su vez, existen varios servidores conectados mediante un enlace
+    \textbf{PPP} al switch principal, que proveen de diversos servicios a las
+    estaciones de trabajo, por ejemplo: active directory, samba,
+    correo electrónico, backup, acceso a bases de datos, acceso a
+    sistemas, telefonía IP, acceso a internet, etc.
+
+    La conexión fue realizada mediante una conexión cableada
+    \textbf{PPP} entre el switch principal, y la computadora corriendo
+    el sniffer, lo que nos permite suponer que pese a activar el modo
+    promiscuo, sólo llegarán hasta la placa de red aquellos paquetes
+    que se encuentren dentro de su dominio de broadcast.
+
+    \begin{table}\begin{center}
+      \begin{tabular}{|c|c|c|}
+      \hline
+      \textbf{Protocolo}   & \textbf{Frecuencia} & \textbf{Informacion}\\ \hline
+      \texttt{ARP         }& 0.75\%     & 7.06       \\ \hline
+      \texttt{IPX         }& 0.01\%     & 13.41      \\ \hline
+      \texttt{IPv4        }& 98.82\%    & 0.02       \\ \hline
+      \texttt{IEEE\_26734 }& 0.00\%     & 16.21      \\ \hline
+      \texttt{802.3       }& 0.15\%     & 9.38       \\ \hline
+      \texttt{IPv6        }& 0.27\%     & 8.55       \\ \hline
+      \texttt{LLDP        }& 0.01\%     & 13.71      \\ \hline
+      \end{tabular}
+      \caption{S: Hyundai - Mediciones}
+      \label{hyundai-s-table}
+    \end{center}\end{table}
+
+    Se pueden apreciar los resultados de las mediciones en la tabla
+    \ref{hyundai-s-table}. Lo primero que se observa es una muy fuerte
+    predominancia de paquetes de protocolo IPv4.
+
+    A priori, según los resultados de esta medición, parecería que
+    \texttt{ARP} no impone un overhead considerable. Sobre esto,
+    decidimos comparar esta medición con el resto, y buscar en qué
+    cosas se diferencian, con el fin de encontrar a qué se debe esta
+    situación de alta eficiencia.
 
     %------------------------------------------------------------------
   	% GRAFICOS HYUNDAI - TIEMPO
     %------------------------------------------------------------------
-    \begin{figure}[H]\begin{center}
-      \includegraphics[width=0.5\textwidth]{%
-      ../output/hyundai-1-s-pie.png}
-      \vspace{-3em}
-      \caption{S: Hyundai - Torta (1 minuto)}
-      \label{hyundai-1-s-pie}
-    \end{center}\end{figure}
-    %
-    \begin{figure}[H]\begin{center}
-      \includegraphics[width=0.5\textwidth]{%
-      ../output/hyundai-5-s-pie.png}
-      \vspace{-3em}
-      \caption{S: Hyundai - Torta (5 minutos)}
-      \label{hyundai-5-s-pie}
-    \end{center}\end{figure}
-    %
-    \begin{figure}[H]\begin{center}
-      \includegraphics[width=0.5\textwidth]{%
-      ../output/hyundai-10-s-pie.png}
-      \vspace{-3em}
-      \caption{S: Hyundai - Torta (10 minutos)}
-      \label{hyundai-10-s-pie}
-    \end{center}\end{figure}
-    %
-    \begin{figure}[H]\begin{center}
-      \includegraphics[width=0.5\textwidth]{%
-      ../output/hyundai-20-s-pie.png}
-      \vspace{-3em}
-      \caption{S: Hyundai - Torta (20 minutos)}
-      \label{hyundai-20-s-pie}
-    \end{center}\end{figure}
-    %  
-    \begin{figure}[H]\begin{center}
-      \includegraphics[width=0.5\textwidth]{%
-      ../output/hyundai-30-s-pie.png}
-      \vspace{-3em}
-      \caption{S: Hyundai - Torta (30 minutos)}
-      \label{hyundai-30-s-pie}
-    \end{center}\end{figure}
-    %
-    \begin{figure}[H]\begin{center}
+    \begin{figure}[h]\begin{center}
       \includegraphics[width=0.5\textwidth]{%
       ../output/hyundai-s-pie.png}
       \vspace{-3em}
-      \caption{S: Hyundai - Torta (Total)}
+      \caption{S: Hyundai - Torta}
       \label{hyundai-s-pie}
     \end{center}\end{figure}
 
@@ -304,6 +346,47 @@ Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de te
       \label{hyundai-s-histogram}
     \end{center}\end{figure}
 
+    \begin{figure}[H]\begin{center}
+      \includegraphics[width=0.5\textwidth]{%
+      ../output/hyundai-1-s-pie.png}
+      \vspace{-3em}
+      \caption{S: Hyundai - Torta (primer minuto)}
+      \label{hyundai-1-s-pie}
+    \end{center}\end{figure}
+    %
+    \begin{figure}[H]\begin{center}
+      \includegraphics[width=0.5\textwidth]{%
+      ../output/hyundai-5-s-pie.png}
+      \vspace{-3em}
+      \caption{S: Hyundai - Torta (primeros 5 minutos)}
+      \label{hyundai-5-s-pie}
+    \end{center}\end{figure}
+    %
+    \begin{figure}[H]\begin{center}
+      \includegraphics[width=0.5\textwidth]{%
+      ../output/hyundai-10-s-pie.png}
+      \vspace{-3em}
+      \caption{S: Hyundai - Torta (primeros 10 minutos)}
+      \label{hyundai-10-s-pie}
+    \end{center}\end{figure}
+    %
+    \begin{figure}[H]\begin{center}
+      \includegraphics[width=0.5\textwidth]{%
+      ../output/hyundai-20-s-pie.png}
+      \vspace{-3em}
+      \caption{S: Hyundai - Torta (primeros 20 minutos)}
+      \label{hyundai-20-s-pie}
+    \end{center}\end{figure}
+    %  
+    \begin{figure}[H]\begin{center}
+      \includegraphics[width=0.5\textwidth]{%
+      ../output/hyundai-30-s-pie.png}
+      \vspace{-3em}
+      \caption{S: Hyundai - Torta (primeros 30 minutos)}
+      \label{hyundai-30-s-pie}
+    \end{center}\end{figure}
+    %
+
   %
   %--------------------------------------------------------------------
   % SUBSECTION II-D: LABORATORIOS DC
@@ -316,7 +399,20 @@ Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de te
     Se utilizó la herramienta explicada previamente. La red cuenta con 175
     computadoras, y se desconoce la cantidad de celulares conectados a ella.
     Los resultados fueron los siguientes.
-   
+  
+\begin{table}\begin{center}
+    \begin{tabular}{|c|c|c|}
+    \hline
+    Protocolo & Informacion & Frecuencia \\ \hline
+    IPv6      & 4.25        & 5.26\%     \\ \hline
+    802.3     & 6.41        & 1.17\%     \\ \hline
+    IPv4      & 0.28        & 82.40\%    \\ \hline
+    ARP       & 3.16        & 11.17\%    \\ \hline
+    \end{tabular}
+\end{center}\end{table}
+
+	
+ 
     %------------------------------------------------------------------
     % TORTA LABOS-DC
     %------------------------------------------------------------------	
