@@ -133,16 +133,17 @@ de las dos fuentes elegidas es \emph{más compresible}.
   momento de la medición. Los resultados obtenidos fueron los
   siguientes
 
-\begin{table}\begin{center}
+\begin{table}[h]\begin{center}
     \begin{tabular}{|c|c|c|}
     \hline
-    Protocolo & Informacion & Frecuencia \\ \hline
-    802.1X    & 15.38       & 0.00\%     \\ \hline
-    IPv6      & 9.59        & 0.13\%     \\ \hline
-    ARP       & 6.65        & 0.99\%     \\ \hline
-    IPv4      & 0.02        & 98.87\%    \\ \hline
+    \textbf{Protocolo} & \textbf{Informacion} & \textbf{Frecuencia} \\ \hline
+    \texttt{802.1X    }& 15.38       & 0.00\%     \\ \hline
+    \texttt{IPv6      }& 9.59        & 0.13\%     \\ \hline
+    \texttt{ARP       }& 6.65        & 0.99\%     \\ \hline
+    \texttt{IPv4      }& 0.02        & 98.87\%    \\ \hline
     \end{tabular} 
     \caption{S: Casa - Mediciones}
+    \label{casa-s-table}
 \end{center}\end{table}
 
 
@@ -199,21 +200,23 @@ de las dos fuentes elegidas es \emph{más compresible}.
     herramienta desarrollada en el ejercicio anterior. Se desconoce la
     cantidad de computadoras o la topología de la red medida. La
     conexión a la red fue efectuada mediante un cable de ethernet. Los
-    resultados fueron los siguientes.
+    resultados se pueden ver en la
+    \textbf{tabla\ref{techint-s-table}}.
 
-\begin{table}\begin{center}
-    \begin{tabular}{|c|c|c|}
-    \hline
-    Protocolo & Informacion & Frecuencia \\ \hline
-    ARP       & 3.03        & 12.26\%    \\ \hline
-    IPX       & 6.40        & 1.19\%     \\ \hline
-    IPv4      & 0.82        & 56.55\%    \\ \hline
-    802.3     & 2.74        & 14.92\%    \\ \hline
-    IPv6      & 2.74        & 14.93\%    \\ \hline
-    LLDP      & 9.30        & 0.16\%     \\ \hline
-   \end{tabular}
-    \caption{S: Techint - Mediciones}
-\end{center}\end{table}
+    \begin{table}\begin{center}
+      \begin{tabular}{|c|c|c|}
+      \hline
+      \textbf{Protocolo} & \textbf{Informacion} & \textbf{Frecuencia} \\ \hline
+      \texttt{ARP       }& 3.03        & 12.26\%    \\ \hline
+      \texttt{IPX       }& 6.40        & 1.19\%     \\ \hline
+      \texttt{IPv4      }& 0.82        & 56.55\%    \\ \hline
+      \texttt{802.3     }& 2.74        & 14.92\%    \\ \hline
+      \texttt{IPv6      }& 2.74        & 14.93\%    \\ \hline
+      \texttt{LLDP      }& 9.30        & 0.16\%     \\ \hline
+      \end{tabular}
+      \caption{S: Techint - Mediciones}
+      \label{techint-s-table}
+    \end{center}\end{table}
     
     %------------------------------------------------------------------
     % TORTA TECHINT
@@ -434,12 +437,13 @@ de las dos fuentes elegidas es \emph{más compresible}.
 \begin{table}\begin{center}
     \begin{tabular}{|c|c|c|}
     \hline
-    Protocolo & Informacion & Frecuencia \\ \hline
-    IPv6      & 4.25        & 5.26\%     \\ \hline
-    802.3     & 6.41        & 1.17\%     \\ \hline
-    IPv4      & 0.28        & 82.40\%    \\ \hline
-    ARP       & 3.16        & 11.17\%    \\ \hline
+    \textbf{Protocolo} & \textbf{Informacion} & \textbf{Frecuencia} \\ \hline
+    \texttt{IPv6      }& 4.25        & 5.26\%     \\ \hline
+    \texttt{802.3     }& 6.41        & 1.17\%     \\ \hline
+    \texttt{IPv4      }& 0.28        & 82.40\%    \\ \hline
+    \texttt{ARP       }& 3.16        & 11.17\%    \\ \hline
     \end{tabular}
+    \label{labos-dc-s-table}
 \end{center}\end{table}
 
 	
@@ -644,7 +648,7 @@ de las dos fuentes elegidas es \emph{más compresible}.
 Hay muchas variaciones de los pasajes de Lorem Ipsum disponibles, pero la mayoría sufrió alteraciones en alguna manera, ya sea porque se le agregó humor, o palabras aleatorias que no parecen ni un poco creíbles. Si vas a utilizar un pasaje de Lorem Ipsum, necesitás estar seguro de que no hay nada avergonzante escondido en el medio del texto. Todos los generadores de Lorem Ipsum que se encuentran en Internet tienden a repetir trozos predefinidos cuando sea necesario, haciendo a este el único generador verdadero (válido) en la Internet. Usa un diccionario de mas de 200 palabras provenientes del latín, combinadas con estructuras muy útiles de sentencias, para generar texto de Lorem Ipsum que parezca razonable. Este Lorem Ipsum generado siempre estará libre de repeticiones, humor agregado o palabras no características del lenguaje, etc.
 
     %------------------------------------------------------------------
-    % TORTA TECHINT
+    % TORTA HYUNDAI
     %------------------------------------------------------------------
     \begin{figure}[ht]\begin{center}
       \includegraphics[width=0.5\textwidth]{%
@@ -655,7 +659,7 @@ Hay muchas variaciones de los pasajes de Lorem Ipsum disponibles, pero la mayor�
     \end{center}\end{figure}
 
     %------------------------------------------------------------------
-    % HISTOGRAMA TECHINT
+    % HISTOGRAMA HYUNDAI
     %------------------------------------------------------------------
     \begin{figure}[H]\begin{center}
       \includegraphics[width=0.5\textwidth]{%
@@ -665,12 +669,15 @@ Hay muchas variaciones de los pasajes de Lorem Ipsum disponibles, pero la mayor�
       \label{hyundai-s1-histogram}
     \end{center}\end{figure}
 
+    %------------------------------------------------------------------
+    % TOPOLOGÍA DE RED HYUNDAI
+    %------------------------------------------------------------------
     \begin{figure}[ht]\begin{center}
       \includegraphics[width=0.5\textwidth]{%
-      ../output/hyundai-s1-graph.png}
+      ../output/hyundai-graph.png}
       \vspace{-2em}
-      \caption{S$_1$: Hyundai - Histograma}
-      \label{hyundai-s1-histogram}
+      \caption{S$_1$: Hyundai - Topología de la Red}
+      \label{hyundai-graph}
     \end{center}\end{figure}
 
   %--------------------------------------------------------------------
