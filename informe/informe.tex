@@ -24,9 +24,9 @@ Trabajo Práctico N$^o$ 1: Wiretapping}
 	\and
 	Gonzalo Benegas,
 	\and
-	Martin Caravario, 
+	Martin Caravario,
 	\and
-	Pedro Rodriguez 
+	Pedro Rodriguez
 }
 
 % make the title
@@ -63,7 +63,7 @@ protocolos distinguidos en la red. Para su visualización, elegimos la
 realización de gráficos de torta e histogramas, ya que los
 consideramos los más apropiados.
 
-Para cada una de las mediciones consideramos las siguientes fuentes: 
+Para cada una de las mediciones consideramos las siguientes fuentes:
 \begin{itemize}
 
   \item $S = \{s_{1} \dots s_{n}\}$, provista por la cátedra, donde
@@ -95,18 +95,18 @@ por el host requerido, mediante un paquete \emph{reply}.
 Para distinguir \emph{nodos} (símbolos) en este contexto, tomamos a
 aquellos cuya probabilidad de aparición era alta, de forma tal que la
 información provista por el mismo fuera menor a la entropía de la
-fuente a la cuál el símbolo pertenecía. 
+fuente a la cuál el símbolo pertenecía.
 
 Tomamos esta decisión porque, según Shannon, el nivel de entropía de una
-fuente habla de la máxima compresibilidad de cada bit en un mensaje enviado 
-con una codificación óptima ($H(F) \leq L(C)$). Luego, si la 
+fuente habla de la máxima compresibilidad de cada bit en un mensaje enviado
+con una codificación óptima ($H(F) \leq L(C)$). Luego, si la
 fuente presenta símbolos cuya cantidad de información está
 por debajo de la entropía, son símbolos que tienen mucha probabilidad de
-aparecer en un mensaje en comparación con los otros, y podría ser 
+aparecer en un mensaje en comparación con los otros, y podría ser
 conveniente representar a estos símbolos con menos bits que al resto, para
-así disminuir la longitud media del código. Por ejemplo, supongamos que 
-enviamos números binarios, y sabemos que el símbolo $X = "00000000"$ aparece en 
-los mensajes la mitad del tiempo y que el resto de las tiras pueden aparecer 
+así disminuir la longitud media del código. Por ejemplo, supongamos que
+enviamos números binarios, y sabemos que el símbolo $X = "00000000"$ aparece en
+los mensajes la mitad del tiempo y que el resto de las tiras pueden aparecer
 todas con la misma
 probabilidad. Entonces, $X$ brindaría una cantidad de información por debajo
 de la entropía, y convendría representar a esa tira simplemente con un $0$,
@@ -187,7 +187,7 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
     \texttt{IPv6      }& 9.59        & 0.13\%     \\ \hline
     \texttt{ARP       }& 6.65        & 0.99\%     \\ \hline
     \texttt{IPv4      }& 0.02        & 98.87\%    \\ \hline
-    \end{tabular} 
+    \end{tabular}
     \caption{S: Casa - Mediciones}
     \label{casa-s-table}
 \end{center}\end{table}
@@ -226,7 +226,7 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
     %------------------------------------------------------------------
     % HISTOGRAMA CASA
     %------------------------------------------------------------------
-    
+
     \begin{figure}[ht]\begin{center}
      \includegraphics[width=0.5\textwidth]{%
       ../output/marto-casa-3hs-s-histogram.png}
@@ -256,7 +256,7 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
       \caption{S: Techint - Mediciones}
       \label{techint-s-table}
     \end{center}\end{table}
-    
+
     El protocolo que más aparece en este escenario es \texttt{IPv4},
     tal como se observa en la figura \ref{techint-s-pie}, haciendo que
     su probabilidad sea la mayor. Esto se ve reflejado en la figura
@@ -267,7 +267,7 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
     %------------------------------------------------------------------
     % TORTA TECHINT
     %------------------------------------------------------------------
-    
+
     \begin{figure}[ht]\begin{center}
       \includegraphics[width=0.5\textwidth]{%
       ../output/techint-s-pie.png}
@@ -275,7 +275,7 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
       \caption{S: Techint - Torta}
       \label{techint-s-pie}
     \end{center}\end{figure}
- 
+
     En este caso el nodo distinguido es el protocolo \texttt{IPv4},
     pues la información que provee es menor a la entropía de la fuente
     utilizada(1.74) , y además es el único que está por debajo de
@@ -290,7 +290,7 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
     %------------------------------------------------------------------
     % HISTOGRAMA TECHINT
     %------------------------------------------------------------------
-     
+
     \begin{figure}[ht]\begin{center}
       \includegraphics[width=0.5\textwidth]{%
       ../output/techint-s-histogram.png}
@@ -306,7 +306,7 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
     \texttt{ARP} sobre el total de paquetes escuchados.
 
     El protocolo que mas aparece en este escenario es \texttt{IPv4}, tal
-    como se observa en la figura \ref{techint-s-pie}, haciendo que 
+    como se observa en la figura \ref{techint-s-pie}, haciendo que
     su probabilidad sea la
     mayor. Esto se ve reflejado en la figura \ref{techint-s-histogram},
     en la cual se puede ver como
@@ -314,13 +314,13 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
     que este provee.
 
 
-    En este caso el nodo distinguido es el protocolo \texttt{IPv4}, 
-    pues la información que provee es menor a la entropía de la fuente 
+    En este caso el nodo distinguido es el protocolo \texttt{IPv4},
+    pues la información que provee es menor a la entropía de la fuente
     utilizada(1.74) , y además es el único que está por debajo de ella. El
     protocolo que mas información aporta es \texttt{LLDP}, ya que
     su frecuencia de aparición(0.15\%) es la menor en la medición tomada. Esto
-    genera que las pocas veces que aparece aporte mas información en 
-    comparación con los protocolos que más aparecen, como por ejemplo 
+    genera que las pocas veces que aparece aporte mas información en
+    comparación con los protocolos que más aparecen, como por ejemplo
     \texttt{IPv4} cuyo porcentaje de aparición sobre el total es del 56\%
     tal como se observa en la figura \ref{techint-s-pie}.
 
@@ -378,7 +378,7 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
     conjetura fácil de poner a prueba. Basta particionar los datos de
     una misma captura, en intervalos de tiempo cada vez mayores, para
     comprobar si efectivamente al aumentar el tiempo de medición, se
-    produce el efecto esperado. 
+    produce el efecto esperado.
 
     Tomando la medición original, se la cortó en intervalos de 1
     minuto, 5 minutos, 10 minutos, 20 minutos y 30 minutos. En las
@@ -401,7 +401,7 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
 
     %------------------------------------------------------------------
     % HISTOGRAMA HYUNDAI
-    %------------------------------------------------------------------	
+    %------------------------------------------------------------------
     \begin{figure}[H]\begin{center}
       \includegraphics[width=0.5\textwidth]{%
       ../output/hyundai-s-histogram.png}
@@ -416,7 +416,7 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
 
     %------------------------------------------------------------------
     % HYUNDAI TIEMPO - PROGRESION
-    %------------------------------------------------------------------ 
+    %------------------------------------------------------------------
     \begin{figure}[H]\begin{center}
       \includegraphics[width=0.5\textwidth]{%
       ../output/hyundai-1-s-pie.png}
@@ -448,7 +448,7 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
       \caption{S: Hyundai - Torta (20 minutos)}
       \label{hyundai-20-s-pie}
     \end{center}\end{figure}
-    %  
+    %
     \begin{figure}[H]\begin{center}
       \includegraphics[width=0.5\textwidth]{%
       ../output/hyundai-30-s-pie.png}
@@ -457,23 +457,6 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
       \label{hyundai-30-s-pie}
     \end{center}\end{figure}
     %
-    \begin{figure}[H]\begin{center}
-      \includegraphics[width=0.5\textwidth]{%
-      ../output/hyundai-s-pie.png}
-      \vspace{-3em}
-      \caption{S: Hyundai - Torta (Total)}
-      \label{hyundai-s-pie}
-    \end{center}\end{figure}
-
-    %------------------------------------------------------------------
-    % HISTOGRAMA HYUNDAI
-    %------------------------------------------------------------------	
-    \begin{figure}[h]\begin{center}
-      \includegraphics[width=0.5\textwidth]{%
-      ../output/hyundai-s-histogram.png}
-      \caption{S: Hyundai - Histograma}
-      \label{hyundai-s-histogram}
-    \end{center}\end{figure}
 
   %
   %--------------------------------------------------------------------
@@ -487,7 +470,7 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
     Se utilizó la herramienta explicada previamente. La red cuenta con 175
     computadoras, y se desconoce la cantidad de celulares conectados a ella.
     Los resultados fueron los siguientes.
-  
+
     \begin{table}\begin{center}
       \begin{tabular}{|c|c|c|}
       \hline
@@ -498,11 +481,12 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
       \texttt{ARP       }& 3.16        & 11.17\%    \\ \hline
       \end{tabular}
       \label{labos-dc-s-table}
+      \caption{S: Laboratorios DC - Mediciones}
     \end{center}\end{table}
 
     %------------------------------------------------------------------
     % TORTA LABOS-DC
-    %------------------------------------------------------------------	
+    %------------------------------------------------------------------
     \begin{figure}[ht]\begin{center}
       \includegraphics[width=0.5\textwidth]{%
       ../output/labos-dc-30m-s-pie.png}
@@ -513,7 +497,7 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
 
     %------------------------------------------------------------------
     % HISTOGRAMA LABOS-DC
-    %------------------------------------------------------------------	
+    %------------------------------------------------------------------
     \begin{figure}[ht]\begin{center}
       \includegraphics[width=0.5\textwidth]{%
       ../output/labos-dc-30m-s-histogram.png}
@@ -542,7 +526,12 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
     % SUBSECTION II-F: Conclusión
     %------------------------------------------------------------------
     \subsection{Conclusión}
-    % HABLAR SOBRE EL PREDOMINIO DE IPV4 SOBRE IPV6 QUE TODAVIA NO ESTA BIEN IMPLEMENTADO EN 
+
+    Notamos una fuerte tendencia del protocolo IPv4 frente al resto. Pese a que IPv6 ya se encuentra vigente hace años, es sabido el hecho de que su implementación aún no se ha extendido como se preveía. En algunas redes pudimos notar, sin embargo, una representación no negligible.
+
+    Con respecto al overhead impuesto por el protocolo ARP, notamos que no es lo suficientemente significativo como para ser motivo de preocupación, sobretodo cuando la red tiene una alta participación de otros protocolos, en donde se puede notar que mientras ARP produce una carga que se podría considerar constante o periódica, debido a la tabla caché de ARP, las cargas impuestas por otros protocoles responden a la intensidad de uso de la red. ARP en cambio, no presenta esta particularidad.
+
+    % HABLAR SOBRE EL PREDOMINIO DE IPV4 SOBRE IPV6 QUE TODAVIA NO ESTA BIEN IMPLEMENTADO EN
     % TODOS LADOS
 
     % IMPACTO DE ARP: SE PIERDE MUCHO TIEMPO EN PROTOCOLOS DE "MANTENIMIENTO" QUE NO APORTAN
@@ -566,9 +555,9 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
   \subsection{Casa}
 
   Las condiciones de esta medición son las mismas que las mencionadas
-  en la sección II-A, solamente se cambió la fuente utilizada y se
+  en la introducción, solamente se cambió la fuente utilizada y se
   filtraron los paquetes segun el tipo \texttt{ARP}.
-  
+
   También, con los datos escuchados, se confeccionó un grafo en el
   cual cada nodo es una dirección ip, y cada arista representa a un
   paquete enviado de una ip a otra, con un grosor que representa la
@@ -598,7 +587,7 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
       \vspace{-2em}
       \caption{S$_1$: Casa - Histograma}
       \label{marto-casa-3hs-s1-histogram}
-    \end{center}\end{figure}	
+    \end{center}\end{figure}
 
     %------------------------------------------------------------------
     % GRAFO CASA
@@ -609,8 +598,8 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
       \vspace{-2em}
       \caption{S$_1$: Casa - Grafo}
       \label{marto-casa-3hs-graph}
-    \end{center}\end{figure}	
-  
+    \end{center}\end{figure}
+
   La ip que más aparece en los paquetes de tipo \texttt{ARP}, dentro
   del campo \textit{destino}, es la 190.168.1.100, tal como se observa
   en la figura \ref{marto-casa-3hs-s1-pie}. Esta ip al ser la que más
@@ -644,13 +633,13 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
   \subsection{Techint}
 
   Las condiciones en las que se midió fueron las mismas a la detallada
-  en la sección II-B, solamente se cambió la fuente utilizada y se
+  en la introducción, solamente se cambió la fuente utilizada y se
   filtraron los paquetes segun el tipo \texttt{ARP}.
 
     %------------------------------------------------------------------
     % TORTA TECHINT
     %------------------------------------------------------------------
-    \begin{figure}[H]\begin{center}
+    \begin{figure}[ht]\begin{center}
       \includegraphics[width=0.5\textwidth]{%
       ../output/techint-s1-pie.png}
       \vspace{-2em}
@@ -668,7 +657,7 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
       \caption{S$_1$: Techint - Histograma}
       \label{techint-s1-histogram}
     \end{center}\end{figure}
-  
+
     %------------------------------------------------------------------
     % GRAFO TECHINT
     %------------------------------------------------------------------
@@ -679,12 +668,12 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
       \caption{S$_1$: Techint - Grafo}
       \label{techint-s1-graph}
     \end{center}\end{figure}
-  
+
 
   En este caso se encontró un subconjunto de nodos distinguidos, los
   cuales presentan una frecuencia significativamente mayor en
   comparación con el resto de los nodos. Esto se puede observar en la
-  figura \ref{techint-s1-pie}. 
+  figura \ref{techint-s1-pie}.
 
   Todos estos nodos aportaron un información menor a la entropía de la
   fuente, la cual fue de 4.73. Estos estan enumerados con letras de la
@@ -711,7 +700,24 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
   %--------------------------------------------------------------------
   \subsection{Hyundai}
 
-Hay muchas variaciones de los pasajes de Lorem Ipsum disponibles, pero la mayoría sufrió alteraciones en alguna manera, ya sea porque se le agregó humor, o palabras aleatorias que no parecen ni un poco creíbles. Si vas a utilizar un pasaje de Lorem Ipsum, necesitás estar seguro de que no hay nada avergonzante escondido en el medio del texto. Todos los generadores de Lorem Ipsum que se encuentran en Internet tienden a repetir trozos predefinidos cuando sea necesario, haciendo a este el único generador verdadero (válido) en la Internet. Usa un diccionario de mas de 200 palabras provenientes del latín, combinadas con estructuras muy útiles de sentencias, para generar texto de Lorem Ipsum que parezca razonable. Este Lorem Ipsum generado siempre estará libre de repeticiones, humor agregado o palabras no características del lenguaje, etc.
+Se observan dos nodos distinguidos, nombrados como A y B, cuyas
+frecuencias de aparición son las mayores. A su vez se puede distinguir una
+jerarquía en la que además de estos nodos primarios existe una serie de
+nodos de segundo nivel en cuanto a su frecuencia, tal como se observa en
+la figura \ref{hyundai-s1-histogram}.
+
+Esta jerarquía también es observable en la figura \ref{hyundai-graph}, en
+donde hay un nodo central bien marcado, y otros nodos importantes  en su periferia más
+cercana.
+
+Segun sabemos del entorno en donde fue realizada la medición, esto es
+posiblemente una consecuencia de la topología de la red en donde se
+realizó la medición, en particular pudimos corroborar que muchas de las
+ips correspondientes a los nodos pertenecen a servidores, que brindan
+servicios activos a todo el resto de las máquinas de la empresa. De esta
+forma es comprensible que los mismos tengan una gran cantidad de
+solicitudes \texttt{ARP}.
+
 
     %------------------------------------------------------------------
     % TORTA HYUNDAI
@@ -752,13 +758,13 @@ Hay muchas variaciones de los pasajes de Lorem Ipsum disponibles, pero la mayor�
   \subsection{Laboratorios DC}
 
   Las condiciones en las que se midió fueron las mismas a la detallada
-  en la sección II-D, solamente se cambió la fuente utilizada y se
+  en la introducción, solamente se cambió la fuente utilizada y se
   filtraron los paquetes segun el tipo \texttt{ARP}.
 
     %------------------------------------------------------------------
     % TORTA LABOS-DC
     %------------------------------------------------------------------
-    \begin{figure}[H]\begin{center}
+    \begin{figure}[ht]\begin{center}
       \includegraphics[width=0.5\textwidth]{%
       ../output/labos-dc-30m-s1-pie.png}
       \vspace{-2em}
@@ -769,25 +775,25 @@ Hay muchas variaciones de los pasajes de Lorem Ipsum disponibles, pero la mayor�
     %------------------------------------------------------------------
     % HISTOGRAMA LABOS-DC
     %------------------------------------------------------------------
-    \begin{figure}[H]\begin{center}
+    \begin{figure}[ht]\begin{center}
       \includegraphics[width=0.5\textwidth]{%
       ../output/labos-dc-30m-s1-histogram.png}
       %\vspace{-2em}
       \caption{S$_1$: Laboratorios DC - Histograma}
       \label{labos-dc-30m-s1-histogram}
     \end{center}\end{figure}
-   
+
     %------------------------------------------------------------------
     % GRAFO LABOS-DC
     %------------------------------------------------------------------
-    \begin{figure}[H]\begin{center}
+    \begin{figure}[ht]\begin{center}
       \includegraphics[width=0.5\textwidth]{%
       ../output/labos-dc-30m-graph.png}
       %\vspace{-2em}
       \caption{S$_1$: Laboratorios DC - Grafo}
       \label{labos-dc-30m-graph}
     \end{center}\end{figure}
-  
+
   En esta medición se encontraron 20 nodos distinguidos. Dentro de
   este subconjunto se observó un nodo en particular, el S, como se
   puede observar en la figura \ref{labos-dc-30m-s1-pie}. Sin embargo,
@@ -799,13 +805,13 @@ Hay muchas variaciones de los pasajes de Lorem Ipsum disponibles, pero la mayor�
   B,C,D,E y F, que están todos por debajo de la entropía y casualmente
   cada uno aporta casi la misma cantidad de información.
 
-  También se observó en el histograma de la figura 
+  También se observó en el histograma de la figura
   \ref{labos-dc-30m-s1-histogram} que a simple vista hay
   aproximadamente 4 niveles de cantidad de información provista por
   los símbolos, y que hay poca variación en la cantidad de información
   provista por prácticamente todos ellos (excepto por el símbolo S,
   que aporta 2.44 de información).
-  
+
   Finalmente, realizamos un grafo de igual forma que en las mediciones
   anteriores. En este caso se observa una única componente conexa, con
   muchos nodos frontera conectados mediante una arista con pocos nodos
@@ -815,26 +821,53 @@ Hay muchas variaciones de los pasajes de Lorem Ipsum disponibles, pero la mayor�
   mediciones ya analizadas, será esperable que estos símbolos sean la
   dirección ip de dispositivos (nodos) destacados en la red local
   estudiada (por ejemplo, podrían ser routers).
-  
+
 
   %--------------------------------------------------------------------
   % SUBSECTION III-F: Conclusión
   %--------------------------------------------------------------------
   \subsection{Conclusión de las mediciones}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum cursus ipsum sapien, a laoreet orci viverra a. Etiam tempus tempor risus non egestas. Maecenas viverra turpis at velit commodo varius. Quisque lobortis elit vitae nibh condimentum, et tincidunt velit pretium. Fusce vitae lacus mi. Suspendisse at bibendum tellus. Fusce maximus nulla libero, sed ornare ex convallis eu. In hac habitasse platea dictumst. Pellentesque commodo rhoncus turpis, sit amet laoreet ex dignissim sit amet. Maecenas in nibh ut purus consequat varius sed at nulla. Duis in magna ut augue aliquam vestibulum. Quisque rhoncus vehicula elementum. Duis tristique imperdiet molestie. Nam placerat tellus finibus laoreet ultrices. Proin feugiat aliquet convallis. Nulla tempus aliquam sem.
+  En todas las mediciones se encontraron indicios que parecen responder a una topología lógica con forma de estrella subyacente. Esto se condice con lo visto en clase ya que responde a las metodologías de ruteo explicadas. Por ejemplo, routers en cascada o subredes bien definidas.
 
+  A diferencia de la fuente anterior, se encontraron en todos los casos más de un símbolo distinguido. Aparentemente, la distribución de probabilidades de esta fuente tiene una estructura jerárquica.
+
+\newpage
 %----------------------------------------------------------------------
 % SECTION IV: Conclusión
 %----------------------------------------------------------------------
 \section{Conclusión}
 
-Fusce pellentesque egestas euismod. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eu imperdiet risus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam porttitor, sapien vel vestibulum tincidunt, elit orci bibendum enim, ut dignissim massa metus in elit. Proin id imperdiet justo. Maecenas egestas, tortor quis blandit sagittis, diam ante eleifend elit, et volutpat tortor velit eget ligula. Nulla sit amet libero tellus.
+Para finalizar, podemos decir que nos divirtió mucho
+la realización de este TP, ya que fuimos capaces de
+internalizarnos en el funcionamiento de las redes de
+área local (LAN) que usamos desde temprana edad
+prácticamente todos los días de nuestras vidas.
 
-Aliquam rhoncus euismod hendrerit. Integer quis nunc non enim tincidunt aliquam nec id dolor. Pellentesque et eleifend urna. Sed dictum in est eu ullamcorper. Cras suscipit scelerisque dignissim. Vestibulum at ligula orci. Phasellus sit amet mauris bibendum dolor ullamcorper fermentum id id elit. In pharetra malesuada gravida. Proin vitae ultrices tellus, at iaculis tellus. Proin suscipit quis velit sit amet finibus.
+Pudimos entender que para la comunicación entre un
+servidor y un host, se tienen que efectuar una serie
+de intercambios de datos entre distintas capas de datos
+de la red. También, utilizamos lo aprendido en clase
+de teoría de la información para analizar características
+de las redes analizadas.
 
-Curabitur vitae nulla libero. Suspendisse in velit id mi scelerisque iaculis ullamcorper lacinia magna. Curabitur at nulla imperdiet, vehicula dolor in, sodales erat. Pellentesque vel erat ligula. Vestibulum eu lectus ornare, gravida ex a, aliquet diam. Aliquam ut nisl sit amet dui tempus ornare. Curabitur ullamcorper, enim et laoreet finibus, enim magna molestie magna, sed semper augue odio eget neque. Sed non est posuere, malesuada magna in, luctus diam. Aliquam posuere placerat libero at sollicitudin. Sed lacus enim, maximus sit amet placerat consectetur, tincidunt eget diam.
+Como ya fue dicho, sobre un mismo conjunto de mediciones
+de red, definimos dos fuentes distintas: $S$ y $S_1$.
+Pudimos observar que las entropías presentadas en los
+experimentos sobre la fuente $S$ fueron menores que las
+presentadas sobre la fuente $S_1$. A partir de esto, y
+aplicando lo que nos enseñó Shannon de teoría de la
+información, podemos concluir que la fuente $S$ es
+\emph{más compresible} que la fuente $S_1$. Es decir, que
+en teoría se podría lograr una codificación óptima de longitud
+media menor de la fuente $S$.
 
-\end{document}565   particular 20 (de la A-S). Dentro de este subconjunto se
-observó un nodo
+Además, en todos los experimentos (sobre ambas fuentes),
+identificamos nodos distinguidos (por debajo de la entropía de
+la fuente).
 
+El trabajo práctico tuvo un componente no presente en trabajos previos que fue la toma de mediciones en el entorno. Esto nos permitió realizar inferencias sobre el mundo real.
+
+
+
+\end{document}
