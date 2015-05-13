@@ -10,6 +10,16 @@
 \usepackage{graphicx}
 % dont use geometry package
 %\usepackage{geometry}
+
+% "hack" to place figures in subsection
+\usepackage{placeins}
+\let\Oldsection\section
+\renewcommand{\section}{\FloatBarrier\Oldsection}
+\let\Oldsubsection\subsection
+\renewcommand{\subsection}{\FloatBarrier\Oldsubsection}
+\let\Oldsubsubsection\subsubsection
+\renewcommand{\subsubsection}{\FloatBarrier\Oldsubsubsection}
+
 \begin{document}
 
 %----------------------------------------------------------------------
@@ -183,18 +193,18 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
 
    Los resultados obtenidos fueron los siguientes
 
-\begin{table}[h]\begin{center}
-    \begin{tabular}{|c|c|c|}
-    \hline
-    \textbf{Protocolo} & \textbf{Informacion} & \textbf{Frecuencia} \\ \hline
-    \texttt{802.1X    }& 15.38       & 0.00\%     \\ \hline
-    \texttt{IPv6      }& 9.59        & 0.13\%     \\ \hline
-    \texttt{ARP       }& 6.65        & 0.99\%     \\ \hline
-    \texttt{IPv4      }& 0.02        & 98.87\%    \\ \hline
-    \end{tabular}
-    \caption{S: Casa - Mediciones}
-    \label{casa-s-table}
-\end{center}\end{table}
+  \begin{table}[ht]\begin{center}
+      \begin{tabular}{|c|c|c|}
+      \hline
+      \textbf{Protocolo} & \textbf{Informacion} & \textbf{Frecuencia} \\ \hline
+      \texttt{802.1X    }& 15.38       & 0.00\%     \\ \hline
+      \texttt{IPv6      }& 9.59        & 0.13\%     \\ \hline
+      \texttt{ARP       }& 6.65        & 0.99\%     \\ \hline
+      \texttt{IPv4      }& 0.02        & 98.87\%    \\ \hline
+      \end{tabular}
+      \caption{S: Casa - Mediciones}
+      \label{casa-s-table}
+  \end{center}\end{table}
 
     El protocolo que más fue escuchado fue \texttt{IPv4}, tal como se
     observa en la figura \ref{marto-casa-3hs-s-pie}, la cantidad de
@@ -254,7 +264,7 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
     Los resultados se pueden ver en la
     \textbf{tabla\ref{techint-s-table}}.
 
-    \begin{table}\begin{center}
+    \begin{table}[ht]\begin{center}
       \begin{tabular}{|c|c|c|}
       \hline
       \textbf{Protocolo} & \textbf{Informacion} & \textbf{Frecuencia} \\ \hline
@@ -340,9 +350,10 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
   %--------------------------------------------------------------------
   % SUBSECTION II-C: HYUNDAI
   %--------------------------------------------------------------------
+  \FloatBarrier
   \subsection{Hyundai}
 
-    \begin{table}\begin{center}
+    \begin{table}[ht]\begin{center}
       \begin{tabular}{|c|c|c|}
       \hline
       \textbf{Protocolo}   & \textbf{Frecuencia} & \textbf{Informacion}\\ \hline
@@ -404,7 +415,7 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
     %------------------------------------------------------------------
   	% GRAFICOS HYUNDAI - TIEMPO
     %------------------------------------------------------------------
-    \begin{figure}[h]\begin{center}
+    \begin{figure}[ht]\begin{center}
       \includegraphics[width=0.5\textwidth]{%
       ../output/hyundai-s-pie.png}
       \vspace{-3em}
@@ -415,7 +426,7 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
     %------------------------------------------------------------------
     % HISTOGRAMA HYUNDAI
     %------------------------------------------------------------------
-    \begin{figure}[H]\begin{center}
+    \begin{figure}[ht]\begin{center}
       \includegraphics[width=0.5\textwidth]{%
       ../output/hyundai-s-histogram.png}
       \caption{S: Hyundai - Histograma}
@@ -430,7 +441,7 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
     %------------------------------------------------------------------
     % HYUNDAI TIEMPO - PROGRESION
     %------------------------------------------------------------------
-    \begin{figure}[H]\begin{center}
+    \begin{figure}[ht]\begin{center}
       \includegraphics[width=0.5\textwidth]{%
       ../output/hyundai-1-s-pie.png}
       \vspace{-3em}
@@ -438,7 +449,7 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
       \label{hyundai-1-s-pie}
     \end{center}\end{figure}
     %
-    \begin{figure}[H]\begin{center}
+    \begin{figure}[ht]\begin{center}
       \includegraphics[width=0.5\textwidth]{%
       ../output/hyundai-5-s-pie.png}
       \vspace{-3em}
@@ -446,7 +457,7 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
       \label{hyundai-5-s-pie}
     \end{center}\end{figure}
     %
-    \begin{figure}[H]\begin{center}
+    \begin{figure}[ht]\begin{center}
       \includegraphics[width=0.5\textwidth]{%
       ../output/hyundai-10-s-pie.png}
       \vspace{-3em}
@@ -454,7 +465,7 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
       \label{hyundai-10-s-pie}
     \end{center}\end{figure}
     %
-    \begin{figure}[H]\begin{center}
+    \begin{figure}[ht]\begin{center}
       \includegraphics[width=0.5\textwidth]{%
       ../output/hyundai-20-s-pie.png}
       \vspace{-3em}
@@ -462,7 +473,7 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
       \label{hyundai-20-s-pie}
     \end{center}\end{figure}
     %
-    \begin{figure}[H]\begin{center}
+    \begin{figure}[ht]\begin{center}
       \includegraphics[width=0.5\textwidth]{%
       ../output/hyundai-30-s-pie.png}
       \vspace{-3em}
@@ -470,7 +481,6 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
       \label{hyundai-30-s-pie}
     \end{center}\end{figure}
     %
-
   %
   %--------------------------------------------------------------------
   % SUBSECTION II-D: LABORATORIOS DC
@@ -479,7 +489,7 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
   \subsection{Laboratorios DC}    
     Los resultados fueron los siguientes.
 
-    \begin{table}\begin{center}
+    \begin{table}[ht]\begin{center}
       \begin{tabular}{|c|c|c|}
       \hline
       \textbf{Protocolo} & \textbf{Informacion} & \textbf{Frecuencia} \\ \hline
@@ -551,7 +561,6 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
     % También se observa el gran predominio de \texttt{IPv4} sobre \texttt{IPv6},
     % el cual actualmente no esta implementado ni funcionando en todos
     % los sistemas.
-
 
 %----------------------------------------------------------------------
 % SECTION III: Desarrollo - Fuente S_1
@@ -677,7 +686,7 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
     %------------------------------------------------------------------
     % GRAFO TECHINT
     %------------------------------------------------------------------
-    \begin{figure}[H]\begin{center}
+    \begin{figure}[ht]\begin{center}
       \includegraphics[width=0.5\textwidth]{%
       ../output/techint-s1-graph.png}
       \vspace{-2em}
@@ -714,29 +723,29 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
   %--------------------------------------------------------------------
   \subsection{Hyundai}
 
-Se observan dos nodos distinguidos, nombrados como A y B, cuyas
-frecuencias de aparición son las mayores. A su vez se puede distinguir una
-jerarquía en la que además de estos nodos primarios existe una serie de
-nodos de segundo nivel en cuanto a su frecuencia, tal como se observa en
-la figura \ref{hyundai-s1-histogram}.
+  Se observan dos nodos distinguidos, nombrados como A y B, cuyas frecuencias
+  de aparición son las mayores. A su vez se puede distinguir una jerarquía en
+  la que además de estos nodos primarios existe una serie de nodos de segundo
+  nivel en cuanto a su frecuencia, tal como se observa en la figura
+  \ref{hyundai-s1-histogram}.
 
-Esta jerarquía también es observable en la figura \ref{hyundai-graph}, en
-donde hay un nodo central bien marcado, y otros nodos importantes  en su periferia más
-cercana.
+  Esta jerarquía también es observable en la figura \ref{hyundai-graph}, en
+  donde hay un nodo central bien marcado, y otros nodos importantesen su
+  periferia más cercana.
 
-Segun sabemos del entorno en donde fue realizada la medición, esto es
-posiblemente una consecuencia de la topología de la red en donde se
-realizó la medición, en particular pudimos corroborar que muchas de las
-ips correspondientes a los nodos pertenecen a servidores, que brindan
-servicios activos a todo el resto de las máquinas de la empresa. De esta
-forma es comprensible que los mismos tengan una gran cantidad de
-solicitudes \texttt{ARP}.
+  Segun sabemos del entorno en donde fue realizada la medición, esto es
+  posiblemente una consecuencia de la topología de la red en donde se realizó
+  la medición, en particular pudimos corroborar que muchas de las ips
+  correspondientes a los nodos pertenecen a servidores, que brindan servicios
+  activos a todo el resto de las máquinas de la empresa. De esta forma es
+  comprensible que los mismos tengan una gran cantidad de solicitudes
+  \texttt{ARP}.
 
 
     %------------------------------------------------------------------
-    % TORTA TECHINT
+    % TORTA HYUNDAI
     %------------------------------------------------------------------
-    \begin{figure}[H]\begin{center}
+    \begin{figure}[ht]\begin{center}
       \includegraphics[width=0.5\textwidth]{%
       ../output/hyundai-s1-pie.png}
       \vspace{-2em}
@@ -745,9 +754,9 @@ solicitudes \texttt{ARP}.
     \end{center}\end{figure}
 
     %------------------------------------------------------------------
-    % HISTOGRAMA TECHINT
+    % HISTOGRAMA HYUNDAI
     %------------------------------------------------------------------
-    \begin{figure}[H]\begin{center}
+    \begin{figure}[ht]\begin{center}
       \includegraphics[width=0.5\textwidth]{%
       ../output/hyundai-s1-histogram.png}
       \vspace{-2em}
@@ -756,33 +765,33 @@ solicitudes \texttt{ARP}.
     \end{center}\end{figure}
 
     %------------------------------------------------------------------
-    % GRAFO Hyundai
+    % GRAFO HYUNDAI
     %------------------------------------------------------------------
-    \begin{figure}[H]\begin{center}
+    \begin{figure}[ht]\begin{center}
       \includegraphics[width=0.5\textwidth]{%
       ../output/hyundai-graph.png}
       %\vspace{-2em}
       \caption{S$_1$: Grafo Hyundai}
-      \label{huyndai-graph}
+      \label{hyundai-graph}
     \end{center}\end{figure}
   
-  Se observan dos nodos distinguidos, nombrados como A y B, cuyas
-  frecuencias de aparición son las mayores. A su vez se puede distinguir una
-  jerarquía en la que además de estos nodos primarios existe una serie de
-  nodos de segundo nivel en cuanto a su frecuencia, tal como se observa en
-  la figura \ref{hyundai-s1-histogram}.
+    Se observan dos nodos distinguidos, nombrados como A y B, cuyas
+    frecuencias de aparición son las mayores. A su vez se puede distinguir una
+    jerarquía en la que además de estos nodos primarios existe una serie de
+    nodos de segundo nivel en cuanto a su frecuencia, tal como se observa en
+    la figura \ref{hyundai-s1-histogram}.
 
-  Esta jerarquía también es observable en la figura \ref{hyundai-graph}, en
-  donde hay un nodo central bien marcado, y otros nodos importantes  en su periferia más
-  cercana.
+    Esta jerarquía también es observable en la figura \ref{hyundai-graph}, en
+    donde hay un nodo central bien marcado, y otros nodos importantes  en su
+    periferia más cercana.
 
-  Segun sabemos del entorno en donde fue realizada la medición, esto es
-  posiblemente una consecuencia de la topología de la red en donde se
-  realizó la medición, en particular pudimos corroborar que muchas de las
-  ips correspondientes a los nodos pertenecen a servidores, que brindan
-  servicios activos a todo el resto de las máquinas de la empresa. De esta
-  forma es comprensible que los mismos tengan una gran cantidad de
-  solicitudes \texttt{ARP}.
+    Segun sabemos del entorno en donde fue realizada la medición, esto es
+    posiblemente una consecuencia de la topología de la red en donde se
+    realizó la medición, en particular pudimos corroborar que muchas de las
+    ips correspondientes a los nodos pertenecen a servidores, que brindan
+    servicios activos a todo el resto de las máquinas de la empresa. De esta
+    forma es comprensible que los mismos tengan una gran cantidad de
+    solicitudes \texttt{ARP}.
 
   %--------------------------------------------------------------------
   % SUBSECTION III-D: LABORATORIOS DC
@@ -826,42 +835,45 @@ solicitudes \texttt{ARP}.
       \label{labos-dc-30m-graph}
     \end{center}\end{figure}
 
-  En esta medición se encontraron 20 nodos distinguidos. Dentro de
-  este subconjunto se observó un nodo en particular, el S, como se
-  puede observar en la figura \ref{labos-dc-30m-s1-pie}. Sin embargo,
-  en la figura \ref{labos-dc-30m-s1-histogram} no se puede apreciar
-  que aporta poca información y queda debajo de la entropía (8.33),
-  puesto que la cantidad de símbolos graficados es muy grande,
-  haciendo que el ancho de la columna que lo representa en el
-  histograma no sea visible. Sí son visibles el conjunto de nodos
-  B,C,D,E y F, que están todos por debajo de la entropía y casualmente
-  cada uno aporta casi la misma cantidad de información.
+    En esta medición se encontraron 20 nodos distinguidos. Dentro de este
+    subconjunto se observó un nodo en particular, el S, como se puede observar
+    en la figura \ref{labos-dc-30m-s1-pie}. Sin embargo, en la figura \ref
+    {labos-dc-30m-s1-histogram} no se puede apreciar que aporta poca
+    información y queda debajo de la entropía (8.33), puesto que la cantidad
+    de símbolos graficados es muy grande, haciendo que el ancho de la columna
+    que lo representa en el histograma no sea visible. Sí son visibles el
+    conjunto de nodos B,C,D,E y F, que están todos por debajo de la entropía y
+    casualmente cada uno aporta casi la misma cantidad de información.
 
-  También se observó en el histograma de la figura
-  \ref{labos-dc-30m-s1-histogram} que a simple vista hay
-  aproximadamente 4 niveles de cantidad de información provista por
-  los símbolos, y que hay poca variación en la cantidad de información
-  provista por prácticamente todos ellos (excepto por el símbolo S,
-  que aporta 2.44 de información).
+    También se observó en el histograma de la figura \ref{labos-dc-30m-s1-histogram} 
+    que a simple vista hay aproximadamente 4 niveles de
+    cantidad de información provista por los símbolos, y que hay poca
+    variación en la cantidad de información provista por prácticamente todos
+    ellos (excepto por el símbolo S, que aporta 2.44 de información).
 
-  Finalmente, realizamos un grafo de igual forma que en las mediciones
-  anteriores. En este caso se observa una única componente conexa, con
-  muchos nodos frontera conectados mediante una arista con pocos nodos
-  centrales. Los gráficos sigieren que estos se correspondan con los
-  símbolos que están por debajo de la entropía en el histograma de la
-  figura \ref{labos-dc-30m-s1-histogram}. Al igual que en las
-  mediciones ya analizadas, será esperable que estos símbolos sean la
-  dirección ip de dispositivos (nodos) destacados en la red local
-  estudiada (por ejemplo, podrían ser routers).
+    Finalmente, realizamos un grafo de igual forma que en las mediciones
+    anteriores. En este caso se observa una única componente conexa, con
+    muchos nodos frontera conectados mediante una arista con pocos nodos
+    centrales. Los gráficos sigieren que estos se correspondan con los
+    símbolos que están por debajo de la entropía en el histograma de la figura
+    \ref{labos-dc-30m-s1-histogram}. Al igual que en las mediciones ya
+    analizadas, será esperable que estos símbolos sean la dirección ip de
+    dispositivos (nodos) destacados en la red local estudiada (por ejemplo,
+    podrían ser routers).
 
   %--------------------------------------------------------------------
   % SUBSECTION III-F: Conclusión
   %--------------------------------------------------------------------
   \subsection{Conclusión de las mediciones}
 
-  En todas las mediciones se encontraron indicios que parecen responder a una topología lógica con forma de estrella subyacente. Esto se condice con lo visto en clase ya que responde a las metodologías de ruteo explicadas. Por ejemplo, routers en cascada o subredes bien definidas.
+  En todas las mediciones se encontraron indicios que parecen responder a una
+  topología lógica con forma de estrella subyacente. Esto se condice con lo
+  visto en clase ya que responde a las metodologías de ruteo explicadas. Por
+  ejemplo, routers en cascada o subredes bien definidas.
 
-  A diferencia de la fuente anterior, se encontraron en todos los casos más de un símbolo distinguido. Aparentemente, la distribución de probabilidades de esta fuente tiene una estructura jerárquica.
+  A diferencia de la fuente anterior, se encontraron en todos los casos más de
+  un símbolo distinguido. Aparentemente, la distribución de probabilidades de
+  esta fuente tiene una estructura jerárquica.
 
 \newpage
 %----------------------------------------------------------------------
@@ -869,36 +881,30 @@ solicitudes \texttt{ARP}.
 %----------------------------------------------------------------------
 \section{Conclusión}
 
-Para finalizar, podemos decir que nos divirtió mucho
-la realización de este TP, ya que fuimos capaces de
-internalizarnos en el funcionamiento de las redes de
-área local (LAN) que usamos desde temprana edad
-prácticamente todos los días de nuestras vidas.
+Para finalizar, podemos decir que nos divirtió mucho la realización de este
+TP, ya que fuimos capaces de internalizarnos en el funcionamiento de las redes
+de área local (LAN) que usamos desde temprana edad prácticamente todos los
+días de nuestras vidas.
 
-Pudimos entender que para la comunicación entre un
-servidor y un host, se tienen que efectuar una serie
-de intercambios de datos entre distintas capas de datos
-de la red. También, utilizamos lo aprendido en clase
-de teoría de la información para analizar características
-de las redes analizadas.
+Pudimos entender que para la comunicación entre un servidor y un host, se
+tienen que efectuar una serie de intercambios de datos entre distintas capas
+de datos de la red. También, utilizamos lo aprendido en clase de teoría de la
+información para analizar características de las redes analizadas.
 
-Como ya fue dicho, sobre un mismo conjunto de mediciones
-de red, definimos dos fuentes distintas: $S$ y $S_1$.
-Pudimos observar que las entropías presentadas en los
-experimentos sobre la fuente $S$ fueron menores que las
-presentadas sobre la fuente $S_1$. A partir de esto, y
-aplicando lo que nos enseñó Shannon de teoría de la
-información, podemos concluir que la fuente $S$ es
-\emph{más compresible} que la fuente $S_1$. Es decir, que
-en teoría se podría lograr una codificación óptima de longitud
-media menor de la fuente $S$.
+Como ya fue dicho, sobre un mismo conjunto de mediciones de red, definimos dos
+fuentes distintas: $S$ y $S_1$. Pudimos observar que las entropías presentadas
+en los experimentos sobre la fuente $S$ fueron menores que las presentadas
+sobre la fuente $S_1$. A partir de esto, y aplicando lo que nos enseñó Shannon
+de teoría de la información, podemos concluir que la fuente $S$ es \emph{más
+compresible} que la fuente $S_1$. Es decir, que en teoría se podría lograr una
+codificación óptima de longitud media menor de la fuente $S$.
 
 Además, en todos los experimentos (sobre ambas fuentes),
 identificamos nodos distinguidos (por debajo de la entropía de
 la fuente).
 
-El trabajo práctico tuvo un componente no presente en trabajos previos que fue la toma de mediciones en el entorno. Esto nos permitió realizar inferencias sobre el mundo real.
-
-
+El trabajo práctico tuvo un componente no presente en trabajos previos que fue
+la toma de mediciones en el entorno. Esto nos permitió realizar inferencias
+sobre el mundo real.
 
 \end{document}
