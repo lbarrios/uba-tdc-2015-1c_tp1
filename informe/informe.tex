@@ -71,8 +71,8 @@ Para cada una de las mediciones consideramos las siguientes fuentes:
   2.
 
   \item $S_{1} = \{s_{1} \dots s_{n}\} $, determinada por nosotros,
-  donde $s_i$ es el valor del campo destino (\texttt{IP}) cada paquete
-  de capa 2 de tipo \texttt{ARP}.
+  donde $s_i$ es el valor del campo destino (MAC) cada paquete de
+  capa 2 de tipo ARP.
 
 \end{itemize}
 
@@ -119,7 +119,7 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
 
 \subsection{Casa}
 
-  Esta siguiente medición fue realizada en una red LAN hogareña, en el
+  Esta medición fue realizada en una red LAN hogareña, en el
   horario de las 15:00 hs, por un lapso de 3 hs. La herramienta
   utilizada fue la indicada en el enunciado del trabajo. A esta LAN
   hubo conectadas 5 computadoras, una impresora y 3 celulares al
@@ -166,7 +166,11 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
 
 \subsection{Laboratorios DC}
 
-
+  Esta medición fue realizada en los laboratorios del departamento de
+  computación, en el horario de las 17 hs, por un lapso de 30 minutos.
+  Se utilizó la herramienta explicada previamente. La red cuenta con
+  175 computadoras, y se desconoce la cantidad de celulares conectados
+  a ella.
 
 %----------------------------------------------------------------------
 % SECTION II: Desarrollo - Fuente S
@@ -212,17 +216,6 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
       \label{marto-casa-3hs-s-pie}
     \end{center}\end{figure}
 
-    La entropía de la fuente propuesta es de 0.095, lo que indica que
-    los símbolos emitidos por la fuente son muy previsibles. Esto se
-    puede observar en la figura \ref{marto-casa-3hs-s-histogram},
-    donde deja por debajo de ella al protocolo \texttt{IPv4} que, al
-    presentar una mayor probabilidad de aparición en la fuente,
-    provoca que la información que aporte sea poca y lo destaque como
-    nodo distinguido. A diferencia de \texttt{IPv4}, podemos encontrar
-    al protocolo \texttt{802.1X} que al tener poca probabilidad de
-    aparición $(2.35 * 10^-5)$, aporta mucha información, siendo el
-    protocolo que más aporta.
-
     %------------------------------------------------------------------
     % HISTOGRAMA CASA
     %------------------------------------------------------------------
@@ -234,6 +227,25 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
       \label{marto-casa-3hs-s-histogram}
     \end{center}\end{figure}
 
+    El protocolo que más fue escuchado fue \texttt{IPv4}, tal como se
+    observa en la figura \ref{marto-casa-3hs-s-pie}, la cantidad de
+    paquetes  de este tipo fue del 98\% mientras que la de paquetes
+    \texttt{ARP} fue del 1\%. Esto permite concluir que en el caso de
+    la red hogareña, el overhead del tipo \texttt{ARP} en un tiempo
+    de 3 horas es practicamente nulo, con respecto al total de
+    paquetes de la red.
+
+    La entropía de la fuente propuesta es de 0.095, lo que indica que los
+    símbolos emitidos por la fuente son muy previsibles. Esto se puede
+    observar en la figura \ref{marto-casa-3hs-s-histogram}, donde deja
+    por debajo de ella al protocolo \texttt{IPv4} que, al presentar una
+    mayor probabilidad de aparición en la fuente, provoca que la información que aporte sea
+    poca y lo destaque como nodo distinguido. A diferencia de
+    \texttt{IPv4}, podemos encontrar al protocolo \texttt{802.1X} que al
+    tener poca probabilidad de aparición $(2.35 * 10^-5)$, aporta mucha
+    información, siendo el protocolo que más aporta.
+      
+    
     %------------------------------------------------------------------
     % SUBSECTION II-B: TECHINT
     %------------------------------------------------------------------
@@ -298,12 +310,6 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
       \label{techint-s-histogram}
     \end{center}\end{figure}
 
-    También se puede observar en la figura \ref{techint-s-pie}, la
-    gran cantidad de paquetes de tipo \texttt{ARP} (12\%) que
-    aparecen, en comparación con los de tipo \texttt{IPv6} (15\%) y
-    \texttt{802.3} (14\%), que se encuentran en segundo lugar y tercer
-    lugar respectivamente. Esto demuestra el overhead del protocolo
-    \texttt{ARP} sobre el total de paquetes escuchados.
 
     El protocolo que mas aparece en este escenario es \texttt{IPv4}, tal
     como se observa en la figura \ref{techint-s-pie}, haciendo que
@@ -323,6 +329,13 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
     comparación con los protocolos que más aparecen, como por ejemplo
     \texttt{IPv4} cuyo porcentaje de aparición sobre el total es del 56\%
     tal como se observa en la figura \ref{techint-s-pie}.
+
+    % ALGO MAS ACA?
+    También se puede observar en la figura \ref{techint-s-pie}, la gran cantidad de paquetes 
+    de tipo \texttt{ARP} (12\%) que aparecen, en comparación con los
+    de tipo \texttt{IPv6} (15\%) y \texttt{802.3} (14\%), que se encuentran
+    en segundo lugar y tercer lugar respectivamente. Esto demuestra el overhead
+    del protocolo \texttt{ARP} sobre el total de paquetes escuchados.
 
   %--------------------------------------------------------------------
   % SUBSECTION II-C: HYUNDAI
@@ -463,12 +476,7 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
   % SUBSECTION II-D: LABORATORIOS DC
   %--------------------------------------------------------------------
   %
-  \subsection{Laboratorios DC}
-
-    Esta medición fue realizada en los laboratorios del departamento de
-    computación, en el horario de las 17 hs, por un lapso de 30 minutos.
-    Se utilizó la herramienta explicada previamente. La red cuenta con 175
-    computadoras, y se desconoce la cantidad de celulares conectados a ella.
+  \subsection{Laboratorios DC}    
     Los resultados fueron los siguientes.
 
     \begin{table}\begin{center}
@@ -505,22 +513,22 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
       \label{labos-dc-30m-s-histogram}
     \end{center}\end{figure}
 
-    El protocolo que más se escuchó fue \texttt{IPv4}, tal como se
-    observa en la figura \ref{labos-dc-30m-s-pie}, la cantidad de
-    paquetes  de este tipo fue del 82\% mientras que la de paquetes
-    \texttt{ARP} fue del 11\%. Se observa que el overhead del tipo
-    \texttt{ARP} en un tiempo de 30 minutos es bajo pero no
-    despreciable con respecto al total de paquetes de la red.
 
-    La entropía de la fuente propuesta es de 0.882, como se observa en
-    la figura \ref{labos-dc-30m-s-histogram}, dejando por debajo de
-    ella al protocolo \texttt{IPv4} que, al presentar una mayor
-    probabilidad de aparición en la fuente, provoca que la información
-    que aporta sea poca y se destaque como nodo distinguido. Podemos
-    encontrar al protocolo
-    \texttt{802.3} que al tener poca probabilidad de aparición
-    (1\%), aporta mucha información, siendo el protocolo que más
-    información aporta.
+  El protocolo que más se escuchó fue \texttt{IPv4}, tal como se
+  observa en la figura \ref{labos-dc-30m-s-pie}, la cantidad de
+  paquetes  de este tipo fue del 82\% mientras que la de paquetes
+  \texttt{ARP} fue del 11\%. Se observa que el overhead del tipo \texttt{ARP} 
+  en un tiempo de 30 minutos es bajo pero no despreciable con respecto al 
+  total de paquetes de la red.
+
+  La entropía de la fuente propuesta es de 0.882, como se observa en la
+  figura \ref{labos-dc-30m-s-histogram}, dejando por debajo de ella al
+  protocolo \texttt{IPv4} que, al presentar una mayor probabilidad de
+  aparición en la fuente, provoca que la información que aporta sea
+  poca y se destaque como nodo distinguido. Podemos encontrar al protocolo 
+  \texttt{802.3} que al tener poca probabilidad de aparición
+  (1\%), aporta mucha información, siendo el protocolo que más información
+  aporta.
 
     %------------------------------------------------------------------
     % SUBSECTION II-F: Conclusión
@@ -547,7 +555,7 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
 
 %----------------------------------------------------------------------
 % SECTION III: Desarrollo - Fuente S_1
-%----------------------------------------------------------------------
+%----------+------------------------------------------------------------
 \section{Desarrollo - Fuente $S_1$}
   %--------------------------------------------------------------------
   % SUBSECTION III-A: CASA
@@ -565,7 +573,6 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
   confección de estos grafos permitirá tener una idea básica de una
   parte de la topología de la red local que escuchamos. Los resultados
   fueron los siguientes.
-
 
     %------------------------------------------------------------------
     % TORTA CASA
@@ -608,24 +615,33 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
   la figura \ref{marto-casa-3hs-s1-histogram}, en donde la información
   que brinda la ip 190.168.1.100 (representada como A) queda por
   debajo de la entropía de la fuente, la cual es 1.24.
+  
+  La ip que más aparece en los paquetes de tipo \texttt{ARP}, dentro del
+  campo \textit{destino}, es la 190.168.1.100, tal como se observa en la
+  figura \ref{marto-casa-3hs-s1-pie}. Esta ip al ser la que más aparece
+  dentro de las comunicaciones, será un nodo distinguido, por lo que será la
+  que menos información aporte. Esto se ve reflejado en la figura
+  \ref{marto-casa-3hs-s1-histogram}, en donde la información que brinda la
+  ip 190.168.1.100 (representada como A) queda por debajo de la entropía de
+  la fuente, la cual es 1.24.  
 
   Las direcciones ip que no son distinguidas tienen frecuencias y
-  probabilidades de aparición muy similares, aportando así cantidades
-  similares de información. Esto se puede observar en la figura
+  probabilidades de aparición muy similares, aportando así
+  cantidades similares de información. Esto se puede observar en la figura
   \ref{marto-casa-3hs-s1-histogram}.
 
-  En la figura \ref{marto-casa-3hs-graph} se observan 7 componentes
-  conexas (hay 7 subconjuntos de ip's que intercambian información
-  sólo entre sí y no con las demas ip's de la red). También se puede
-  observar que hay dos pares de dos nodos (direcciones ip) que están
-  unidos por una arista de un grosor enorme. Se deduce que estos pares
-  de  nodos intercambian entre sí una cantidad muy grande de paquetes.
-  El grafo muestra nodos de la red que recibieron o emitieron
-  paquetes, mientras que en el histograma sólo mostramos a los nodos
-  que \texttt{recibieron} paquetes ya que los símbolos que
-  consideramos son el campo \texttt{destino} de los paquetes. Es por
-  esto que en el grafo aparecen representados más nodos de la red que
-  en el histograma.
+  En la figura \ref{marto-casa-3hs-graph} se observan 7 componentes conexas
+  (hay 7 subconjuntos de ip's que intercambian información sólo entre sí y
+  no con las demas ip's de la red). También se puede observar que hay dos
+  pares de dos
+  nodos (direcciones ip) que están unidos por una arista de un grosor
+  enorme. Se deduce que estos pares de  nodos intercambian entre sí una cantidad
+  muy grande de paquetes.
+  El grafo muestra nodos de la red que recibieron o emitieron paquetes,
+  mientras que en el histograma sólo mostramos a los nodos que
+  \texttt{recibieron} paquetes ya que los símbolos que consideramos son el
+  campo \texttt{destino} de los paquetes. Es por esto que en el grafo
+  aparecen representados más nodos de la red que en el histograma.  
 
   %------------------------------------------------------------ --------
   % SUBSECTION III-B: TECHINT
@@ -650,7 +666,7 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
     %------------------------------------------------------------------
     % HISTOGRAMA TECHINT
     %------------------------------------------------------------------
-    \begin{figure}[H]\begin{center}
+    \begin{figure}[ht]\begin{center}
       \includegraphics[width=0.5\textwidth]{%
       ../output/techint-s1-histogram.png}
       \vspace{-2em}
@@ -676,24 +692,22 @@ de concluir cuál de las dos fuentes elegidas es \emph{más compresible}.
   figura \ref{techint-s1-pie}.
 
   Todos estos nodos aportaron un información menor a la entropía de la
-  fuente, la cual fue de 4.73. Estos estan enumerados con letras de la
-  A a la J, formando así un subconjunto con 10 nodos distinguidos, tal
-  como se ve en la figura \ref{techint-s1-histogram}. Dentro de estos
-  nodos, se observa uno en particular nombrado como A (cuya ip es
-  172.23.135.254), que aparece con una frecuencia mayor al resto
-  (18\%), lo que como consecuencia aportará menor cantidad de
-  información.
+  fuente, la cual fue de 4.73. Estos estan enumerados con letras de la A a
+  la J, formando así un subconjunto con 10 nodos distinguidos, tal como se
+  ve en la figura \ref{techint-s1-histogram}. Dentro de estos nodos, se
+  observa uno en particular nombrado como A (cuya ip es 172.23.135.254), que
+  aparece con una frecuencia mayor al resto (18\%), lo que como consecuencia
+  aportará menor cantidad de información.
 
-  También realizamos un grafo a partir de los datos de forma similar a
-  la hecha en la red \emph{Casa}. En este caso se pueden observar dos
-  componentes conexas. En ambas componentes se observa que hay uno o
-  más \texttt{nodos especiales}, que están conectados con una cantidad
-  grande de nodos que sólo se conectan con este. Estos nodos son nodos
-  correspondientes a los símbolos destacados (que se encuentran por
-  debajo de la entropía) en el histograma de la figura
-  \ref{techint-s1-histogram}. Luego, consideramos que es esperable que
-  estos símbolos (o al menos alguno/s) de estos se correspondan con la
-  dirección ip de routers presentes en la red.
+  También realizamos un grafo a partir de los datos de forma similar a la
+  hecha en la red \emph{Casa}. En este caso se pueden observar dos componentes
+  conexas. En ambas componentes se observa que hay uno o más \texttt{nodos
+  especiales}, que están conectados con una cantidad grande de nodos que
+  sólo se conectan con este. Estos nodos son nodos correspondientes a
+  los símbolos destacados (que se encuentran por debajo de la entropía) en
+  el histograma de la figura \ref{techint-s1-histogram}. Luego, consideramos
+  que es esperable que estos símbolos (o al menos alguno/s) de estos se
+  correspondan con la dirección ip de routers presentes en la red.
 
   %--------------------------------------------------------------------
   % SUBSECTION III-C: HYUNDAI
@@ -720,9 +734,9 @@ solicitudes \texttt{ARP}.
 
 
     %------------------------------------------------------------------
-    % TORTA HYUNDAI
+    % TORTA TECHINT
     %------------------------------------------------------------------
-    \begin{figure}[ht]\begin{center}
+    \begin{figure}[H]\begin{center}
       \includegraphics[width=0.5\textwidth]{%
       ../output/hyundai-s1-pie.png}
       \vspace{-2em}
@@ -731,7 +745,7 @@ solicitudes \texttt{ARP}.
     \end{center}\end{figure}
 
     %------------------------------------------------------------------
-    % HISTOGRAMA HYUNDAI
+    % HISTOGRAMA TECHINT
     %------------------------------------------------------------------
     \begin{figure}[H]\begin{center}
       \includegraphics[width=0.5\textwidth]{%
@@ -742,15 +756,33 @@ solicitudes \texttt{ARP}.
     \end{center}\end{figure}
 
     %------------------------------------------------------------------
-    % TOPOLOGÍA DE RED HYUNDAI
+    % GRAFO Hyundai
     %------------------------------------------------------------------
-    \begin{figure}[ht]\begin{center}
+    \begin{figure}[H]\begin{center}
       \includegraphics[width=0.5\textwidth]{%
       ../output/hyundai-graph.png}
-      \vspace{-2em}
-      \caption{S$_1$: Hyundai - Topología de la Red}
-      \label{hyundai-graph}
+      %\vspace{-2em}
+      \caption{S$_1$: Grafo Hyundai}
+      \label{huyndai-graph}
     \end{center}\end{figure}
+  
+  Se observan dos nodos distinguidos, nombrados como A y B, cuyas
+  frecuencias de aparición son las mayores. A su vez se puede distinguir una
+  jerarquía en la que además de estos nodos primarios existe una serie de
+  nodos de segundo nivel en cuanto a su frecuencia, tal como se observa en
+  la figura \ref{hyundai-s1-histogram}.
+
+  Esta jerarquía también es observable en la figura \ref{hyundai-graph}, en
+  donde hay un nodo central bien marcado, y otros nodos importantes  en su periferia más
+  cercana.
+
+  Segun sabemos del entorno en donde fue realizada la medición, esto es
+  posiblemente una consecuencia de la topología de la red en donde se
+  realizó la medición, en particular pudimos corroborar que muchas de las
+  ips correspondientes a los nodos pertenecen a servidores, que brindan
+  servicios activos a todo el resto de las máquinas de la empresa. De esta
+  forma es comprensible que los mismos tengan una gran cantidad de
+  solicitudes \texttt{ARP}.
 
   %--------------------------------------------------------------------
   % SUBSECTION III-D: LABORATORIOS DC
@@ -821,7 +853,6 @@ solicitudes \texttt{ARP}.
   mediciones ya analizadas, será esperable que estos símbolos sean la
   dirección ip de dispositivos (nodos) destacados en la red local
   estudiada (por ejemplo, podrían ser routers).
-
 
   %--------------------------------------------------------------------
   % SUBSECTION III-F: Conclusión
