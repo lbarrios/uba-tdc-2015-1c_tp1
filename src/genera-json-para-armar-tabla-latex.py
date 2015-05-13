@@ -1,3 +1,8 @@
+### Este programa recibe un archivo json de una medición como parámetro
+### y devuelve por standard output un archivo json adecuado para armar 
+### una tabla en latex, con las columnas
+### | Protocolo | Frecuencia | Información |
+
 import json
 import sys
 
